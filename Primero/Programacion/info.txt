@@ -1,0 +1,32 @@
+PROGRAMACIÓN
+
+TRIMESTRE 1
+    - Funciones
+
+TRIMESTRE 2
+    - Programación Orientada a Objetos
+
+TRIMESTRE 3
+    - POO
+    - App
+
+
+Examenes:
+    - Papel y boli
+
+Usaremos un IDE 
+Usamos C#
+IDE: 
+    - Archivos de Cod. Fuentes
+    - Workspaces
+    - Proyectos
+    - Compilar
+    - Debug
+
+Un IDE maneja "workspaces", que dentro tienen proyectos, que dentro tienen archivos de código fuente
+
+IDE - "Rider" (lo hace JetBrain?)
+Instalar Visual Studio 2022 !!!!!!!
+
+
+AVISA A JAVIER A Y 40!!!
