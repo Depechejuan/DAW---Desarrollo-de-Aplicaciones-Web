@@ -87,3 +87,4 @@ DDL (Segunda evaluación)
 Diccionario de datos:
 guia donde se describe la base de datos, también conocidos como "metadatos" (Donde se guarda el nombre de la tabla? en metadatos.)
 
+
