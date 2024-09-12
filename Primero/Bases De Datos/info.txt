@@ -1,0 +1,54 @@
+160h (5h sem)
+
+Fechas orientativas de eval.
+1ª -> Principios de Noviembre
+2ª -> Finales de Febrero
+3ª -> Finales de Mayo (Si se suspende algo, se recupera aquí)
+-------------------
+
+Trimestres:
+1ª Evaluación, Base de la Pirámide
+UD 1 > Sistemas de Almacenamiento (1 semana)
+UD 2 > Diagramas E-R - Entidad Relación - erdplus.com (4 semanas)
+UD 3 > Modelo Relacional (5 semanas)
+Examen de UD2 y 3 allá por Noviembre.
+Solicitud Diagrama > Modelo Relacional
+
+2ª Evaluación - Mitad de Pirámide
+UD 4 > Gesión de Tablas - DDL (Creación de tablas)
+UD 5 > Consultas SQL - Select (Aprox 6/7s emanas)
+UD 6 > Manipulación de datos - DML
+
+3ª Evaluación
+UD 7 -> Scripts Transact- SQL (3 semanas)
+UD 8 -> Procedimientos y Funciones (3 semanas) ( Se verá Cursores también)
+UD 9 -> Triggers (2 semanas)
+UD 10 -> Cursores (2 semanas)
+
+
+--------
+Metodología
+Alta en "AULES"
+    - Avisos y foro de dudas
+    - Teoría e información para realizar las actividades
+    - Entrega de actividades
+    - Enlace a más información
+
+Ejercicios sólo en clase salvo excepción
+
+
+FORMACIÓN DUAL:
+    - Parte del módulo se impartirá en el aula (90%) y parte en la empresa (10%)
+    - Es necesario el APTO de la empresa para aprobar.
+
+Evaluación y criterios de calificación
+Evaluación ordinaria (con derecho a continua)
+    - Entrega en plazo de las prácticas realizadas (25%)
+    - Examen de evaluación (75%) (puede ser papel y/o ordenador)
+
+Ponderación de la nota
+    - Diseño lógico (primer trimestre): 20%
+    - Diseño físico (Segundo trimestre): 40%
+    - Programación (tercer trimestre): 40%
+
+
