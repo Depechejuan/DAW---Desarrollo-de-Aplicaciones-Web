@@ -1,0 +1,32 @@
+Lenguajes de Marcas y sistemas de gestión de información
+
+T1 - Introducción a los lenguajes de Marcas
+T2 - Lenguajes de marcas HTML
+T3 - Hojas de estilo CSS
+T4 - Lenguaje JavaScript
+T5 - Documentos XML
+T6 - Validación de documentos: DTD
+T7 - Gestión y recuperación de información: XPath y XQuery
+T8 - Transofmraciión de la información: XSLT
+T9 - Sistemas de gestión de la información
+
+
+1ª Evaluación
+HTML y mitad CSS
+
+2ª Evaluación:
+CSS y JavaScript
+
+3ª Evaluación
+Resto.
+
+
+Materiales:
+Todo en Aula Virtual
+
+Examen 60%
+Prácticas 40% (30% integradora 10% ejercicios cortos)
+Integradora : Práctica grande que se manda por trimestre.
+Ejercicios Cortos los irá mandando día a día.
+Entrega: 1 semana despues de envío.  Corregirá 3 ejercicios random para no corregir todo y subirá las soluciones de todos.
+
