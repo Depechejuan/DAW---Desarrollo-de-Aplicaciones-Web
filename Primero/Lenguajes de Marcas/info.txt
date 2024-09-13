@@ -30,3 +30,5 @@ Integradora : Práctica grande que se manda por trimestre.
 Ejercicios Cortos los irá mandando día a día.
 Entrega: 1 semana despues de envío.  Corregirá 3 ejercicios random para no corregir todo y subirá las soluciones de todos.
 
+
+
