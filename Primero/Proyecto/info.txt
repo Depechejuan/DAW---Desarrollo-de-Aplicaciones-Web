@@ -1,0 +1,40 @@
+El Proyecto
+
+En 2º se entregaba un proyecto cuando acababas las prácticas.
+Tenías 40h de dedicación para el proyecto (lo cual es poco 💩)
+
+Hay que hacer un informe en el cual determinas la empresa, logo, temática, competidores, inversión, etc.
+(Modelo de datos, punto 0 - X entre gastos/beneficios, donde se cruzan)
+
+Para llegar al 10 tenias que mostrar el prototipo (el programa)
+
+
+[PRIMERO] - [SEGUNDO]
+
+Vamos a ver la Arquitectura, de qué hace falta para poder montar la aplicación.
+
+Front End - 
+digital ocean (tipo amazon, azure)
+nginx (El servidor HTTP definitivo) - Apache se quedó fuera hace mucho
+metes el index.html
+el proveedor de servicios (digital ocean) te da una IP (ejemplo: 8.7.9.12), pero tu quieres un determinas el dominio (www.loquesea.es), necesitas un DNS.
+como por ejemplo duckdns
+ejemplO: hostinguer:
+La dirección pregnative.es es la dirección 8.7.9.12.
+HTML estatico = no accede a datos.
+
+
+Back-End -
+Ahora haces un login, entonces abres un servidor en azure y despliegas tu aplicación back end alli.
+La petición va a una base de datos (supabase, tipo postgres)!! 
+
+Por ejemplo, subes una imágen, ¿Dónde va?
+Un servicio que se llama S3 - por ejemplo
+
+
+Hay que hacer un "mapa de aplicación", donde dibujas la aplicación para tener una idea más cercana a la realidad
+
+
+
+EN SEGUNDO VEMOS ASP.NET
+

@@ -1,2 +1,90 @@
 Sistemas lógicos de almacenamiento
 
+Base de Datos (información) > SGDB (Sistema de Gestión de Base de Datos)
+
+Usaremos SQL Server (de Microsoft)
+
+Bases de datos RELACIONALES
+Oracle
+MySQL/MariaDB
+SQL Server
+PostgreSQL
+SQLite
+
+Bases de datos NO RELACIONALES (NoSQL - Not Only SQL)
+// Si tengo muchos datos por segundo, es mejor usar NoSQL
+// Si tienes una estructura cambiante, quizá mejor usar NoSQL
+MongoDB (Se verá un poco)
+Redis
+Neo4J (es una red social, hace "Personas" y las relaciona a modo gráfico)
+(Casandra...
+Big Table...)
+
+El lenguaje es "SQL" (Lenguaje estructurado de consultas)
+Oracle tiene el PL/SQL, SQLServer tiene el TSQL, MariaDB Tiene el PL/SQL pero más reducido (nada que ver), postgreSQL tiene pgPLSQL 
+
+Tendremos "VIRTUAL BOX" para una máquina virtual, con SQL Server instalado.
+
+
+
+
+
+Sistema Gestor
+---------------
+Nivel Físico o interno
+Cómo se guardan en el disco duro
+
+Nivel lógico
+las relaciones
+
+Nivel de Usuario (o externo)
+Es lo que vemos como usuarios (un formulario por ejemplo)
+
+------
+
+Hay que determinar que los tipos de carácteres que debe tener cada valor de las tablas.
+(Ejemplo: texto en nombre o numérico en el número de la calle)
+Se indexan las claves para que sea más rápida la base de datos.
+
+
+Consultas: Instrucciones que nos permiten realizar peticiones a una BBDD sobre registros almacenados en una o varias tablas.
+Informes: Listados ordenados y clasificados de campos y registros  seleccionados para que sean legibles
+Vistas: (el front) Transformaciones, completas o parciales de una o varias tablas para obtener una nueva tabla como combinación de sus registros.
+
+
+---
+
+Cuando se procesan datos de una SGDB:
+- Guiotes o Scripts (Los llamamos Scripts): son un conjunto de instrucciones que, ejecutadas, de forma ordenada, realizan operaciones avanzadas de mantenimiento de los datos almacenados ne una base de datos. (Crea, modifica, inserta, bucles)
+- Procedimientos y funciones: Son tipos especiales de scripts que estánalmacenados en la base de datos y que forman parte de su esquema (Ejemplo: Alguien hace un script para insertar una persona en la BBDD, y todos lo usamos.)
+Procedimiento: Cualquier código que pueda jeecutar como un script, Función: sólo se puede llamar desde una consulta (Suele ser para sacar datos)
+- Disipadres o Trigger: Son tipos especiales de scripts que están almacenadosen la BBDD y que se ejecutan cuando se produce una acción concreta con un registro en una tabla.
+(Al ocurrir un evento, se ejecuta) - (Se modifica un cliente = se deja un registro en una tabla de histórico para que se guarde ese cambio)
+
+
+---
+
+
+Administradores de sistema o Diseñadores: Los artesanos de la base de datos. Conocimiento, experiencia...
+Administradores de DB (DBA - DataBase Admin): Una vez creada, los admins. Se encargan de mantener, backups, permisos, etc.
+Programadores: Realizan aplicaciones sobre los objetos
+Usuarios Finales: Clientes.
+
+
+Protección de Datos: Responsable de gestionar los datos e inscribirlos en un fichero.
+ARCO (Acceso, rectificación, cancelación)
+Acceso no autorizado = notificar a la agencia de protección de datos en menos de 48h, sino multas hasta el 3% de la facturación de la empresa.
+
+
+------------------------
+
+
+DCL (Data control language) - control de permisos
+
+DDL (Segunda evaluación)
+
+
+Diccionario de datos:
+guia donde se describe la base de datos, también conocidos como "metadatos" (Donde se guarda el nombre de la tabla? en metadatos.)
+
+

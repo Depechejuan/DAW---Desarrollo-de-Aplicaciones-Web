@@ -1,0 +1,52 @@
+TEMA 1
+
+Un grupo de gente cromañon necesitaban contar. ¿Para qué?
+
+Contaban días, gente de su manada, cuantos pasos daban para el arbol, cuantos mamuts cazaban, de que tamaño....
+Contaban las estrellas
+
+Decimales
+Hexadecimales
+Docenas
+Sexagesimal
+Romanos (Sistemsa semi-posicional)
+Mayas (Vigesimal, de 20)
+Octal
+Binario
+
+
+
+Maestros de la informática
+Turin (Enigma)
+Bool (Algebra booleana)
+Von Newman (Arquitectura Von Newman)
+Xanon (Logica)
+
+
+RESUMEN: Sistemas de numeración (A dia de hoy usamos decimal, PC binarios, bytes 8, usaremos hexadecimal para esta asignatura)
+
+DIVISIÓN, es la operación que hace grupos
+
+0
+1
+10
+11
+100
+101
+110
+111
+1000
+
+Ejeemplo con el 111.
+111 = 1x2**2+1x2+1x1
+
+
+173 == 1*100+7*10+3*1
+
+a elevado a 0 da 1
+a elevado a x, es tantas veces A como X marque
+
+ejemplo:
+543210
+100101 - 1x2**5 + 0x2**4 + 0x2**3 + 1x2**2 + 0x2**1 + 1x2**0 = (los que son 0x no nos molestamos en calcularlos) 
+            32                        4                  1 = 37(10) <- eso se pone en pequeño abajo
