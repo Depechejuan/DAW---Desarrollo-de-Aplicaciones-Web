@@ -184,7 +184,7 @@
                     </p>
                     <p>
                         Se puede interpretar como pares "1/0",
-                        "verdadero/falso", "si/no"
+                        "verdadero/falso", "si/no", "encendido/apagado"...
                     </p>
                     <p>Ejemplo:</p>
                     <code
@@ -580,6 +580,332 @@
                     </p>
 
                     <a href="#funciones" class="return" title="Funciones">
+                        <svg
+                            class="icon"
+                            height="32"
+                            viewBox="0 0 32 32"
+                            width="32"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <g fill="none" fill-rule="evenodd">
+                                <path d="m0 0h32v32h-32z" />
+                                <path
+                                    class="fill"
+                                    d="m16 0c8.836556 0 16 7.163444 16 16s-7.163444 16-16 16-16-7.163444-16-16 7.163444-16 16-16zm.0715729 9.25735931-.0209322.021-.0222136-.021-7.07106779 7.07106779 1.41421359 1.4142136 4.6710678-4.6702814v10.4276407h2v-10.4436407l4.6857864 4.6862814 1.4142136-1.4142136z"
+                                    fill="#202327"
+                                />
+                            </g>
+                        </svg>
+                    </a>
+                </details>
+            </article>
+
+            <article class="operadores">
+                <details id="operadores">
+                    <summary>
+                        <a id="title" name="operadores">Operadores</a>
+                    </summary>
+
+                    <h2>Operadores</h2>
+                    <p>
+                        En C#, los operadores son símbolos que le dicen al
+                        compilador qué tipo de operación realizar. Estos
+                        operadores trabajan con variables y valores para
+                        realizar cálculos matemáticos, comparaciones, y tomar
+                        decisiones lógicas, entre otras cosas.
+                    </p>
+
+                    <h3>Tipos de Operadores</h3>
+                    <ul>
+                        <li>Aritméticos</li>
+                        <li>Comparación</li>
+                        <li>Lógicos</li>
+                        <li>Asignación</li>
+                        <li>Unarios</li>
+                    </ul>
+
+                    <h4>Operadores Aritméticos</h4>
+                    <p>
+                        Los operadores aritméticos se utilizan para realizar
+                        operaciones matemáticas básicas como la suma, resta,
+                        multiplicación y división.
+                    </p>
+                    <ol>
+                        <li>
+                            Operador "==": Igual a. <br />
+                            Este operador se encarga de comprobar que los
+                            elementos colocados a sus lados sean del mismo
+                            valor.<br />
+                            <!-- prettier-ignore -->
+                            <code>int a = 10;
+                                int b = 20;
+                                int c = 10;
+                                bool result1 = a == b; // return false
+                                bool result = a == c; // return true
+                            </code>
+                        </li>
+                        <li>
+                            Operador "!=": Distinto a.<br />
+                            Este operador se encarga de comparar que los
+                            elementos colocados a sus lados sean diferentes.
+                            <br />
+                            <!-- prettier-ignore -->
+                            <code>int a = 10;
+                                int b = 20;
+                                int c = 10;
+                                bool result1 = a != b; // return True
+                                bool result2 = a !=c; // return false 
+                            </code>
+                        </li>
+                        <li>
+                            Operador ">": Mayor que. <br />
+                            Este operador se encarga de comprobar si el valor
+                            colocado a su izquierda es mayor que el colocado a
+                            su derecha.
+                            <!-- prettier-ignore -->
+                            <code>int a = 10;
+                                int b = 20;
+                                bool result1 = a > b; // return False
+                                bool result2 = b > a; // return True 
+                            </code>
+                        </li>
+                        <li>
+                            Operador "<": Menor que. <br />
+                            Este operador se encarga de comprobar si el valor
+                            colocado a su izquierda es menor que el colocado a
+                            su derecha
+                            <!-- prettier-ignore -->
+                            <code>int a = 10;
+                                int b = 20;
+                                bool result1 = a < b; // return True
+                                bool result2 = b < a; // return false 
+                            </code>
+                        </li>
+                        <li>
+                            Operador ">=": Mayor o igual <br />
+                            Este operador se encarga de comprobar si el valor
+                            colocado su izquierda es mayor o igual al colocado a
+                            su derecha. <br />
+                            Es importante entender que es "mayor o igual", y no
+                            "igual o mayor".
+                            <!-- prettier-ignore -->
+                            <code>int a = 10;
+                                int b = 20;
+                                bool result1 = a >= b; // return False
+                                bool result2 = b >= a; // return True 
+                            </code>
+                        </li>
+                        <li>
+                            Operador "<=": Menor o igual <br />
+                            Este operador se encarga de comprobar si el valor
+                            colocado a su izquierda es menor o igual al colocado
+                            en su derecha <br />
+                            Es importante entender que es "menor o igual", y no
+                            "igual o menor". <br />
+                            c
+                            <code
+                                >int a = 10; int b = 20; bool result1 = a <= b;
+                                // return True bool result2 = b <= a; // return
+                                False
+                            </code>
+                        </li>
+                    </ol>
+
+                    <h4>Operadores</h4>
+                    <p>
+                        Se utilizan para combinar condiciones lógicas y
+                        devuelven un valor booleano (true o false). Los
+                        operadores más comunes son:
+                    </p>
+                    <ol>
+                        <li>
+                            <strong>&&</strong><br />
+                            El operador lógico &&, en inglés "and", Evalúa si
+                            ambas condiciones son true. Si todas las condiciones
+                            son verdaderas, el resultado será true. Si al menos
+                            una condición es false, el resultado será false.<br />
+                            <!-- prettier-ignore -->
+                            <code>true && true = True
+                                true && false = false
+                                false
+                                && true = false
+                                false && false = false
+                            </code>
+                            Podemos usarlo con un ejemplo práctico con un caso
+                            real.
+                            <!-- prettier-ignore -->
+                            <code>int edad = 25; 
+                                bool tieneLicencia = true;
+                                if (edad >= 18 && tieneLicencia)
+                                {
+                                Console.WriteLine("Puedes conducir.");
+                            } else
+                            {
+                                Console.WriteLine("No puedes conducir.");
+                            }
+                            </code>
+                            Puedes cambiar las variables edad y tieneLicencia
+                            para comprobar todos los casos.<br />
+                            Os dejo otro ejemplo:
+                            <!-- prettier-ignore -->
+                            <code>bool estaLloviendo = true;
+                                bool tengoParaguas = false;
+                                if (estaLloviendo && tengoParaguas)
+                                {
+                                    Console.WriteLine("Salgo a caminar.");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("No puedo salir, está lloviendo.");
+                                }
+                                </code>
+                        </li>
+                        <li>
+                            ||<br />
+                            El operador || (En inglés, "or"), Evalúa si al menos
+                            una de las condiciones es true. Si cualquiera de las
+                            dos (o ambas) condiciones es true, el resultado será
+                            true. Sólo será false si todas las condiciones son
+                            false.<br />
+                            <!-- prettier-ignore -->
+                            <code>true || true = true
+                                true || false = true
+                                false || true = true
+                                false || false = false
+                            </code>
+                            <!-- prettier-ignore -->
+                            <code>bool estaLloviendo = true;
+                                bool tengoParaguas = false;
+                                if (estaLloviendo || tengoParaguas)
+                                {
+                                    Console.WriteLine("Salgo a caminar.");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("No salgo.");
+                                }
+                            </code>
+                            Aunque tengoParaguas es false, la condición
+                            estaLloviendo es true. Como al menos una condición
+                            es true, el bloque dentro del if se ejecuta y se
+                            imprime "Salgo a caminar.".
+                        </li>
+                    </ol>
+
+                    <h4>Combinación de ||y &&</h4>
+                    <p>
+                        Es posible combinar múltiples operadores lógicos en una
+                        sola expresión. <br />
+                        Cuando esto ocurre, es importante recordar la
+                        precedencia de los operadores. El operador && (AND)
+                        tiene mayor precedencia que el operador || (OR). Esto
+                        significa que primero se evalúan las expresiones con &&,
+                        y luego las con ||, a menos que se utilicen paréntesis
+                        para alterar el orden.
+                    </p>
+                    <!-- prettier-ignore -->
+                    <code>int edad = 17;
+                        bool tienePermisoPadres = true;
+                        bool esVIP = false;
+                        if (edad >= 18 || (tienePermisoPadres && esVIP))
+                        {
+                            Console.WriteLine("Puedes acceder al evento.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("No puedes acceder al evento.");
+                        }
+                        </code>
+                    <p>
+                        <strong>Explicación:</strong><br />
+                        Primero se evalúa la expresión dentro de los paréntesis:
+                        tienePermisoPadres && esMiembroVIP. tienePermisoPadres
+                        es true, pero esMiembroVIP es false. Por lo tanto, la
+                        combinación tienePermisoPadres && esMiembroVIP es
+                        false.<br />
+                        Luego, se evalúa la expresión completa: edad >= 18 ||
+                        false. edad >= 18 es false, y false || false da como
+                        resultado false.<br />
+                        Como el resultado final es false, se ejecuta el bloque
+                        else.
+                    </p>
+
+                    <h4>Operadores de Asignación</h4>
+                    <p>
+                        Estos operadores se utilizan para asignar valores a las
+                        variables. Algunos combinan la asignación con una
+                        operación matemática.
+                    </p>
+                    <ol>
+                        <li>
+                            Operador =<br />
+                            Es una asignación simple.
+                            <!--prettier-ignore-->
+                            <code>int a = 10;</code>
+                        </li>
+                        <li>
+                            Operador +=<br />
+                            Este operador se encarga de, a la vez de sumar la
+                            cantidad indicada a la derecha de la expresión,
+                            declarar el resultado de la operación en la
+                            variable.
+                            <!--prettier-ignore-->
+                            <code>int x = 10;
+                        x += 5;  // x = x + 5 = 15
+                        x += 5; // ahora, x = x + 5 = 20
+                    </code>
+                        </li>
+                        <li>
+                            Operador -=<br />
+                            Al igual que su contraparte, este se encarga de
+                            restar y asignar el resultado en la variable<br />
+                            <!--prettier-ignore-->
+                            <code>int x = 10;
+                                x -= 5;  // x = x - 5 = 5
+                                x -= 5; // ahora, x = x - 5 = 0
+                            </code>
+                        </li>
+                        <li>
+                            Operador ++ <br />
+                            Este operador se encarga de incrementar el valor de
+                            la variable en uno. Generalmente, esta operación se
+                            especifica después de la variable, como veremos en
+                            el ejemplo de abajo.<br />
+                            <!--prettier-ignore-->
+                            <code>int a = 7;
+                            a++
+                            Console.WriteLine(a); // a = 8
+                        </code>
+                            También se puede utilizar a la inversa<br />
+                            <!--prettier-ignore-->
+                            <code>int a = 7;
+                                ++a;
+                                Console.WriteLine(a); // a = 8
+                            </code>
+                            Aunque en términos generales no hay diferencia,
+                            algunos casos pueden dar resultados diferentes.
+                            <!-- INTRODUCIR CASO DIFERENCIAL DEL ++a y a++ -->
+                        </li>
+                        <li>
+                            !<br />
+                            El operador ! significa "not". Invierte el valor de
+                            la variable.
+                            <!--prettier-ignore-->
+                            <code>bool a = true;
+                                Console.WriteLine(!a); // devuelve false
+                            </code>
+                        </li>
+                        <li>
+                            -<br />
+                            No hay que confundirlo con la resta. Este operador
+                            va pegado, sin espacios, a la variable que queremos
+                            afectar.
+                        </li>
+                    </ol>
+                    <h4>Operadores Unarios</h4>
+
+                    <h3>Orden de Ejecución de Operadores</h3>
+                    <a href="#operadores" class="return" title="Operadores">
                         <svg
                             class="icon"
                             height="32"
