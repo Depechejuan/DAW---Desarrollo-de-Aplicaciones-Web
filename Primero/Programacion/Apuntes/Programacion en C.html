@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>PROGRAMACIÓN EN C# - 1ºN de DAW</title>
+    </head>
+    <body>
+        <header>
+            <h1>Programación en C# - Primero de DAW</h1>
+            <button id="theme"></button>
+        </header>
+        <main>
+            <article class="introduccion-programacion">
+                <details id="introduccion-programacion">
+                    <summary>
+                        <a id="title" name="introduccion-programacion"
+                            >Introducción</a
+                        >
+                    </summary>
+                    <h2>Introducción a C#</h2>
+                    <p>
+                        C# (pronunciado "C Sharp") es un lenguaje de
+                        programación creado por Microsoft que es utilizado en
+                        una amplia variedad de aplicaciones. Si nunca has
+                        programado antes, imagina que un lenguaje de
+                        programación es una forma de darle instrucciones a una
+                        computadora para que realice tareas. Así como nosotros
+                        usamos el español o el inglés para comunicarnos, los
+                        programadores usan lenguajes como C# para "hablar" con
+                        las computadoras.
+                    </p>
+
+                    <h3>¿Para qué se utiliza C#?</h3>
+
+                    <p>
+                        C# se usa en muchos tipos de aplicaciones diferentes,
+                        como por ejemplo:
+                    </p>
+                    <ul>
+                        <li>
+                            <b>Desarrollo de aplicaciones de escritorio:</b> Si
+                            has usado programas en Windows, muchos de ellos
+                            probablemente fueron creados con C#.
+                        </li>
+                        <li>
+                            <b>Desarrollo de juegos:</b> C# es muy popular en el
+                            desarrollo de videojuegos, sobre todo gracias a su
+                            uso en el motor de juegos Unity, uno de los más
+                            conocidos en la industria.
+                        </li>
+                        <li>
+                            <b>Aplicaciones web:</b> Con C# se pueden crear
+                            sitios web y servicios en línea que millones de
+                            personas usan a diario.
+                        </li>
+                        <li>
+                            <b>Aplicaciones móviles:</b> También es posible
+                            desarrollar aplicaciones móviles para Android y iOS
+                            usando C# con herramientas como Xamarin.
+                        </li>
+                        <li>
+                            <b
+                                >Inteligencia artificial, automatización y
+                                más:</b
+                            >
+                            Gracias a su versatilidad, C# se utiliza en
+                            proyectos más avanzados como inteligencia
+                            artificial, automatización de procesos y sistemas
+                            embebidos (como los que controlan dispositivos
+                            electrónicos). Aunque es más probable encontrarte
+                            estos diseños en el lenguaje "Python"
+                        </li>
+                    </ul>
+                    <a
+                        href="#introduccion-programacion"
+                        class="return"
+                        title="introduccion-programacion"
+                    >
+                        <svg
+                            class="icon"
+                            height="32"
+                            viewBox="0 0 32 32"
+                            width="32"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <g fill="none" fill-rule="evenodd">
+                                <path d="m0 0h32v32h-32z" />
+                                <path
+                                    class="fill"
+                                    d="m16 0c8.836556 0 16 7.163444 16 16s-7.163444 16-16 16-16-7.163444-16-16 7.163444-16 16-16zm.0715729 9.25735931-.0209322.021-.0222136-.021-7.07106779 7.07106779 1.41421359 1.4142136 4.6710678-4.6702814v10.4276407h2v-10.4436407l4.6857864 4.6862814 1.4142136-1.4142136z"
+                                    fill="#202327"
+                                />
+                            </g>
+                        </svg>
+                    </a>
+                </details>
+            </article>
+
+            <article class="declaracion-variables">
+                <details id="declaracion-variables">
+                    <summary>
+                        <a id="title" name="declaracion-variables"
+                            >Declaración de Variables</a
+                        >
+                    </summary>
+                    <h2>DECLARACIÓN Y ASIGNACIÓN DE VARIABLES</h2>
+                    <p>Antes de nada. ¿Qué son las variables?</p>
+                    <p>
+                        Puedes pensar que las variables son como cajas en las
+                        que metemos dentro información.<br />
+                    </p>
+                    <p>
+                        Las variables se declaran usando una palabra clave que
+                        define el tipo de dato, el nombre que queremos darle, y
+                        finalizar la sentencia con un punto y coma (;).
+                    </p>
+                    <p>Los tipos de datos que se utilizan son:</p>
+                    <ul>
+                        <li>int</li>
+                        <li>double</li>
+                        <li>bool</li>
+                        <li>strings</li>
+                    </ul>
+
+                    <h3>INT</h3>
+                    <p>El tipo de datos "INT" contiene números enteros.</p>
+                    <p>Se declara:</p>
+                    <code>int a;</code>
+                    <p>
+                        La declaración se haría utilizando el operador "=", el
+                        cual no es un signo "igual" como en matemáticas.
+                    </p>
+                    <p>
+                        Este signo "=" pertenece al operador "asignación", el
+                        cual guarda el contenido a la derecha del "=" en la
+                        variable indicada a su izquierda
+                    </p>
+                    <p>Ejemplo:</p>
+                    <code>a = 7</code>
+                    <p>
+                        En este caso, a la variable "a" se le asigna el número 7
+                    </p>
+                    <p>
+                        El resultado declaración + asignación sería el siguiente
+                    </p>
+                    <code
+                        >int a;<br />
+                        a = 7;
+                    </code>
+                    <p>Otra opción para ahorrar una línea de código sería:</p>
+                    <code>int a = 7;</code>
+
+                    <p>
+                        De ahora en adelante, se declarará y asignará todo en
+                        una misma línea
+                    </p>
+
+                    <h3>DOUBLE</h3>
+                    <p>
+                        El tipo de datos "DOUBLE" contiene números con sus
+                        decimales, también llamados números reales.
+                    </p>
+                    <p>Ejemplo:</p>
+                    <code>double a = 7.6;</code>
+                    <p>
+                        Es importante expresar los números decimales con punto
+                        (.) y no con comas (,)
+                    </p>
+
+                    <h3>BOOL</h3>
+                    <p>
+                        El tipo de datos "BOOL" sólo puede contener dos valores.
+                        "True" y "False".
+                    </p>
+                    <p>
+                        Se puede interpretar como pares "1/0",
+                        "verdadero/falso", "si/no"
+                    </p>
+                    <p>Ejemplo:</p>
+                    <code
+                        >bool a = true;<br />
+                        bool b = false;
+                    </code>
+
+                    <h3>STRINGS</h3>
+                    <p>El tipo de datos "STRING" contiene cadenas de textos.</p>
+                    <p>
+                        Para especificar la cadena de texto, esta se debe
+                        declarar entre comillas ("")
+                    </p>
+                    <p>Ejemplo:</p>
+                    <code>string saludo = "Hola"</code>
+                    <a
+                        href="#declaracion-variables"
+                        class="return"
+                        title="declaracion-variables"
+                    >
+                        <svg
+                            class="icon"
+                            height="32"
+                            viewBox="0 0 32 32"
+                            width="32"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <g fill="none" fill-rule="evenodd">
+                                <path d="m0 0h32v32h-32z" />
+                                <path
+                                    class="fill"
+                                    d="m16 0c8.836556 0 16 7.163444 16 16s-7.163444 16-16 16-16-7.163444-16-16 7.163444-16 16-16zm.0715729 9.25735931-.0209322.021-.0222136-.021-7.07106779 7.07106779 1.41421359 1.4142136 4.6710678-4.6702814v10.4276407h2v-10.4436407l4.6857864 4.6862814 1.4142136-1.4142136z"
+                                    fill="#202327"
+                                />
+                            </g>
+                        </svg>
+                    </a>
+                </details>
+            </article>
+
+            <article class="console-writeline">
+                <details id="console-writeline">
+                    <summary>
+                        <a id="title" name="console-writeline"
+                            >Console.WriteLine()</a
+                        >
+                    </summary>
+
+                    <h2>CONSOLE.WRITELINE</h2>
+                    <code>Console.WriteLine("Hello World")</code>
+                    <p>
+                        Esta instrucción imprime en la consola de comandos el
+                        contenido que se encuentra dentro de su clase. Puede
+                        imprimir cualquier tipo de dato, tanto de un tipo como
+                        de varios.
+                    </p>
+                    <p>
+                        Como ejemplo, si declaramos una variable como un número,
+                        podemos introducir esta variable dentro de la expresión.
+                    </p>
+                    <code
+                        >int numero = 7; <br />Console.WriteLine(numero);
+                    </code>
+                    <p>
+                        Esto dará como resultado una impresión en consola del
+                        valor de "numero", en este caso, 7.
+                    </p>
+
+                    <h3>Imprimir por consola varias variables</h3>
+                    <p>
+                        Dependiendo del caso, podríamos querer imprimir varias
+                        cosas por consolsa.
+                    </p>
+                    <p>
+                        Una solución es hacer tantos "Console.WriteLine()" como
+                        variables tengamos, lo cual es poco eficiente
+                    </p>
+                    <p>
+                        Para hacerlo todo en una misma línea, aquí tienes unos
+                        ejemplos.
+                    </p>
+                    <!-- prettier-ignore -->
+                    <code
+                        >// Ejemplo 1: Imprimir varias variables en una misma línea
+                        int edad = 25;
+                        string nombre = "Carlos";
+                        Console.WriteLine("Nombre: " + nombre + ", Edad: " + edad);
+                    </code>
+                    <br />
+                    <!-- prettier-ignore -->
+                    <code>
+                        // Ejemplo 2: Usando interpolación de cadenas (más eficiente y legible)
+                        int numero = 42;
+                        double precio = 19.99;
+                        Console.WriteLine($"El número es {numero} y el precio es {precio}");
+                    </code>
+                    <br />
+                    <!-- prettier-ignore -->
+                    <code>
+                        // Ejemplo 3: Imprimir variables de diferentes tipos en una sola línea char inicial = 'A';
+                        bool esEstudiante = true;
+                        Console.WriteLine("Inicial: " + inicial + ", ¿Es estudiante? " + esEstudiante);
+                    </code>
+                    <a
+                        href="#console-writeline"
+                        class="return"
+                        title="console-writeline"
+                    >
+                        <svg
+                            class="icon"
+                            height="32"
+                            viewBox="0 0 32 32"
+                            width="32"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <g fill="none" fill-rule="evenodd">
+                                <path d="m0 0h32v32h-32z" />
+                                <path
+                                    class="fill"
+                                    d="m16 0c8.836556 0 16 7.163444 16 16s-7.163444 16-16 16-16-7.163444-16-16 7.163444-16 16-16zm.0715729 9.25735931-.0209322.021-.0222136-.021-7.07106779 7.07106779 1.41421359 1.4142136 4.6710678-4.6702814v10.4276407h2v-10.4436407l4.6857864 4.6862814 1.4142136-1.4142136z"
+                                    fill="#202327"
+                                />
+                            </g>
+                        </svg>
+                    </a>
+                </details>
+            </article>
+
+            <h2>FUNCIONES</h2>
+            <p></p>
+        </main>
+    </body>
+</html>
+
+base
+<article class="introduccion-programacion">
+    <details id="introduccion-programacion">
+        <summary>
+            <a id="title" name="introduccion-programacion">Introducción</a>
+        </summary>
+
+        <a
+            href="#introduccion-programacion"
+            class="return"
+            title="Introducción a DOM"
+        >
+            <svg
+                class="icon"
+                height="32"
+                viewBox="0 0 32 32"
+                width="32"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <g fill="none" fill-rule="evenodd">
+                    <path d="m0 0h32v32h-32z" />
+                    <path
+                        class="fill"
+                        d="m16 0c8.836556 0 16 7.163444 16 16s-7.163444 16-16 16-16-7.163444-16-16 7.163444-16 16-16zm.0715729 9.25735931-.0209322.021-.0222136-.021-7.07106779 7.07106779 1.41421359 1.4142136 4.6710678-4.6702814v10.4276407h2v-10.4436407l4.6857864 4.6862814 1.4142136-1.4142136z"
+                        fill="#202327"
+                    />
+                </g>
+            </svg>
+        </a>
+    </details>
+</article>
