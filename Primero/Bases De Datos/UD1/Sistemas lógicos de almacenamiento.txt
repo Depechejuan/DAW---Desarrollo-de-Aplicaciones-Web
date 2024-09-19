@@ -79,7 +79,7 @@ Acceso no autorizado = notificar a la agencia de protección de datos en menos d
 ------------------------
 
 
-DCL (Data control language)
+DCL (Data control language) - control de permisos
 
 DDL (Segunda evaluación)
 
