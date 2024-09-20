@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script>
+            "use strict";
+            function myFunction() {
+                let numero = 1234;
+                // alert(numero);
+                let resto = numero % 10;
+                let division = xnumero / 10;
+                // numero = Math.floor(3 / 2); // devolver redondeando hacia abajo
+                // Math.ceil(123.4); // devuelve 124
+                // Math.round(123.4); // redondea con la regla >5 redondeo hacia arriba.
+                alert(
+                    `La división de ${numero} entre 10 es: ${division} y me sobra ${resto}`
+                );
+            }
+        </script>
+        <title>Probando JavaScript</title>
+    </head>
+    <body>
+        <button type="button" onClick="myFunction()">¡Hazme Click!</button>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Calcular Numero</title>
+        <script>
+            function divisionEntera() {
+                const cajita = document.getElementById("numero");
+
+                let numero = cajita.value;
+                if (typeof numero != 0) {
+                    return alert("Introduce un número, melón!");
+                }
+                console.log(numero);
+                let resto = numero % 10;
+                let division = Math.floor(numero / 10);
+                alert(
+                    `El número que has introducido es: ${numero}. Su división es ${division} y su resto es ${resto}`
+                );
+            }
+        </script>
+    </head>
+    <body>
+        Numero: <input type="text" id="numero" />
+
+        <button type="button" onClick="divisionEntera()">
+            ¡Púlsame y consigue la división entera!
+        </button>
+    </body>
+</html>

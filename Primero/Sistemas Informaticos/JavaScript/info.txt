@@ -1,0 +1,24 @@
+Lenguaje JavaScript, es un lenguaje de alto nivel.
+Se interpreta con el navegador.
+
+
+posicion
+210
+----
+131
+numero
+
+Como hacer "grupitos" (division)
+131|_10
+  1 13|_10
+     3 1|_ 10
+       1   0
+
+
+1 grupo de 1000, 2 grupos de 100, 3 grupos de 10, 4 grupos de 1.
+1234 |_10__
+   4   123 |_10__
+         3  12 |__10_
+             2  1|_10__
+                1   0
+1x10^3 + 2x10^2 + 3x10^1 + 4*10^0
