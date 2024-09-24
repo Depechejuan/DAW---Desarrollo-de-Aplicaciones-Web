@@ -54,5 +54,3 @@ PHP - Interpretado, Diseñado para webs dinámicas. Del lado del servidor
 PYTHON - Alto nivel, cuya filosofía hace hincapié ne una sintaxis muy limpia y que favorece código legible. Orientado a objetos, imperativa y funcional.
 
 
-
-

@@ -31,3 +31,10 @@ CRITERIOS DE CALIFICACIÓN
 20% act 80% examen
 Sacar mínimo 5
 Redondeo de cifra (pero solo si curras bien)
+
+
+
+
+Compiladores, ensambladores, intérpretes y otros sistemas de traducción.
+
+codigo fuente - tradución a código objeto - enlace con Linker a programa ejecutabla
