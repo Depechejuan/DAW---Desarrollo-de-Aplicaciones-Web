@@ -1,3 +1,4 @@
+
 ¿Qué hacemos cuando queremos hacer una base de datos de un cliente?
 
 1.- Análisis de requisitos:
@@ -29,3 +30,38 @@ Ubicación/origen (Movil, cajero, ubicación real)
 Tipo_moneda
 Periodica o no
 Inmediata o regular
+
+
+
+
+EJEMPLO:
+Entidad coche, clave rimaria es MATRICULA, pero podría ser NUM.BASTIDOR
+Se identtifica "matricula(P)", "numBastidor(A)"
+
+EJEMPLO:
+Habitacion de hotel
+Planta + habitación pueden ser datos, que juntos sean clave primaria. EJEMPLO: 101 (Planta 1, habitación 01)
+Se representan subrayando el atributo
+Aunque lo habitual es que sea "numHabitación" = 101;
+
+
+Atributos compuestos. (Composite)
+Ejemplo: nombreCompleto -> nombre, apellido 1, apellido2
+
+Atributo simple:
+Almacena un único valor por entidad (una persona solo tiene 1 DNI)
+
+
+Atributos edad/fecha nacimineto (derivado o calculado)  (derived)
+Se calcula en base a otros atributos (fecha nacimiento) -> fecha actual - fecha de nacimiento = edad
+Se representa haciendo el ciruclo con puntitos.
+
+Multivaluados:
+Tiene muchos valores. Como por ejepmo: Direcciones: Se representa con un doble óvalo (dos redondeles). Puede ser compuesto y multivaluado.
+Otro ejemplo: Teléfono
+dir_via; dir_nombre... Se declaran así en SQL
+
+
+
+RELACIONES:
+

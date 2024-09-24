@@ -7,9 +7,6 @@
         <script>
             function divisionEntera() {
                 const numero = document.getElementById("numero").value;
-                // if (typeof numero != 0) {
-                //     return alert("Introduce un número, melón!");
-                // }
                 console.log(numero);
 
                 if (numero < 9999 || numero > 999) {
@@ -31,7 +28,7 @@
                     console.log(
                         `division4 = ${division4}, division3 = ${division3}, division2 = ${division2}, division1 = ${division1}`
                     );
-                    let resultado = `El número que seleccionaste es: ${numero}. \n La descomposición del número es: ${resto4}x10^0 + ${resto3}x10^1 + ${resto2}x10^2 + ${resto1}x10^3`;
+                    let resultado = `El número que seleccionaste es: ${numero}. \n La descomposición del número es: ${resto1}x10^3 +  ${resto2}x10^2 + ${resto3}x10^1 + ${resto4}x10^0 `;
                     console.log(resultado);
                     document.getElementById("resultado").textContent =
                         resultado;
@@ -41,6 +38,8 @@
                     );
                 }
             }
+
+            function corrección() {}
         </script>
     </head>
     <body>
