@@ -5,18 +5,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Ejercicio de Prueba</title>
         <script>
-
-            function Saludo(nombre) {
-                alert(`Hola ${nombre}`)
-                
+            function Saludo() {
+                let nombre = document.getElementById("cajitaTexto").value;
+                alert(`¡ Hola ${nombre} !`);
+            }
+            function Borrame() {
+                let cajita = document.getElementById("cajitaTexto");
+                cajita.value = "";
             }
         </script>
     </head>
-    <body>
-        <label>
-            Inserta tu nombre: <input type="text" id="saludo" />
-            <button onClick="Saludo('Juan')">Decir Hola!</button>
-        </label>
-        <p></p>
-    </body id="resultado">
+        <p>Inserta tu nombre:</p>
+        <input type="text" id="cajitaTexto" onClick="Borrame()" />
+        <br>
+
+        <button onClick="Saludo()">Decir Hola!</button>
+        <p id="resultado"></p>
+    </body>
 </html>

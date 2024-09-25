@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>P3</title>
+        <script>
+            function divideEntre10() {
+                let dividendo = document.getElementById("numero").value;
+                let divisor = 10;
+                let cociente = Math.floor(dividendo / divisor);
+                let resto = dividendo % divisor;
+                console.log(dividendo, divisor, cociente, resto);
+                alert(
+                    `El número ${dividendo} entre ${divisor} su cociente es ${cociente} y su resto es ${resto}`
+                );
+            }
+        </script>
+    </head>
+    <body>
+        Numero: <input type="text" id="numero" />
+
+        <button type="button" onClick="divideEntre10()">
+            ¡Púlsame y consigue la división entera!
+        </button>
+
+        <div>
+            <p id="resultado"></p>
+        </div>
+
+        <script>
+            numero = Math.floor(87.9);
+            document.write(numero);
+            document.write("<br>");
+            numero = Math.round(87.5);
+            document.write(numero);
+            document.write("<br>");
+            numero = Math.ceil(87.1);
+            document.write(numero);
+        </script>
+    </body>
+</html>
