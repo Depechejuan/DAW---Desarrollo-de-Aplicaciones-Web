@@ -8,27 +8,69 @@
             function divideEntre10() {
                 let dividendo = document.getElementById("numero").value;
                 let divisor = 10;
-                let cociente = Math.floor(dividendo / divisor);
-                let resto = dividendo % divisor;
-                console.log(dividendo, divisor, cociente, resto);
-                alert(
-                    `El número ${dividendo} entre ${divisor} su cociente es ${cociente} y su resto es ${resto}`
-                );
+                let cociente;
+                let resto;
+                // console.log("bucle");
+                // for (let i = 0; i < 4; i++) {
+                //     console.log("Entramos al bucle");
+                //     console.log("i", i);
+                //     cociente = Math.floor(dividendo / divisor);
+                //     console.log("cociente: ", cociente);
+                //     resto = dividendo % divisor;
+                //     console.log("resto: ", resto);
+                //     dividendo = cociente;
+                //     console.log("dividendo: ", dividendo);
+                //     console.log("cociente: ", cociente);
+                //     switch (i) {
+                //         case "0":
+                //             document.getElementById("unidades").value = resto;
+                //         case "1":
+                //             document.getElementById("decenas").value = resto;
+                //         case "2":
+                //             document.getElementById("centenas").value = resto;
+                //         case "3":
+                //             document.getElementById("unidades-millar").value =
+                //                 resto;
+                //     }
+                // }
+                // console.log("Hola");
+
+                cociente = Math.floor(dividendo / divisor);
+                resto = dividendo % divisor;
+                document.getElementById("unidades").value = resto;
+
+                dividendo = cociente;
+                cociente = Math.floor(dividendo / divisor);
+                resto = dividendo % divisor;
+                document.getElementById("decenas").value = resto;
+
+                dividendo = cociente;
+                cociente = Math.floor(dividendo / divisor);
+                resto = dividendo % divisor;
+                document.getElementById("centenas").value = resto;
+
+                dividendo = cociente;
+                cociente = Math.floor(dividendo / divisor);
+                resto = dividendo % divisor;
+                document.getElementById("unidades-millar").value = resto;
             }
         </script>
     </head>
     <body>
-        Numero: <input type="text" id="numero" />
-
-        <button type="button" onClick="divideEntre10()">
-            ¡Púlsame y consigue la división entera!
-        </button>
-
+        Introduce un número de 4 cifras: <input type="text" id="numero" />
+        <br />
+        <button onClick="divideEntre10()">Calcular</button>
+        <br />
+        <br />
+        Unidades de millar: <input type="text" id="unidades-millar" /><br />
+        Centenas: <input type="text" id="centenas" /><br />
+        Decenas: <input type="text" id="decenas" /><br />
+        Unidades: <input type="text" id="unidades" /><br />
         <div>
             <p id="resultado"></p>
         </div>
 
-        <script>
+        <!-- <script>
             numero = Math.floor(87.9);
             document.write(numero);
             document.write("<br>");
@@ -37,6 +79,6 @@
             document.write("<br>");
             numero = Math.ceil(87.1);
             document.write(numero);
-        </script>
+        </script> -->
     </body>
 </html>

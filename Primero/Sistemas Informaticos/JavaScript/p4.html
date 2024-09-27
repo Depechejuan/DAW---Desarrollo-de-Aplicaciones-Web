@@ -1,14 +1,12 @@
-<!--
-    
--->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Modificar color de fondo</title>
 
         <script>
+            console.log(document.getElementById("button"));
             function color() {
                 type = document.getElementById("input").value;
                 document.body.style.background = type;
@@ -17,6 +15,11 @@
     </head>
     <body>
         <input type="text" id="input" />
-        <input type="button" onClick="color()" value="Cambiame de color!" />
+        <input
+            type="button"
+            id="button"
+            onClick="color()"
+            value="Cambiame de color!"
+        />
     </body>
 </html>
