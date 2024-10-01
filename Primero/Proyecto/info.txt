@@ -23,7 +23,6 @@ ejemplO: hostinguer:
 La dirección pregnative.es es la dirección 8.7.9.12.
 HTML estatico = no accede a datos.
 
-
 Back-End -
 Ahora haces un login, entonces abres un servidor en azure y despliegas tu aplicación back end alli.
 La petición va a una base de datos (supabase, tipo postgres)!! 
@@ -31,11 +30,15 @@ La petición va a una base de datos (supabase, tipo postgres)!!
 Por ejemplo, subes una imágen, ¿Dónde va?
 Un servicio que se llama S3 - por ejemplo
 
-
 Hay que hacer un "mapa de aplicación", donde dibujas la aplicación para tener una idea más cercana a la realidad
-
-
 
 EN SEGUNDO VEMOS ASP.NET
 
+-----
+proxmox (Máquina virtual - recomendación del profesor)
 
+CURL
+Postman
+
+Protocolo HTTP:
+CURL (es una aplicación) le ha manado ese string (el body de una petición , heads, status, etc...)
