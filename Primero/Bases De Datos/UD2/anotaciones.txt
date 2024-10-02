@@ -65,3 +65,8 @@ dir_via; dir_nombre... Se declaran así en SQL
 
 RELACIONES:
 
+
+
+TERNARIA
+Un profesor imparte un módulo a 1 grupo
+Un profesor imparte un módulo a muchos grupos

@@ -22,3 +22,40 @@ Como hacer "grupitos" (division)
              2  1|_10__
                 1   0
 1x10^3 + 2x10^2 + 3x10^1 + 4*10^0
+
+
+
+
+BINARIO:
+Base 2
+0111= 0x2^3 + 1x2^2 + 1x2^1 + 1x1^0 --- Lo mismo que en decimal, pero con el 2
+
+      0          4      2        1  = 7
+
+La solución de cada operación, es el resultado en decimal
+Número x base elevado a posición.!!!!!!!!!
+
+
+Al reves
+
+7 |___2__
+1     3  |___2__ 
+      1     1  |___2__
+            1      0
+
+
+
+109 en base 10:
+
+   109 |___2__
+   1    54 |___2__
+         0     27 |___2__
+               1     13 |___2__ 
+                     1      6 |___2__
+                           0     3 |___2__
+                                 1     1 
+      
+      Resultado = 1101101
+
+1101101 = 1x2^6 + 1x2^5 + 0 + 1x2^3 + 1x2^2 + 1x2^0 =
+            64+   32       +  8        +  4  + 1 = 109
