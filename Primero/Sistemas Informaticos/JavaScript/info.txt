@@ -59,3 +59,118 @@ Al reves
 
 1101101 = 1x2^6 + 1x2^5 + 0 + 1x2^3 + 1x2^2 + 1x2^0 =
             64+   32       +  8        +  4  + 1 = 109
+
+
+Octal (Base 8)
+0 1 2 3 4 5 6 7 10 11 12 13 14 15 16 17 ...
+
+Hexadecimal (16)
+0 1 2 3 4 5 6 7 8 9 A B C D E F
+
+ABC = Ax16^2 + Bx16^1 + Cx16^0
+      10x256 + 11x16 + 12x1
+         2560 + 176 + 12
+                  2748
+
+
+508 |__16__
+ 12   31 |__16__
+       15    1
+
+12 = C
+15 = F
+1 = 1
+
+1FC
+
+686
+
+  686|__16__
+   14   42 |___16__
+        10    2
+
+2AE
+
+
+COMBINATORIA
+Tenemos 4 cajas, cada caja tiene una bola roja y una bola azul.
+2*2*2*2 (o 2^4)
+
+El máximo de bits en una caja de 8 digitos (2^8-1)
+minimo 0
+maximo 11111111 = 255 (256-1)
+
+
+
+----
+
+ARITMÉTICA BINARIA
+
+0+0 =0
+0+1=1
+1+0=1
+1+1=10(BINARIO!!) , pero vamos a poner un "0", porque solo tenemos 1 bit. 0 y me llevo 1 (A esto se le llama acarreo)
+---
+
+SUMA
+10010011
+1110110
+--------
+(1)10001001
+
+
+Resta
+0-0=0
+0-1=1 (acarreo negativo)
+1-0=1
+1-1=0
+
+Te llevas 1 a la derecha
+
+11100110
+11001010
+--------
+(1)11011100
+Esto indica que es NEGATIVO
+
+
+
+Multiplicación:
+0x0=0
+0x1=0
+1x0=0
+1x1=1
+
+100110
+ 1010
+----------
+            000000 (Puedes omitir esto porque es tood 000000)
+           100110
+          000000
+         100110
+         ----------
+         101111100
+
+
+de hexadecimal a BINARIO
+
+
+A8 = Ax16^1+8x16^0
+      160   + 8 = 168
+
+168 |___2__
+  0    84 |___2__
+         0   42 |___2__
+               0   21 |___2__
+                     1   10|___2__
+                          0    5 |___2__
+                                1    2 |___2__
+                                      0    1
+
+10101000
+
+
+0100101010110111 (de 4 en 4)
+4AB7
+
+
