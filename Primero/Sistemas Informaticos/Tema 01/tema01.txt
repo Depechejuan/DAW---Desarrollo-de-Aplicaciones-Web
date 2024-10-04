@@ -52,3 +52,64 @@ ejemplo:
             32                        4                  1 = 37(10) <- eso se pone en pequeño abajo
 
 
+
+
+
+MULTIPLICADORES:
+
+Bit = Unidad (Binaria) mínima de información
+Byte = Agrupación de 8 bits. 1B = 8bits => [00/FF] -> [00000000/11111111] = [0,255] => 2^n estados posibles. (n = numero de bits)
+
+            
+            
+                DECIMAL                                 BINARIOS
+--------------------------------------      -----------------------------
+Unidad  abreviatura     multiplicador       
+kilo        k               10^3            kibi    ki      2^10
+Mega        M               10*6            Mibi    Mi      2^20
+Giga        G               10^9            Gibi    Gi      2^30
+Tera        T               10^12           Tebi    Ti      2^40
+Peta        P               10^15           Pebi    Pi      2^50
+Exa         E               10^18           Exbi    E       2^60
+Zetta       Z               10^21           Zebi    Z       2^70
+Yotta       Y               2^24            Yobi    Y       2^80
+
+
+
+1TB => 1000GB => 0,98
+
+
+CODIFICACIÓN DE CARACTERES.
+
+ASCII
+ISO 8856-1
+UNICODE
+UTF-16
+UTF-32
+
+
+
+
+PROCESAR INFORMACIÓN
+Puerta lógica "NOT"  (Operador Unario)
+A|B
+---
+0|1
+1|0
+
+Puerta Lógica (AND y OR) (Revisar las pruertas and y or)
+Puerta "AND"
+A|B-C
+-----
+0|0-0
+0|1-0
+1|0-0
+1|1-1
+
+Puerta "Or"
+A|B-C
+-----
+0|0-0
+0|1-1
+1|0-1
+1|1-1
