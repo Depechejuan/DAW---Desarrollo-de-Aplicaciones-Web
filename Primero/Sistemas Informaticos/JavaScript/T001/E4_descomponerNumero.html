@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Introducción a JavaScript: ejemplo 4</title>
+	
+    <script type="text/javascript">
+		// función obtiene los dígitos de un numero
+        function obtenerDigitos(){
+            // Cálculo de las unidades
+			dividendo = document.getElementById("numero").value // valor original introducido por el ususario
+			resto = dividendo % 10 								// resto de dividir entre 10
+			document.getElementById("unidades").value = resto	// escribir el resultado
+
+            // Calculo las decenas
+            dividendo = Math.floor( dividendo / 10 )			// el número original dividido entre 10 para...
+            resto = dividendo % 10								// ...continuar el proceso de forma repetitiva
+            document.getElementById("decenas").value = resto
+
+            // Calcular las centenas
+            dividendo = Math.floor( dividendo / 10 )
+            resto = dividendo % 10
+            document.getElementById("centenas").value = resto
+
+            // Unidades de Millar
+            dividendo = Math.floor( dividendo / 10 )
+            resto = dividendo % 10
+            document.getElementById("uMillar").value = resto
+        }
+    </script>	
+</head>
+
+<body>
+	Introduce un número: <input type="text" id="numero"/>
+    <br/>
+    <input type="button" value="Descomponer" onclick="obtenerDigitos()"/>
+    <br/>
+	<hr/>
+    <br/>
+    U. de millar: <input type="text" id="uMillar">
+    <br/>
+    Centenas: <input type="text" id="centenas">
+    <br/>
+    Decenas: <input type="text" id="decenas">
+    <br/>
+    Unidades: <input type="text" id="unidades">
+</body>
+
+</html>

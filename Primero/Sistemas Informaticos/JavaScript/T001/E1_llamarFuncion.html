@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Introducción a JavaScript: Ejemplo 1</title>
+	
+    <script type="text/javascript">
+        function decirHola(nombre){
+			// La función alert muestra un mensaje en un cuadro de texto
+            alert("Hola "+ nombre + ", ¿cómo estás?")
+        }
+    </script>
+	
+</head>
+
+<body>
+	Cada input del tipo botón llama a la misma función de JavaScript al hacer click, pero con diferentes argumentos de entrada
+	<br/>
+    <input type="button" value="Saludar a Luis" onclick="decirHola('Luis')"/>
+    <input type="button" value="Saludar a Paco" onclick="decirHola('Paco')"/>
+
+</body>
+
+</html>
