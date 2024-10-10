@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Introducción a JavaScript: ejemplo 3</title>
+	
+    <script type="text/javascript">
+		// función que devuelve los valores de la división entre 10 
+        function divideEntre10() {
+			// obtenemos el valor introducido por el usuario
+            dividendo = document.getElementById("numero").value
+			
+			// calculamos el resto de la división con el operador módulo
+            resto = dividendo % 10
+			
+			// obtenemos el cociente de la división entera (redondeando hacia abajo la división con decimales)
+            cociente = Math.floor(dividendo / 10)
+			
+			// mostramos los resultados
+            alert("La división de " + dividendo + " entre 10 es: " + cociente + " y sobra: " + resto)
+        }
+    </script>	
+</head>
+
+<body>
+	Introduce un número: <input type="text" id="numero"/>
+    <br/>
+    <input type="button" value="Calcular división" onclick="divideEntre10()"/>
+</body>
+
+</html>

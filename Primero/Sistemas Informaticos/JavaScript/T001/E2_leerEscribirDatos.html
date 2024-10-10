@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Introducción a JavaScript: ejemplo 2</title>
+	
+    <script type="text/javascript">
+		// función para saludar 
+        function decirHola(){
+			// Obtenemos el objeto input type text por su identificador
+            cajaNombre = document.getElementById("nombre")
+			
+			// Obtenemos el texto introducido en la caja de texto
+            nombre = cajaNombre.value
+			
+			// lo mostramos con un alert
+            alert("Hola " + nombre + ", ¡encantado de conocerte!")
+        }
+		
+		// función para resetear el textbox
+        function resetTexto(){
+            // Obtenemos el objeto input type text por su identificador
+            cajaNombre = document.getElementById("nombre")
+			
+			// Modificamos su valor por el que queramos
+            cajaNombre.value = "escribe aquí..."
+        }
+		
+		// función para borrar el textbox
+        function borrarTexto(){
+            // Se repite el proceso anterior pero con un solo paso
+            document.getElementById("nombre").value = ""
+        }
+		
+		/*
+		  nota: las funciones resetTexto() y borrarTexto() hacen la misma funcionalidad,
+		  que es escribir un texto en el input id="nombre", por tanto sería conveniente
+		  hacer una única función que realizara esa funcionalidad a partir de un parámetro
+		  de entrada, por ejemplo: 
+		  function escribirTexto(texto){
+			document.getElementById("nombre").value = texto
+		  }
+		  y luego hacer las llamadas a la función como:
+		  escribirTexto("escribe aquí...")
+		  escribirTexto("")
+		*/
+    </script>
+	
+</head>
+
+<body>
+	Dime tu nombre: <input type="text" id="nombre" value="escribe aquí..." onclick="borrarTexto()"/>
+    <br/>
+	(cada vez que se hace click sobre la caja se borra su contenido)
+    <br/>
+	<br/>
+    <input type="button" value="Saludar" onclick="decirHola()"/>
+    <input type="button" value="Reset" onclick="resetTexto()"/>
+</body>
+
+</html>
