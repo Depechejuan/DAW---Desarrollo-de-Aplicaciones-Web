@@ -1,0 +1,5 @@
+La tabla CLIENTE también sirve como usuario registrado, por lo que el usuario podrá:
+	- Tener acceso a toda la información de su mascota (Ficha técnica de su mascota, tratamientos, citas pendientes etc...)
+
+
+La tabla MASCOTAS
