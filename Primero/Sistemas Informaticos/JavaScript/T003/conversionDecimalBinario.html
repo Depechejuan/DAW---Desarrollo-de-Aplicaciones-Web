@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversión de Decimal a Binario</title>
+	<style>
+		input[type="text"].DecNumber {
+            width: 200px;
+            padding: 5px;
+            font-size: 16px;
+        }
+		
+        input[type="text"].BinDigit {
+            width: 20px;
+			text-align: center;
+        }
+		
+		td.BinWeights {
+            color: red;
+			text-align: center;
+        }
+    </style>
+	
+	<script>
+        // Check if digit is 0 or 1
+        function checkDigit(event) {
+            const box = event.target;
+            const digit = box.value;
+
+            // If not, erase it and alert
+            if (digit !== '0' && digit !== '1') {
+                box.value = '';
+                alert("Por favor, introduce solo '0' o '1'.");
+            }
+        }
+		
+		// Check base 10 number is a number between 0 and 255
+        function isValidNumber(value) {
+            const number = Number(value);
+            return !isNaN(number) && number >= 0 && number <= 255;
+        }
+
+        // Asign checkDigit event to all inputs type=text
+        window.onload = function() {
+            const digits = document.querySelectorAll('input.BinDigit');
+            digits.forEach(digits => {
+                digits.addEventListener('input', checkDigit);
+            });
+        }
+		
+		// Calculate a write binary number from decimal input text
+		function calculateBinary() {
+            alert('Introduce aquí tu código')
+        }
+    </script>
+	
+</head>
+
+<body>
+	
+	 <!-- Text, input and button for base 10 number -->
+	 <div>
+        <label for="base10Number">Introduce un número en base 10:</label>
+        <input type="text" id="numeroBase10" class="DecNumber">
+		<br>
+        <button onclick="calculateBinary()">Calcular binario</button>
+    </div>
+	
+	
+	<!-- Table for binary number -->
+    <table border="0">
+        <tr>
+            <td>Pesos:</td>
+            <td class="BinWeights">7</td>
+            <td class="BinWeights">6</td>
+            <td class="BinWeights">5</td>
+            <td class="BinWeights">4</td>
+            <td class="BinWeights">3</td>
+            <td class="BinWeights">2</td>
+            <td class="BinWeights">1</td>
+			<td class="BinWeights">0</td>
+        </tr>
+        <tr>
+            <td>Dígitos:</td>
+            <td><input type="text" id="BinDigit7" class="BinDigit"></td>
+            <td><input type="text" id="BinDigit6" class="BinDigit"></td>
+            <td><input type="text" id="BinDigit5" class="BinDigit"></td>
+            <td><input type="text" id="BinDigit4" class="BinDigit"></td>
+            <td><input type="text" id="BinDigit3" class="BinDigit"></td>
+            <td><input type="text" id="BinDigit2" class="BinDigit"></td>
+            <td><input type="text" id="BinDigit1" class="BinDigit"></td>
+            <td><input type="text" id="BinDigit0" class="BinDigit"></td>
+        </tr>
+    </table>
+
+</body>
+</html>
