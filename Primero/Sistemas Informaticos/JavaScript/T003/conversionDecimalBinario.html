@@ -1,98 +1,197 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversión de Decimal a Binario</title>
-	<style>
-		input[type="text"].DecNumber {
-            width: 200px;
-            padding: 5px;
-            font-size: 16px;
-        }
-		
-        input[type="text"].BinDigit {
-            width: 20px;
-			text-align: center;
-        }
-		
-		td.BinWeights {
-            color: red;
-			text-align: center;
-        }
-    </style>
-	
-	<script>
-        // Check if digit is 0 or 1
-        function checkDigit(event) {
-            const box = event.target;
-            const digit = box.value;
-
-            // If not, erase it and alert
-            if (digit !== '0' && digit !== '1') {
-                box.value = '';
-                alert("Por favor, introduce solo '0' o '1'.");
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Conversión de Binario a Decimal</title>
+        <style>
+            input[type="text"].DecNumber {
+                width: 200px;
+                padding: 5px;
+                font-size: 16px;
             }
-        }
-		
-		// Check base 10 number is a number between 0 and 255
-        function isValidNumber(value) {
-            const number = Number(value);
-            return !isNaN(number) && number >= 0 && number <= 255;
-        }
 
-        // Asign checkDigit event to all inputs type=text
-        window.onload = function() {
-            const digits = document.querySelectorAll('input.BinDigit');
-            digits.forEach(digits => {
-                digits.addEventListener('input', checkDigit);
-            });
-        }
-		
-		// Calculate a write binary number from decimal input text
-		function calculateBinary() {
-            alert('Introduce aquí tu código')
-        }
-    </script>
-	
-</head>
+            input[type="text"].BinDigit {
+                width: 20px;
+                text-align: center;
+            }
 
-<body>
-	
-	 <!-- Text, input and button for base 10 number -->
-	 <div>
-        <label for="base10Number">Introduce un número en base 10:</label>
-        <input type="text" id="numeroBase10" class="DecNumber">
-		<br>
-        <button onclick="calculateBinary()">Calcular binario</button>
-    </div>
-	
-	
-	<!-- Table for binary number -->
-    <table border="0">
-        <tr>
-            <td>Pesos:</td>
-            <td class="BinWeights">7</td>
-            <td class="BinWeights">6</td>
-            <td class="BinWeights">5</td>
-            <td class="BinWeights">4</td>
-            <td class="BinWeights">3</td>
-            <td class="BinWeights">2</td>
-            <td class="BinWeights">1</td>
-			<td class="BinWeights">0</td>
-        </tr>
-        <tr>
-            <td>Dígitos:</td>
-            <td><input type="text" id="BinDigit7" class="BinDigit"></td>
-            <td><input type="text" id="BinDigit6" class="BinDigit"></td>
-            <td><input type="text" id="BinDigit5" class="BinDigit"></td>
-            <td><input type="text" id="BinDigit4" class="BinDigit"></td>
-            <td><input type="text" id="BinDigit3" class="BinDigit"></td>
-            <td><input type="text" id="BinDigit2" class="BinDigit"></td>
-            <td><input type="text" id="BinDigit1" class="BinDigit"></td>
-            <td><input type="text" id="BinDigit0" class="BinDigit"></td>
-        </tr>
-    </table>
+            td.BinWeights {
+                color: red;
+                text-align: center;
+            }
+            td.button {
+                text-align: center;
+            }
+        </style>
 
-</body>
+        <script>
+            // Check if digit is 0 or 1
+            function checkDigit(event) {
+                const box = event.target;
+                const digit = box.value;
+
+                // If not, erase it and alert
+                if (digit !== "0" && digit !== "1") {
+                    box.value = "";
+                    alert("Por favor, introduce solo '0' o '1'.");
+                }
+            }
+
+            // I changed this function in order to prevent that someone doesn't fill all the boxes with a value
+            // And change original one adapting it to a binary statement.
+            function isValidArray(valor) {
+                for (let i = 0; i <= 7; i++) {
+                    if (valor[i] == "") {
+                        alert(
+                            "Has dejado una cajita sin número. Asegúrate de tener valores 0-1 en todas las cajas"
+                        );
+                        deleteDOM();
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            // Asign checkDigit event to all inputs type=text
+            window.onload = function () {
+                const digits = document.querySelectorAll("input.BinDigit");
+                digits.forEach((digits) => {
+                    digits.addEventListener("input", checkDigit);
+                });
+            };
+
+            let binary = [];
+            // This function gets all the elements on the boxes to form an array with all the values.
+            function getBinaryNumber() {
+                for (let i = 7; i >= 0; i--) {
+                    let number = document.getElementById(`BinDigit${i}`).value;
+                    binary.push(number);
+                }
+            }
+
+            function deleteDOM() {
+                binary = [];
+                document.getElementById(`numeroBase10`).value = 0;
+                document.getElementById("result").textContent = "";
+            }
+
+            // Asign checkDigit event to all inputs type=text
+            function calculateBinary() {
+                getBinaryNumber();
+                let isValid = isValidArray(binary);
+                if (!isValid) {
+                    return;
+                }
+                let string = "";
+                let calc = 0;
+                binary.reverse();
+                for (let i = 7; i >= 0; i--) {
+                    calc += binary[i] * Math.pow(2, i);
+                    string += `${binary[i]}·2^${i}`;
+                    if (i != 0) {
+                        string += " + ";
+                    }
+                }
+                document.getElementById("numeroBase10").value = calc;
+                document.getElementById("result").textContent = string;
+                calculateHexAscii();
+            }
+
+            function calculateHexAscii() {
+                let dividend = document.getElementById("numeroBase10").value;
+                console.log(dividend);
+                let module;
+                let hexadecimal;
+                while (dividend > 0) {
+                    module = dividend % 16;
+                    console.log("Valor de Módule?: ", module);
+                    switch (module) {
+                        case module == 10:
+                            console.log("10");
+                            hexadecimal += "A";
+                            break;
+                        case module == 11:
+                            hexadecimal += "B";
+                            break;
+                        case module == 12:
+                            hexadecimal += "C";
+                            break;
+                        case module == 13:
+                            console.log("13");
+                            hexadecimal += "D";
+                            break;
+                        case module == 14:
+                            hexadecimal += "E";
+                            break;
+                        case module == 15:
+                            hexadecimal += "F";
+                            break;
+                        default:
+                            console.log("-10");
+                            hexadecimal += `${module}`;
+                            break;
+                    }
+                    console.log(hexadecimal);
+                    console.log(dividend);
+                    dividend = Math.floor(dividend / 2);
+                    console.log(module);
+                    console.log(dividend);
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <!-- Table for binary number -->
+        <table border="0">
+            <tr>
+                <th colspan="8">
+                    Inserta el número binario para obtener el decimal
+                </th>
+            </tr>
+            <tr>
+                <td>Pesos:</td>
+                <td class="BinWeights">7</td>
+                <td class="BinWeights">6</td>
+                <td class="BinWeights">5</td>
+                <td class="BinWeights">4</td>
+                <td class="BinWeights">3</td>
+                <td class="BinWeights">2</td>
+                <td class="BinWeights">1</td>
+                <td class="BinWeights">0</td>
+            </tr>
+            <tr>
+                <td>Dígitos:</td>
+                <td><input type="text" id="BinDigit7" class="BinDigit" /></td>
+                <td><input type="text" id="BinDigit6" class="BinDigit" /></td>
+                <td><input type="text" id="BinDigit5" class="BinDigit" /></td>
+                <td><input type="text" id="BinDigit4" class="BinDigit" /></td>
+                <td><input type="text" id="BinDigit3" class="BinDigit" /></td>
+                <td><input type="text" id="BinDigit2" class="BinDigit" /></td>
+                <td><input type="text" id="BinDigit1" class="BinDigit" /></td>
+                <td><input type="text" id="BinDigit0" class="BinDigit" /></td>
+            </tr>
+            <tr>
+                <td class="button" colspan="8">
+                    <button onclick="calculateBinary()">
+                        Calcular binario
+                    </button>
+                </td>
+            </tr>
+        </table>
+        <!-- Text, input and button for base 10 number -->
+
+        <div>
+            <label for="base10Number">El número en base 10 es:</label>
+            <input type="text" id="numeroBase10" class="DecNumber" />
+            <br />
+            <p id="result"></p>
+        </div>
+
+        <div>
+            <p>El número en Hexadecimal es:</p>
+            <p id="hexadecimal"></p>
+        </div>
+    </body>
 </html>
