@@ -42,3 +42,38 @@ Postman
 
 Protocolo HTTP:
 CURL (es una aplicación) le ha manado ese string (el body de una petición , heads, status, etc...)
+
+
+
+
+
+
+
+
+nginx -> servidor HTTP, html, css y js
+
+
+Servidor App:
+    - ASP (El mismo fichero servía tanto para front como para Back)
+    - php (clon de ASP con más cosas)
+    - Springboot (Java) - Cambio de paradigma. Servidor de datos puro y duro. 
+    - ASP.NET (Nada que ver con ASP) - C# - Mezcla de HTML y C#
+    - nodeJS -> se programa en JavaScript
+    - go (Google) (Puede lanzar MUCHOS threads, tiene un propio planificador the threads)
+    - Python (DJango) - Nadie hace un server con python xD
+
+
+Hace falta:
+    - Servidor de BBDD
+        - Microsoft SQL server
+        - PostgreSQL (Prioridad) -> Supabase (para crear una, te regala 0,5gb)
+        - Oracle  (El mejor y más caro)
+        - Casandra (Lo usó primero Facebook, NOSQL) -> Hoy en día su sucessor es 
+        
+Compartir archivos:
+    - S3 -> API para meter archivos gordos. el GB en una bbdd es muy caro, y en S3 es céntimos al mes.
+    - Minio (servidor propio)
+        
+- ???? - Si tengo varios servidores, tener una RAM común entre ellos y poder acceder a datos más rápidamente
+
+- ???? - Chat con vídeo en tiempo real entre varios usuarios
