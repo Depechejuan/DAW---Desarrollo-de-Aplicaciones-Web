@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Conversión de Decimal a Binario</title>
+        <style>
+            table.inner {
+                border: 0px;
+            }
+
+            table.outter,
+            table.outter > tbody > tr > td,
+            table.outter > tbody > tr > th {
+                border: 1px solid;
+                border-collapse: collapse;
+                text-align: center;
+            }
+
+            input[type="text"].BinDigit {
+                width: 20px;
+                text-align: center;
+            }
+
+            input[type="text"].HexDigit,
+            input[type="text"].AsciiChar {
+                width: 120px;
+                height: 40px;
+                font-size: 24px;
+                text-align: center;
+            }
+
+            td.BinWeights {
+                color: red;
+                text-align: center;
+            }
+        </style>
+
+        <script>
+            // Check if digit is 0 or 1
+            function checkDigit(event) {
+                const box = event.target;
+                const digit = box.value;
+
+                // If not, erase it and alert
+                if (digit !== "0" && digit !== "1") {
+                    box.value = "";
+                    alert("Por favor, introduce solo '0' o '1'.");
+                }
+            }
+
+            // Check base 10 number is a number between 0 and 255
+            function isValidNumber(valor) {
+                const number = Number(valor);
+                return !isNaN(numero) && numero >= 0 && numero <= 255;
+            }
+
+            // Asign checkDigit event to all inputs type=text
+            window.onload = function () {
+                const digits = document.querySelectorAll("input.BinDigit");
+                digits.forEach((digits) => {
+                    digits.addEventListener("input", checkDigit);
+                });
+            };
+
+            // Convert a 4 digit number from binary to hexadecimal
+            function binToHex(bin) {
+                // Check if the input string has exactly 4 binary digits
+                if (/^[01]{4}$/.test(bin)) {
+                    // Convert binary to decimal
+                    let dec = parseInt(bin, 2);
+                    // Convert decimal to hexadecimal
+                    let hex = dec.toString(16).toUpperCase();
+                    return hex;
+                } else {
+                    alert(
+                        "Error en la funcion binToHex: '" +
+                            bin +
+                            "' no es una entrada valida."
+                    );
+                    return "";
+                }
+            }
+
+            // convert an hexadecimal number to its ascii character
+            function hexToAscii(hex) {
+                // Validate that the input is a valid hexadecimal number
+                if (/^[0-9A-Fa-f]+$/.test(hex)) {
+                    // Convert the hexadecimal to a decimal number
+                    let dec = parseInt(hex, 16);
+                    // Convert the decimal number to an ASCII character
+                    return String.fromCharCode(dec);
+                } else {
+                    alert(
+                        "Error en la funcion hexToAscii: '" +
+                            hex +
+                            "' no es una entrada valida."
+                    );
+                    return "";
+                }
+            }
+
+            // Ejemplo de uso
+            function ejemploHexAscii() {
+                /* A la función binToHex() se le tiene que pasar 
+			un numero en binario de 4 dígitos por ejemplo:
+			supongamos que tenemos 4 digitos en binario (texto 0 o 1) 
+			en 4 variables, lo juntamos y lo pasamos para obtener el 
+			caracter en hexadecimal correspondiente: */
+                let digit3 = "1";
+                let digit2 = "1";
+                let digit1 = "1";
+                let digit0 = "1";
+
+                // Recuerda: el operador + con texto, lo concatena
+                let binDigit = digit3 + digit2 + digit1 + digit0;
+                let hexDigit = binToHex(binDigit);
+
+                alert(
+                    "El digito '" +
+                        binDigit +
+                        "' en hexadecimal es: '" +
+                        hexDigit +
+                        "'"
+                );
+
+                /* A la función hexToAscii() se le tiene que pasar 
+			dos digitos en hexadecimal y te devuelve el caracter en ASCII:
+			supongamos que tenemos el dígito '58' que corresponde a la 'X' */
+                hexDigit = "58";
+                let asciiChar = hexToAscii(hexDigit);
+
+                alert(
+                    "El digito '" +
+                        hexDigit +
+                        "' en hexadecimal corresponde a  '" +
+                        asciiChar +
+                        "' en ASCII"
+                );
+            }
+
+            // Calculate and asign the output of the textboxes,
+            // the corresponding hexadecimal value from the binary input
+            // the corresponding ascii character
+            function calculateHexAscii() {
+                // alert("Pon aquí tu código");
+
+                const BinDigit7 = document.getElementById("BinDigit7").value;
+                const BinDigit6 = document.getElementById("BinDigit6").value;
+                const BinDigit5 = document.getElementById("BinDigit5").value;
+                const BinDigit4 = document.getElementById("BinDigit4").value;
+                const binDigit1 = BinDigit7 + BinDigit6 + BinDigit5 + BinDigit4;
+                const hexDigit1 = binToHex(binDigit1);
+
+                const BinDigit3 = document.getElementById("BinDigit3").value;
+                const BinDigit2 = document.getElementById("BinDigit2").value;
+                const BinDigit1 = document.getElementById("BinDigit1").value;
+                const BinDigit0 = document.getElementById("BinDigit0").value;
+                const binDigit2 = BinDigit3 + BinDigit2 + BinDigit1 + BinDigit0;
+                const hexDigit2 = binToHex(binDigit2);
+                const hexDigitFinal = hexDigit1 + hexDigit2;
+
+                document.getElementById("HexDigit").value = hexDigitFinal;
+
+                const asciiChar = hexToAscii(hexDigitFinal);
+                document.getElementById("AsciiChar").value = asciiChar;
+            }
+        </script>
+    </head>
+
+    <body>
+        <table class="outter">
+            <tr>
+                <th>Binario</th>
+                <th>Hexadecimal</th>
+                <th>ASCII</th>
+            </tr>
+            <tr>
+                <td>
+                    <!-- Table for binary number -->
+                    <table class="inner">
+                        <tr>
+                            <td>Pesos:</td>
+                            <td class="BinWeights">7</td>
+                            <td class="BinWeights">6</td>
+                            <td class="BinWeights">5</td>
+                            <td class="BinWeights">4</td>
+                            <td class="BinWeights">3</td>
+                            <td class="BinWeights">2</td>
+                            <td class="BinWeights">1</td>
+                            <td class="BinWeights">0</td>
+                        </tr>
+                        <tr>
+                            <td>Dígitos:</td>
+                            <td>
+                                <input
+                                    type="text"
+                                    id="BinDigit7"
+                                    class="BinDigit"
+                                    value="0"
+                                    disabled
+                                />
+                            </td>
+                            <td>
+                                <input
+                                    type="text"
+                                    id="BinDigit6"
+                                    class="BinDigit"
+                                />
+                            </td>
+                            <td>
+                                <input
+                                    type="text"
+                                    id="BinDigit5"
+                                    class="BinDigit"
+                                />
+                            </td>
+                            <td>
+                                <input
+                                    type="text"
+                                    id="BinDigit4"
+                                    class="BinDigit"
+                                />
+                            </td>
+                            <td>
+                                <input
+                                    type="text"
+                                    id="BinDigit3"
+                                    class="BinDigit"
+                                />
+                            </td>
+                            <td>
+                                <input
+                                    type="text"
+                                    id="BinDigit2"
+                                    class="BinDigit"
+                                />
+                            </td>
+                            <td>
+                                <input
+                                    type="text"
+                                    id="BinDigit1"
+                                    class="BinDigit"
+                                />
+                            </td>
+                            <td>
+                                <input
+                                    type="text"
+                                    id="BinDigit0"
+                                    class="BinDigit"
+                                />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+
+                <td><input type="text" id="HexDigit" class="HexDigit" /></td>
+
+                <td><input type="text" id="AsciiChar" class="AsciiChar" /></td>
+            </tr>
+
+            <tr>
+                <td colspan="3">
+                    <input
+                        type="button"
+                        onclick="ejemploHexAscii()"
+                        value="Ejemplo"
+                    />
+                    <input
+                        type="button"
+                        onclick="calculateHexAscii()"
+                        value="Calcular"
+                    />
+                </td>
+            </tr>
+        </table>
+        <br />
+
+        <!-- HEX DEC BIN table from: https://mathmonks.com/decimal/hexadecimal-to-decimal  -->
+        <img
+            loading="lazy"
+            decoding="async"
+            src="https://mathmonks.com/wp-content/uploads/2022/08/Hex-to-Decimal-Table.jpg"
+            width="529"
+            height="597"
+            srcset="
+                https://mathmonks.com/wp-content/uploads/2022/08/Hex-to-Decimal-Table.jpg         600w,
+                https://mathmonks.com/wp-content/uploads/2022/08/Hex-to-Decimal-Table-266x300.jpg 266w
+            "
+            sizes="(max-width: 529px) 100vw, 529px"
+        />
+
+        <!-- ASCII table from wikipedia: https://commons.wikimedia.org/wiki/File:ASCII-Table-wide.svg  -->
+        <img
+            alt="File:ASCII-Table-wide.svg"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/ASCII-Table-wide.svg/800px-ASCII-Table-wide.svg.png?20221024154539"
+            decoding="async"
+            width="800"
+            height="532"
+            srcset="
+                https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/ASCII-Table-wide.svg/1200px-ASCII-Table-wide.svg.png?20221024154539 1.5x,
+                https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/ASCII-Table-wide.svg/1600px-ASCII-Table-wide.svg.png?20221024154539 2x
+            "
+            data-file-width="875"
+            data-file-height="582"
+        />
+    </body>
+</html>
