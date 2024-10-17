@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="es">
+    <head>
+        <title>GALLOS - INSCRIPCIÓN</title>
+        <meta charset="UTF-8" />
+    </head>
+
+    <body>
+        <h1>INSCRIPCIÓN</h1>
+
+        <form id="MyForm" action="" method="">
+            <fieldset>
+                <legend>Datos Personales</legend>
+                Nombre de Raper@:
+                <input
+                    type="text"
+                    name="nombre"
+                    placeholder="Por ejemplo: Arkano"
+                />
+                <br />
+                Contraseña:
+                <input
+                    type="password"
+                    name="pass"
+                    placeholder="¡Debes recordarla!"
+                />
+                <br />
+            </fieldset>
+            <br />
+            <fieldset>
+                <legend>Descripción artística</legend>
+                ¿Cuánto flow tienes? <br />
+                <input type="radio" name="flow" value="mucho" checked />
+                Mucho<br />
+                <input type="radio" name="flow" value="normal" /> Normal<br />
+                <input type="radio" name="flow" value="poco" /> Poco <br />
+                ¿Cuál es tu estilo?
+                <select name="style">
+                    <option value="estructuras">Estructuras</option>
+                    <option value="punchline" selected>Punchline</option>
+                    <option value="metricas">Métricas</option>
+                    <option value="noDestaco">No Destaco</option>
+                </select>
+            </fieldset>
+            <br />
+
+            <fieldset>
+                <legend>Demostración</legend>
+                Escribe unas rimas para ver tu talento: <br />
+                <textarea
+                    name="rimas"
+                    placeholder="Pon una base para motivarte..."
+                    cols="30"
+                    rows="5"
+                ></textarea
+                ><br />
+                Sube un vídeo tuyo: <input type="file" accept="image/*" />
+                <!-- He añadido el atributto "accept" para que sólo acepte imágenes de cualquier formato -->
+            </fieldset>
+
+            <!-- TOS = Terms Of Service -->
+            <input type="checkbox" name="TOS" /> Acepta estos términos sin
+            leerlos <br />
+            <br />
+
+            <button type="reset" name="reset">Vaciar formulario</button>
+            <button type="submit" name="send">Enviar</button>
+        </form>
+        <hr />
+        <br />
+        <a href="../portada.html"
+            ><img src="../imagenes/botonVolver.png" alt="Botón vuelve p'atrá"
+        /></a>
+    </body>
+</html>
