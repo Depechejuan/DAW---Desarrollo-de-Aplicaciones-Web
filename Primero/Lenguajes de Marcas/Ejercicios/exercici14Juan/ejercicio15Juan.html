@@ -6,14 +6,26 @@
     <title>Nuevos Controles</title>
 </head>
 <body>
-    <h1>Formulario HTML5</h1>
     <form id="form-practicas" action="" method="">
-        Empresa a la que irás: <input type="text" id="Nombre" name="nombre" required><br />
+        <h1>Formulario HTML5</h1>
+        Empresa a la que irás: <input type="text" id="Nombre" name="nombre" minlength="3" maxlength="20" autofocus required><br />
         Web de la empresa (Opcional): <input type="url" id="web" name="web"> <br />
         Correo de contacto (Opcional): <input type="email" id="email" name="email"><br />
+        Móvil de contacto (Opcional): <input type="tel" id="phone" name="phone" pattern="6{1}[0-9]{8}" title="El número de teléfono debe tener 9 dígitos y empezar por 6"><br />
         Fecha de inicio de prácticas: <input type="date" min="2025-02-01" max="2025-02-28" required><br />
         Empezarás a las... <input type="time" id="hora" name="hora" min="07:00" max="09:00" step="900" required><br />
-        Horas a la semana: <input type="number" id="horas-semana" name="horas-semana" min="30" max="40" value="36"> <br />
+        Horas a la semana: <input type="number" id="horas-semana" name="horas-semana" min="30" max="40" value="36" required> <br />
+        Marca del vehículo con el que irás: <input type="text" id="vehiculo" name="vehiculo" list="car" required><br>
+        <datalist id="car">
+            <option value="Kia"></option>
+            <option value="Tesla"></option>
+            <option value="Audi"></option>
+            <option value="Seat"></option>
+        </datalist>
+        Color (Opcional): <input type="color" id="color" name="color" value="#FFFFFF" required><br>
+        DNI: <input type="text" id="DNI" name="DNI" pattern="[0-9]{8}[A-Z]{1}" title="El DNI debe contener 8 números, un guión y una letra" required><br>
+        ¿Cuánto te gustó este formulario?<br>
+        Nada<input type="range" min="0" max="4" value="3" required>Mucho<br>
         <button type="send">Enviar</button>
     </form>
 </body>
