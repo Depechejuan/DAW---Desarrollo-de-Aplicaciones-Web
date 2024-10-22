@@ -10,8 +10,42 @@
     <p>¡Suscríbete a nuestra Newsletter!</p>
 
     <form id="MyForm" action="" method="">
-        
+        <fieldset>
+            <legend>Datos Personales</legend>
 
+            Nombre: <input type="text" name="nombre" placeholder="Inserta aquí tu nombre" autofocus required> <br>
+            Apellidos: <input type="text" name="apellidos"> <br>
+            Email: <input type="email" name="email" required><br>
+            Fecha de Nacimiento: <input type="date" name="nacimiento" max="2010-12-31" required>
+        </fieldset>
+        <fieldset>
+            <legend>Datos de Fan</legend>
+            Selecciona tu época favorita: <br>
+            <select name="epoca">
+                <option value="primeros-discos">Sus Primeros Discos</option>
+                <option value="wilder" selected>Los álbumes con Wilder</option>
+                <option value="ultima">Su última época</option>
+            </select>
+            <br>
+            <br>
+            ¿Cuál es tu disco favorito? <input type="text" name="disco-fav" list="disco-fav">
+            <datalist id="disco-fav">
+                <option value="101"></option>
+                <option value="Violator"></option>
+                <option value="Music For The Masses"></option>
+                <option value="Songs Of Faith And Devotion"></option>
+                <option value="Ultra"></option>
+                <option value="Memento Mori"></option>
+            </datalist>
+            <br>
+            <br>
+            Explica por qué eres fan: <textarea name="fan" rows="5" cols="30" placeholder="Explicanos tus motivos" minlength="10" maxlength="400" required></textarea>
+            <br>
+            ¿Tu nivel de fan? <br>
+            <input type="range" min="1" max="10" value="9" name="fan-lvl">
+        </fieldset>
+        Acepta los términos de condiciones<input type="checkbox" name="TOS"><br>
+        <button type="submit">Enviar</button> <button type="reset">Resetear Formulario</button>
     </form>
 </body>
 </html>
