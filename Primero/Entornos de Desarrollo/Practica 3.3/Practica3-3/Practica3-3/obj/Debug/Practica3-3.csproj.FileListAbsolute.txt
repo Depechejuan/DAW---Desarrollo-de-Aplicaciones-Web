@@ -1,0 +1,7 @@
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\Practica 3.3\Practica3-3\Practica3-3\bin\Debug\Practica3-3.exe.config
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\Practica 3.3\Practica3-3\Practica3-3\bin\Debug\Practica3-3.exe
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\Practica 3.3\Practica3-3\Practica3-3\bin\Debug\Practica3-3.pdb
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\Practica 3.3\Practica3-3\Practica3-3\obj\Debug\Practica3-3.csproj.AssemblyReference.cache
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\Practica 3.3\Practica3-3\Practica3-3\obj\Debug\Practica3-3.csproj.CoreCompileInputs.cache
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\Practica 3.3\Practica3-3\Practica3-3\obj\Debug\Practica3-3.exe
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\Practica 3.3\Practica3-3\Practica3-3\obj\Debug\Practica3-3.pdb
