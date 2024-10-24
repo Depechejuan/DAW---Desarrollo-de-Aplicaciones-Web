@@ -1,0 +1,17 @@
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\WinFormsApp\WinFormsApp\bin\Debug\net8.0-windows\WinFormsApp.exe
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\WinFormsApp\WinFormsApp\bin\Debug\net8.0-windows\WinFormsApp.deps.json
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\WinFormsApp\WinFormsApp\bin\Debug\net8.0-windows\WinFormsApp.runtimeconfig.json
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\WinFormsApp\WinFormsApp\bin\Debug\net8.0-windows\WinFormsApp.dll
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\WinFormsApp\WinFormsApp\bin\Debug\net8.0-windows\WinFormsApp.pdb
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\WinFormsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.Form1.resources
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\WinFormsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.csproj.GenerateResource.cache
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\WinFormsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\WinFormsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.AssemblyInfoInputs.cache
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\WinFormsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.AssemblyInfo.cs
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\WinFormsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.csproj.CoreCompileInputs.cache
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\WinFormsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.sourcelink.json
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\WinFormsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.dll
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\WinFormsApp\WinFormsApp\obj\Debug\net8.0-windows\refint\WinFormsApp.dll
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\WinFormsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.pdb
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\WinFormsApp\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.genruntimeconfig.cache
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\WinFormsApp\WinFormsApp\obj\Debug\net8.0-windows\ref\WinFormsApp.dll
