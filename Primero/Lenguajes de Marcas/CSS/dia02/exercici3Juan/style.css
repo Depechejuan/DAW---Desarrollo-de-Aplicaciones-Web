@@ -1,0 +1,28 @@
+body {
+    background-color: black;
+}
+
+h1 {
+    font-size: 50px;
+    color: red;
+    font-family: "Comic Sans MS";
+}
+
+h2 {
+    font-size: 34px;
+    color: yellow;
+    text-align: right;
+    font-family: "Arial";
+}
+
+h3 {
+    font-size: 22px;
+    color: orange;
+    font-size: "Arial";
+}
+
+p {
+    font-size: 16px;
+    color: white;
+    font-family: "Calibri";
+}

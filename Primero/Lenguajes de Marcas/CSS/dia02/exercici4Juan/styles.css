@@ -1,0 +1,49 @@
+body {
+    background-color: #D7AEFB;
+    text-align: center;
+}
+
+h1, h2 {
+    font-family: "Comic Sans MS";
+}
+
+h1 {
+    font-size: 50px;
+    background-color: #FBD9A0;
+    color: #800080;
+}
+
+h2 {
+    font-size: 36px;
+    color: #5E0FB5;
+}
+
+p {
+    text-align: right;
+}
+
+b {
+    color: #4D06FF;
+}
+
+s {
+    color: #FF0000;
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+td {
+    width: 25%;
+    background-color: #AFFBAE;
+}
+
+img {
+    height: 50px;
+}
