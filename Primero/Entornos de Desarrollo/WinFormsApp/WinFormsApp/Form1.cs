@@ -28,7 +28,8 @@ namespace WinFormsApp
             {
                 num3 = num2 + 1;
             }
-            MessageBox.Show("Valores finales: \n num1: " + num1 + "\n num2: " + num2 + "\n num3: " + num3);
+            MessageBox.Show("Valores finales: \n num1: " + num1 + "\n num2: " + num2 +
+                "\n num3: " + num3);
         }
     }
 }
