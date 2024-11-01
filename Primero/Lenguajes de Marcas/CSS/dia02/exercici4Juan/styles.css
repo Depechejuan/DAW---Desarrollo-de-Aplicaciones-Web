@@ -30,6 +30,10 @@ s {
     color: #FF0000;
 }
 
+i {
+    font-family: 'Calibri';
+}
+
 table {
     width: 100%;
 }
@@ -37,11 +41,13 @@ table {
 th {
     background-color: #000000;
     color: #FFFFFF;
+    font-family: 'Arial';
 }
 
 td {
     width: 25%;
     background-color: #AFFBAE;
+    font-family: 'Arial';
 }
 
 img {
