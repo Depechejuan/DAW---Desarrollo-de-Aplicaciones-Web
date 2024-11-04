@@ -1,0 +1,15 @@
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\Practica 3.2.3\Practica 3.2.3\bin\Debug\net8.0\Practica 3.2.3.exe
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\Practica 3.2.3\Practica 3.2.3\bin\Debug\net8.0\Practica 3.2.3.deps.json
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\Practica 3.2.3\Practica 3.2.3\bin\Debug\net8.0\Practica 3.2.3.runtimeconfig.json
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\Practica 3.2.3\Practica 3.2.3\bin\Debug\net8.0\Practica 3.2.3.dll
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\Practica 3.2.3\Practica 3.2.3\bin\Debug\net8.0\Practica 3.2.3.pdb
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\Practica 3.2.3\Practica 3.2.3\obj\Debug\net8.0\Practica 3.2.3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\Practica 3.2.3\Practica 3.2.3\obj\Debug\net8.0\Practica 3.2.3.AssemblyInfoInputs.cache
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\Practica 3.2.3\Practica 3.2.3\obj\Debug\net8.0\Practica 3.2.3.AssemblyInfo.cs
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\Practica 3.2.3\Practica 3.2.3\obj\Debug\net8.0\Practica 3.2.3.csproj.CoreCompileInputs.cache
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\Practica 3.2.3\Practica 3.2.3\obj\Debug\net8.0\Practica 3.2.3.sourcelink.json
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\Practica 3.2.3\Practica 3.2.3\obj\Debug\net8.0\Practica 3.2.3.dll
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\Practica 3.2.3\Practica 3.2.3\obj\Debug\net8.0\refint\Practica 3.2.3.dll
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\Practica 3.2.3\Practica 3.2.3\obj\Debug\net8.0\Practica 3.2.3.pdb
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\Practica 3.2.3\Practica 3.2.3\obj\Debug\net8.0\Practica 3.2.3.genruntimeconfig.cache
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\Practica 3.2.3\Practica 3.2.3\obj\Debug\net8.0\ref\Practica 3.2.3.dll
