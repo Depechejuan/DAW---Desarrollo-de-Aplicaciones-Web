@@ -1,0 +1,7 @@
+USE JARDINERIA
+-- Crear index, IX_NOMBRE TABLA_NOMBRE ATRIBUTO
+CREATE INDEX IX_CLIENTES_apellido
+ON CLIENTES(apellido_contacto, telefono, email)
+
+SELECT *
+  FROM CLIENTES

@@ -1,0 +1,44 @@
+img {
+    height: 20px;
+}
+
+#foto-cunyao {
+    height: 100px;
+}
+
+body {  
+    background-color: #f9b4e2
+}
+
+
+h1 {
+    font-size: 24px;
+    font-family: 'Comic Sans MS';
+    color: #4B0082;
+    text-decoration: underline;
+    text-transform: uppercase;
+
+}
+
+li {
+    font-size: 10px;
+    font-family: 'Arial';
+    font-variant: small-caps;
+    font-weight: bold;
+}
+
+.grey {
+    color:gray;
+}
+
+hr {
+    border-color: #4B0082;
+}
+
+#kk {
+    text-decoration: overline;
+}
+
+#quete {
+    text-decoration: line-through;
+}

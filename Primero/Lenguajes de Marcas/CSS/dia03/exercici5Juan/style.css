@@ -1,0 +1,27 @@
+body {
+    background-color: aquamarine;
+    text-align: center;
+}
+
+#portada {
+    width: 100%;
+    border: none;
+}
+
+img {
+    height: 120px;
+    border: 5px solid blue;
+}
+
+#green-border {
+    border-color: green;
+}
+
+#grey-border {
+    border-color: grey;
+}
+
+#red-dots {
+    border-color: red;
+    border-style: dotted;
+}

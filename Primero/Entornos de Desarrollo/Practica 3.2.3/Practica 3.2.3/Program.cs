@@ -21,7 +21,10 @@
                 Console.WriteLine("");
                 Console.WriteLine("------");
                 if (letra == '0')
+                {
                     salir = true;
+                    continue;
+                }
                 //almaceno los menores y mayores.
                 if (minLetra < letra)
                     minLetra = letra;

@@ -1,0 +1,43 @@
+body {
+    font-size: 15px;
+    font-family: "Arial";
+    background-color: lightgoldenrodyellow;
+}
+
+#blue-border {
+    border: 5px solid blue;
+}
+
+#green-border {
+    border: 5px dotted green;
+}
+
+#red-border {
+    border: 5px inset red;
+}
+
+.orange-border {
+    border: 5px dashed orange;
+}
+
+span {
+    color: orange;
+}
+
+#blue-color {
+    color: blue;
+}
+
+#green-color-bg {
+    color: green;
+    background-color: lightgreen;
+}
+
+#red-color {
+    color: red;
+}
+
+#grey-bg {
+    background-color: lightgray;
+    color: black;
+}
