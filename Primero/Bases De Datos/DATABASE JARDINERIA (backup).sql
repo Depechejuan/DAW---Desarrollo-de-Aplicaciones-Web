@@ -20,6 +20,7 @@ CREATE TABLE OFICINAS (
 
 
 CREATE TABLE EMPLEADOS (
+  codEmpleado 		INT,
   nombre 			VARCHAR(50) NOT NULL,
   apellido1 		VARCHAR(50) NOT NULL,
   apellido2 		VARCHAR(50),
