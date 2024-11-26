@@ -1,0 +1,20 @@
+/* Pistas:
+   - Toda la página usa letra "Arial"
+   - Fíjate que los iconos siguen un patrón, de 3 en 3...
+*/
+
+body {
+   font-family: 'Arial';
+}
+
+li:nth-child(3n+1) {
+   list-style-image: url('./iconos/dia.png');
+}
+
+li:nth-child(3n+2) {
+   list-style-image: url('./iconos/tarde.png');
+}
+
+li:nth-child(3n+3) {
+   list-style-image: url('./iconos/noche.png');
+}

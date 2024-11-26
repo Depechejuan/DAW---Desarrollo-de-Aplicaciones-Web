@@ -1,0 +1,25 @@
+/* Pistas:
+   - Toda la página usa letra "Arial"
+   - Antes de nada, mejora las líneas de la tabla...
+   - Fíjate en el patrón...
+*/
+
+body {
+   font-family: 'Arial';
+   text-align: center;
+}
+
+table, th, td {
+   border: 2px solid black;
+   border-collapse: collapse;
+}
+
+tr:first-child {
+   background-color: darkblue;
+   color: white;
+   text-transform: uppercase;
+}
+
+tr:nth-child(2n+3) {
+   background-color: lightgray;
+}

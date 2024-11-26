@@ -1,0 +1,38 @@
+/* Pistas:
+   - Parecido al Apartado 7, con añadiendo algunos "color"...
+   - Recuerda que con la coma(,) puedes dar el mismo estilo a varias cosas a la vez
+*/
+
+body {
+   font-family: 'Arial';
+   text-align: center;
+}
+
+table, th, td {
+   border: 3px solid black;
+   border-collapse: collapse;
+}
+
+th {
+   text-transform: uppercase;
+}
+
+tr:first-child, td:first-child {
+   background-color: darkblue;
+   color: white;
+}
+
+td:nth-child(2n+3) {
+   background-color: lightgray;
+}
+
+
+tr:nth-child(2), tr:nth-child(3), tr:nth-child(4) {
+   color: green;
+font-weight: bold;
+}
+
+tr:nth-last-child(-n+2) {
+   color: brown;
+   font-weight: bold;
+}

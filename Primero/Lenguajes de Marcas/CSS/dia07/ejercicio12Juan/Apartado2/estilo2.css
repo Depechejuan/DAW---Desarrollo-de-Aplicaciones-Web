@@ -1,0 +1,30 @@
+/* Pistas:
+   - Toda la página usa letra "Arial"
+   - Fíjate en el patrón de pares e impares...
+   - Recuerda que vimos dos efectos para cambiar a mayúsculas...
+*/
+
+body {
+   font-family: 'Arial';
+   font-variant: small-caps;
+   font-weight: bold;
+}
+
+h1 {
+   color: brown;
+   text-transform: uppercase;
+}
+
+li:nth-child(odd) {
+   color: darkblue;
+}
+
+li:nth-child(even) {
+   color: blue;
+}
+
+/*
+   Como CSS funciona por especificidad, los "li" son más especificos que el body,
+   lo que permite que se aplique lo solicitado sin repetir el font-variant en cada caso
+   o crear una nueva etiqueta.
+*/

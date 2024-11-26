@@ -1,0 +1,33 @@
+a:link {
+    background-color: pink;
+}
+
+a:visited {
+    background-color: green;
+}
+
+a:hover {
+    background-color: black;
+    color: white;
+}
+
+a:active {
+    background-color: brown;
+}
+
+p:first-letter {
+    font-size: 30px;
+}
+
+p:first-line {
+    color: blue;
+}
+
+input:focus {
+    border: dashed red 3px;
+}
+
+/*
+    Super comentario CSS
+    Pascu da los first-child !!
+*/

@@ -1,0 +1,30 @@
+/* Pistas:
+   - Casi todo es igual que en el Apartado 4. Puedes copiarlo...
+   - Pero ahora, los fondos grises cambian...
+*/
+
+/* Pistas:
+   - Toda la página usa letra "Arial"
+   - Antes de nada, mejora las líneas de la tabla...
+   - Fíjate en el patrón...
+*/
+
+body {
+   font-family: 'Arial';
+   text-align: center;
+}
+
+table, th, td {
+   border: 3px solid black;
+   border-collapse: collapse;
+}
+
+tr:first-child {
+   background-color: darkblue;
+   color: white;
+   text-transform: uppercase;
+}
+
+td:nth-child(even) {
+   background-color: lightgray;
+}

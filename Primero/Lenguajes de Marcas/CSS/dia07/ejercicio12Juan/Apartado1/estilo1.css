@@ -1,0 +1,22 @@
+/* Pistas:
+   - Toda la página usa letra "Arial"
+*/
+
+body {
+   font-family: 'Arial';
+}
+
+li:first-child {
+   color: green;
+   font-weight: bold;
+}
+
+li:nth-child(25) {
+   color: orange;
+   font-weight: bold;
+}
+
+li:last-child {
+   font-weight: bold;
+   color:purple;
+}

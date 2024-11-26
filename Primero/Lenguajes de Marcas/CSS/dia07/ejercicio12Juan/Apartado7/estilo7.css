@@ -1,0 +1,26 @@
+/* Pistas:
+   - Parecido al Apartado 5, con dos pequeños cambios...
+*/
+
+body {
+   font-family: 'Arial';
+   text-align: center;
+}
+
+table, th, td {
+   border: 3px solid black;
+   border-collapse: collapse;
+}
+
+th {
+   text-transform: uppercase;
+}
+
+tr:first-child, td:first-child {
+   background-color: darkblue;
+   color: white;
+}
+
+td:nth-child(2n+3) {
+   background-color: lightgray;
+}
