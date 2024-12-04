@@ -1,0 +1,36 @@
+/* Pistas:
+    - El H1 usa fuente "Arial" y tamaño de letra 50px
+    - La altura de la imagen es 350px
+    - El radio de borde usado es 350px (¡solo en una esquina!)
+    - El grosor del borde de la imagen es 3px
+    - La sombra de la imagen esta vez NO está desplazada, pero se difumina 20px (y es negra)
+    - La sombra del texto esta vez NO está desplazada, pero se difumina 10px (y es blanca)
+    - Esta vez el degradado es radial (y en concreto circle)
+*/
+
+html {
+    height: 100%; /* ¡¡No quites esto!! Es para que el degradado del fondo no se repita */
+}
+
+body {
+	height: 100%; /* ¡¡No quites esto!! Es para que el degradado del fondo no se repita */
+    margin: 0; /* ¡¡No quites esto!! Es para que el degradado del fondo no se repita */
+    background-repeat: no-repeat; /* ¡¡No quites esto!! Es para que el degradado del fondo no se repita */
+	background-attachment: fixed; /* ¡¡No quites esto!! Es para que el degradado del fondo no se repita */
+    background-image: radial-gradient(circle, white, brown);
+    text-align: center;
+}
+
+h1 {
+    color: brown;
+    text-shadow: 0px 0px 10px white;
+    font-size: 50px;
+    font-family: 'Arial';
+}
+
+img {
+    border: 3px dotted brown;
+    border-radius: 350px 0px 0px 0px;
+    box-shadow: -0px 0px 20px black;
+    width: 350px;
+}

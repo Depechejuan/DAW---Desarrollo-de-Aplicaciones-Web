@@ -1,0 +1,35 @@
+/* Pistas:
+    - El H1 usa fuente "Arial" y tamaño de letra 50px
+    - La altura de la imagen es 350px
+    - El radio de borde usado es 40px
+    - El grosor del borde de la imagen es 3px
+    - Los desplazamientos de la sombra de la imagen son 10px
+    - Los desplazamientos de la sombra del texto son 5px
+*/
+
+html {
+    height: 100%; /* ¡¡No quites esto!! Es para que el degradado del fondo no se repita */
+}
+
+body {
+	height: 100%; /* ¡¡No quites esto!! Es para que el degradado del fondo no se repita */
+    margin: 0; /* ¡¡No quites esto!! Es para que el degradado del fondo no se repita */
+    background-repeat: no-repeat; /* ¡¡No quites esto!! Es para que el degradado del fondo no se repita */
+	background-attachment: fixed; /* ¡¡No quites esto!! Es para que el degradado del fondo no se repita */
+    background-image: linear-gradient(white, blue);
+    text-align: center;
+}
+
+h1 {
+    color: blue;
+    text-shadow: 5px 5px gray;
+    font-family: 'Arial';
+    font-size: 50px;
+}
+
+img {
+    border: 3px solid blue;
+    border-radius: 40px;
+    box-shadow: 10px 10px blue;
+    width: 350px;
+}

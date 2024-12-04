@@ -246,3 +246,103 @@ SELECT MAX(precio), MIN(precio), COUNT(precio)
 -- Si usas count,es preferible pasar la PK. Si pasas precio y hay 2 iguales, sólo contaría 1. 
 SELECT COUNT(codigo)
   FROM PRODUCTO
+
+
+  --- NULLS
+
+-- Muestra clientes que NO TENGAN Dirección 2
+SELECT *
+  FROM CLIENTES
+ WHERE linea_direccion2 IS NULL
+
+ -- Muestra clientes que SI TENGAN dirección 2
+SELECT *
+ FROM CLIENTES
+WHERE linea_direccion2 IS NOT NULL
+
+-- No usar el igual (=)
+
+SELECT COUNT(codCliente)
+  FROM CLIENTES
+
+SELECT AVG(limite_credito)
+  FROM CLIENTES
+
+SELECT SUM(limite_credito)
+  FROM CLIENTES
+
+SELECT MAX(limite_credito) AS MaxCredito, 
+		MIN(limite_credito) AS MinCredit,
+		AVG(limite_credito) AS AverageCredit,
+		SUM(limite_credito) AS SumaCredito,
+		COUNT(codCliente) AS TotalClientes
+  FROM CLIENTES
+
+SELECT MAX(limite_credito) AS MaxCredit
+  FROM CLIENTES
+ WHERE pais = 'Spain'
+
+
+SELECT pais, MAX(limite_credito) AS MaxCredit
+  FROM CLIENTES
+ GROUP BY pais -- Agrupar por
+ ORDER BY MaxCredit DESC -- Si quieres organizarlo por la columna creada, hay que darle un Alias
+
+
+SELECT pais, COUNT(codCliente) AS NumClientes
+  FROM CLIENTES
+ WHERE linea_direccion2 IS NOT NULL
+ GROUP BY pais
+HAVING COUNT(codCliente) >= 4 -- Aqui NO se usa el ALIAS
+ ORDER BY NumClientes DESC
+
+ -- Having es un WHERE , pero para los campos agrupados (Despues de hacer la agrupación)
+
+-- DISTINCT
+-- Elimina aquellos registros que sean iguales.
+
+SELECT DISTINCT pais, nombre_cliente
+  FROM CLIENTES
+ 
+USE TIENDA
+GO
+
+SELECT codigo, nombre
+  FROM FABRICANTE
+ORDER BY 1 ASC -- Esto es automático, igualmente NO PONGAS NUMEROS EN EL ORDER BY
+
+SELECT codigo, nombre
+  FROM FABRICANTE
+ ORDER BY 7 DESC -- Esto peta
+
+
+USE JARDINERIA
+GO
+-- Detectar duplicados. 
+-- Coges todos los nombres, y agrupas por su nombre. Si hay dos iguales los muestra
+SELECT nombre_cliente, COUNT(codCliente)
+  FROM CLIENTES
+ GROUP BY nombre_contacto
+HAVING COUNT(codCliente) > 1
+
+
+-----------
+-- JOINS --
+-----------
+
+
+-- 9. Muestra el precio m�ximo, precio m�nimo, precio medio y el n�mero total de productos que tiene el fabricante Crucial.
+SELECT COUNT(codigo) AS CountClientes, MAX(precio) AS MaxPrice,
+		MIN(precio) AS MinPrice, AVG(precio) AS AvgPrice
+  FROM PRODUCTO
+ WHERE codigo_fabricante = 6
+
+ -- No sabíamos el código de "Crucial", ahora, ¿Cómo lo hacemos sin saber qué código es "Crucial"?
+SELECT F.codigo, F.nombre, COUNT(p.codigo)
+  FROM PRODUCTO P,
+	   FABRICANTE F
+ WHERE P.codigo_fabricante = F.codigo
+ GROUP BY F.codigo, f.nombre
+ -- Agrupar siempre por PK + lo que quieras sacar.
+
+

@@ -1,0 +1,94 @@
+/*
+    PISTAS EJERCICIO 14:
+    ✔ - Quita los anchos que le pusimos a la tabla (100% y 25%). Esas líneas fuera...
+    ✔ - Ahora las imágenes miden 100px de alto y 150px de ancho.
+    ✔ - Las imágenes tienen un radio de borde de 10px.
+    ✔ - La sombra de las imágenes NO se desplaza, pero se difumina 10px.
+    ✔ - Además, ponles a las imágenes la línea margin: 10px; (pronto veremos qué es esto)
+    - Pega las líneas para que el degradado funcione bien (las que os di en el ejercicio de Paquirrín).
+    ✔ - El fondo es un degradado diagonal de blanco a rosa.
+    ✔ - En la tabla, si te fijas, he corregido las líneas. Igual que en los apuntes, pero con 2px.
+    ✔ - La tabla tiene una sombra desplazada 10px en las dos direcciones (sin difuminar)
+    ✔ - Para centrar la tabla, ponle a table las líneas margin-left: auto; y margin-right: auto; (las veremos...)
+    ✔ - Al H1 ponle ancho 40%, y también las líneas de margin-left: auto; y margin-right: auto; (las veremos...)
+    ✔ - El H1 tiene sombra de texto desplazada -3px 5px gray.
+    ✔ - El H1 tiene grosor de borde 3px. 
+    ✔ - El H1 tiene radio de borde 10px (solo en dos esquinas, fíjate...)
+    ✔ - Los TH tienen una sombra de texto 3px 3px 5px gray.
+    ✔ - Han cambiado algunos colores...
+
+
+*/
+
+
+body {
+    background-image: linear-gradient(to bottom left, white, pink);
+    text-align: center;
+}
+
+h1, h2 {
+    font-family: "Comic Sans MS";
+}
+
+h1 {
+    font-size: 50px;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 3px -3px 5px gray;
+    border: 3px solid #800080;
+    border-radius: 10px 0px;
+    background-color: white;
+    color: #800080;
+}
+
+h2 {
+    font-size: 36px;
+    color: #5E0FB5;
+}
+
+
+b {
+    color: #4D06FF;
+}
+
+s {
+    color: #FF0000;
+}
+
+i {
+    font-family: 'Calibri';
+}
+
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+table {
+    box-shadow: 10px 10px black;
+    margin: auto; /* así evitamos los margin left-right*/
+    font-family: 'Arial';
+}
+
+th {
+    background-color: #bdbdbd;
+    color: black;
+    text-shadow: 3px 3px 5px gray;
+}
+
+tr:nth-child(even) {
+    background-color: white;
+}
+
+tr:nth-child(odd) {
+    background-color: lightyellow;
+}
+
+img {
+    height: 100px;
+    width: 150px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px black;
+    margin: 10px;
+}

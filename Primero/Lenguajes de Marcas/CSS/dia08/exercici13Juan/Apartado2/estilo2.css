@@ -1,0 +1,35 @@
+/* Pistas:
+    - El H1 usa fuente "Arial" y tamaño de letra 50px
+    - La altura de la imagen es 350px
+    - El radio de borde usado es 40px (pero fíjate que esta vez no está en todas las esquinas...)
+    - El grosor del borde de la imagen es 3px
+    - Los desplazamientos de la sombra de la imagen son 10px (pero mira la dirección... ¿Toca cambiar algún signo?)
+    - Los desplazamientos de la sombra del texto son 5px (pero mira la dirección... ¿Toca cambiar algún signo?)
+*/
+
+html {
+    height: 100%; /* ¡¡No quites esto!! Es para que el degradado del fondo no se repita */
+}
+
+body {
+	height: 100%; /* ¡¡No quites esto!! Es para que el degradado del fondo no se repita */
+    margin: 0; /* ¡¡No quites esto!! Es para que el degradado del fondo no se repita */
+    background-repeat: no-repeat; /* ¡¡No quites esto!! Es para que el degradado del fondo no se repita */
+	background-attachment: fixed; /* ¡¡No quites esto!! Es para que el degradado del fondo no se repita */
+    background-image: linear-gradient(to right, orange, red);
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    text-shadow: -5px -5px black;
+    font-size: 50px;
+    font-family: 'Arial';
+}
+
+img {
+    border: 3px solid black;
+    border-radius: 0px 40px;
+    box-shadow: -10px 10px black;
+    width: 350px;
+}
