@@ -346,3 +346,59 @@ SELECT F.codigo, F.nombre, COUNT(p.codigo)
  -- Agrupar siempre por PK + lo que quieras sacar.
 
 
+
+USE JARDINERIA
+SELECT *
+  FROM CLIENTES
+ WHERE linea_direccion2 IS NULL
+
+SELECT *
+  FROM CLIENTES
+ WHERE linea_direccion2 IS NOT NULL
+
+SELECT TOP(1)*
+  FROM CLIENTES
+ ORDER BY limite_credito DESC
+
+SELECT MAX(limite_credito)
+  FROM CLIENTES
+
+SELECT MIN(limite_credito) AS MinCredit,
+	   MAX(limite_credito) AS MaxCredit, 
+	   SUM(limite_credito) AS SumCredit, 
+	   AVG(limite_credito) AS AvgCredit, 
+	   COUNT(codCliente) AS CodCliente,
+	   pais
+  FROM CLIENTES
+GROUP BY pais
+
+
+SELECT nombre_cliente, COUNT(p.codPedido) AS TotalPedidos
+  FROM CLIENTES C,
+	   PEDIDOS P
+ WHERE C.codCliente = P.codCliente AND pais = 'Spain'
+ GROUP BY c.nombre_cliente, c.codCliente
+HAVING COUNT(p.codPedido) >= 6
+
+-- pedidos que hay y estado en el que están codpedido, fecha pedido, cod estado
+
+SELECT COUNT(EP.codEstado) AS Total, EP.descripcion
+  FROM PEDIDOS P, ESTADOS_PEDIDO EP
+ WHERE P.codEstado = EP.codEstado
+ GROUP BY EP.codEstado, EP.descripcion
+
+-- Forma más fácil
+SELECT codEstado, COUNT(codPedido)
+  FROM PEDIDOS
+  GROUP BY codEstado
+
+
+
+  -- Añadir nombre cliente
+SELECT p.CodPedido, P.fecha_pedido, p.CodEstado,
+	   e.descripcion, c.nombre_cliente
+  FROM PEDIDOS p,
+	   ESTADOS_PEDIDO e,
+	   CLIENTES c
+ WHERE p.codEstado = e.codEstado 
+   AND p.codCliente = c.codCliente
