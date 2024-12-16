@@ -1,0 +1,10 @@
+body {
+    text-align: center;
+}
+
+b, u, i {
+    display: block;
+    background-color: yellow;
+    height: 100px;
+    width: 20%;
+}

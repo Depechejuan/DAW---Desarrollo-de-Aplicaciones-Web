@@ -402,3 +402,47 @@ SELECT p.CodPedido, P.fecha_pedido, p.CodEstado,
 	   CLIENTES c
  WHERE p.codEstado = e.codEstado 
    AND p.codCliente = c.codCliente
+
+
+--
+-- pedidos -> clientes -- Join normal
+--
+
+SELECT p.codPedido, c.codCliente, c.nombre_cliente
+  FROM CLIENTES C, 
+		PEDIDOS P
+ WHERE P.codCliente = C.codCliente
+
+--
+-- pedidos -> clientes -- Inner Join
+--
+
+SELECT p.codPedido, c.codCliente, c.nombre_cliente
+  FROM CLIENTES C INNER JOIN PEDIDOS P
+    ON C.codCliente = p.codCliente
+   AND p.codPedido BETWEEN 1 AND 50
+   -- Where no iría aquí, sino un AND para evitar historias
+
+   -- LEFT JOIN
+SELECT C.codCliente, COUNT(p.codPedido) AS numPedidos
+  FROM CLIENTES C LEFT JOIN PEDIDOS P ON c.codCliente = p.codCliente
+ GROUP BY c.codCliente
+ -- El right join es solo cambiar de lado el FROM
+ --FROM PEDIDOS P RIGHT JOIN CLIENTES C ON C.codCliente = p.codCliente
+
+ -- NO SALDRIA TODO
+SELECT p.codCliente, COUNT(p.codPedido) AS numPedidos
+  FROM CLIENTES C LEFT JOIN PEDIDOS P ON c.codCliente = p.codCliente
+ GROUP BY p.codCliente
+ -- Hay que agrupar SIEMPRE por el lado que tenga los datos completos (En este caso, sería clientes)
+
+
+ -- La suma de productos que no se hayan vendido, no da0 sino NULL- Usar ISNULL y valor 0
+SELECT p.codProducto, p.nombre, ISNULL(SUM(dp.cantidad), 0) AS sumCantidad
+  FROM PRODUCTOS P LEFT JOIN DETALLE_PEDIDOS DP ON P.codProducto = DP.codProducto
+ GROUP BY p.codProducto, p.nombre
+
+SELECT c.codCliente, c.nombre_cliente, c.linea_direccion1, ISNULL(c.linea_direccion2, '')
+  FROM CLIENTES C
+SELECT c.codCliente, c.nombre_cliente, c.linea_direccion1, ISNULL(c.linea_direccion2, 'No Adress')
+  FROM CLIENTES C

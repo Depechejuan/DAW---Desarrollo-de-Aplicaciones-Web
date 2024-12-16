@@ -1,0 +1,24 @@
+body {
+	background-color: gray;
+}
+
+.vacias {
+	height: 150px;
+}
+
+#cajaRoja { background-color: red; }
+
+#cajaAzul { background-color: blue; }
+
+#cajaAmarilla
+{
+	background-color: yellow;
+	font-size: 20px;
+	font-family: Arial;
+	text-align: justify;
+	
+	margin-left: 15px;
+	margin-right: 15px;
+	margin-top: 40px;
+	padding: 0 40px;
+}
