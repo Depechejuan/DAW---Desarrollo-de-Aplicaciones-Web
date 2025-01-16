@@ -446,3 +446,167 @@ SELECT c.codCliente, c.nombre_cliente, c.linea_direccion1, ISNULL(c.linea_direcc
   FROM CLIENTES C
 SELECT c.codCliente, c.nombre_cliente, c.linea_direccion1, ISNULL(c.linea_direccion2, 'No Adress')
   FROM CLIENTES C
+
+
+
+
+-- UNION, INTERSECCIÓN Y DIFERENCIA
+-- {1, 3, 5} UNION  {1, 5} -> resultado { 1, 3, 5}
+-- No son números, sino registros. El registro 1 es igual al registro 1 del de abajo.
+-- UNION ALL {1,3,5,1,5} <- es lo mismo como están en los dos sitios, los repite
+
+-- INTERSECCIÓN:
+-- - {1, 3, 5} INTERSECT  {1, 5} -> {1,5} tiene que ver mucho con el AND
+
+-- DIFERENCIA (En Oracle se utiliza "Minus"
+-- No es una resta, sino la diferencia de elementos entre dos conjuntos
+ -- - {1, 3, 5} EXCEPT  {1, 5} ->  {3} -> si está en ambas, se quita.
+
+ SELECT codCliente
+   FROM CLIENTES
+ WHERE codCliente IN (1,3,5)
+--UNION 
+-- UNION ALL 
+--INTERSECT
+-- EXCEPT
+SELECT codCliente
+  FROM CLIENTES
+ WHERE codCliente IN (1,5)
+
+
+ -- esto falla, ¿por qué?
+-- ARRIBA TENEMOS LA MUESTRA GRANDE Y ABAJO EL FILTRAJE.
+SELECT codCliente
+  FROM CLIENTES
+ WHERE codCliente IN (1,5)
+-- UNION 
+-- UNION ALL 
+-- INTERSECT
+EXCEPT
+SELECT codCliente
+  FROM CLIENTES
+ WHERE codCliente IN (1,3,5)
+
+ -- Si la consulta de arriba no es igual que la consulta de abajo, va a petar.
+ SELECT codCliente, nombre_cliente
+   FROM CLIENTES
+ WHERE codCliente IN (1,3,5)
+EXCEPT
+SELECT codCliente
+  FROM CLIENTES
+ WHERE codCliente IN (1,5)
+
+ -- Esto si funciona porque es lo mismo. son las mismas tablas
+  SELECT *
+   FROM CLIENTES
+ WHERE codCliente IN (1,3,5)
+EXCEPT
+SELECT *
+  FROM CLIENTES
+ WHERE codCliente IN (1,5)
+
+
+SELECT codCliente
+  FROM CLIENTES
+ EXCEPT
+SELECT codCliente
+  FROM PEDIDOS
+
+  -- Clientes que NO han hecho pagos
+SELECT codCliente
+  FROM CLIENTES
+EXCEPT
+SELECT codCliente
+  FROM PAGOS
+
+ -- Que han hecho pedidos pero NO han hecho pagos.
+SELECT codCliente
+  FROM PEDIDOS
+EXCEPT
+SELECT codCliente
+  FROM PAGOS
+
+
+-- SUBCONSULTAS
+SELECT * 
+  FROM CLIENTES
+ WHERE codCliente IN (1,3,5)
+--- 1, 3, 5 son numeros magicos, pero y si quiero los clientes que han hecho pedidos?
+
+SELECT *
+  FROM CLIENTES
+ WHERE codCliente IN (SELECT codCliente
+										FROM PEDIDOS)
+
+SELECT DISTINCT C.*
+  FROM PEDIDOS P, CLIENTES C
+ WHERE p.codCliente = c.codCliente
+
+ SELECT DISTINCT C.*
+  FROM PEDIDOS P JOIN CLIENTES C 
+	  ON p.codCliente = c.codCliente
+
+
+-- Ahora clientes que NO han hecho pedidos, tan fácil
+SELECT *
+  FROM CLIENTES
+ WHERE codCliente NOT IN (SELECT codCliente
+										FROM PEDIDOS)
+
+SELECT c.codCliente
+  FROM CLIENTES C LEFT JOIN PEDIDOS P ON c.codCliente = P.codCliente
+GROUP BY c.codCliente
+HAVING COUNT(p.CodPedido) = 0
+
+
+-- Clientes que han hecho pedidos pero aún no han pagado
+SELECT *
+  FROM CLIENTES
+ WHERE codCliente  IN (SELECT codCliente
+										FROM PEDIDOS)
+		AND codCliente NOT IN (SELECT codCliente FROM PAGOS)
+
+
+-- 
+SELECT AVG(importe_pago) AS importe
+  FROM PAGOS;
+
+ SELECT *
+   FROM PAGOS
+ WHERE importe_pago >= (SELECT AVG(importe_pago)
+  FROM PAGOS)
+
+  -- No funciona porque no hay agrupación/having
+SELECT * FROM PAGOS WHERE importe_pago >= AVG(importe_pago)
+
+-- todos los pagos mayores que el menor de los pagos
+ SELECT *
+   FROM PAGOS
+ WHERE importe_pago > (SELECT MIN(importe_pago)
+  FROM PAGOS)
+
+-- El pago mayor
+ SELECT *
+   FROM PAGOS
+ WHERE importe_pago >= (SELECT MAX(importe_pago)
+  FROM PAGOS)
+
+
+-- ALL y ANY
+-- Consultas que devuelven varios registros y comparamos los de SELECT A y el SELECT B
+-- ALL sería un AND y ANY es un OR.
+
+ -- ALL = Si cumple la condición, aparece, sino, no aparece, de uno en uno del primero al último.
+ -- Ejemplo: ¿Es 1000 mayor que ALL los valores? si o no? siguiente.... ¿Es X mayor que ALL los valores? si no? siguiente...
+
+SELECT *
+  FROM CLIENTES
+ WHERE limite_credito > ANY (SELECT importe_pago
+													FROM PAGOS
+												  WHERE YEAR(fechaHora_pago) = 2022)
+ -- Se utilizan cuando hay varios registros numéricos a comparar
+
+-- Subconsultas con EXISTS
+SELECT DISTINCT C.codCliente
+   FROM CLIENTES C
+ WHERE EXISTS (SELECT * FROM PEDIDOS P WHERE P.codCliente = c.CodCliente)

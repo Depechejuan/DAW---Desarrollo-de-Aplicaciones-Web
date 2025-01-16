@@ -1,0 +1,23 @@
+/* Haz aquí el ejercicio. Son 4 líneas XD.
+   Copia el RESET de los apuntes, tal cual,
+   para quitar todos los margin y padding.
+   Luego, mira la web y acaba el cuestionario */  
+
+
+* {
+   margin: 0;
+   padding: 0;
+}
+
+td, th {
+   padding: 5px;
+}
+
+ul, ol {
+   list-style: revert;
+   margin-left: 20px;
+}
+
+li {
+   list-style: inherit;
+}

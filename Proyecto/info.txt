@@ -77,3 +77,34 @@ Compartir archivos:
 - ???? - Si tengo varios servidores, tener una RAM común entre ellos y poder acceder a datos más rápidamente
 
 - ???? - Chat con vídeo en tiempo real entre varios usuarios
+
+
+
+
+
+CLIENTE --> Chrome, firefox...
+
+(Back End)
+Load Balancer (o "ingress") -> nginx 
+máquinas virtuales conectadas entre si mediante una red virtual
+un nodo es un ordenador físico o virtual que está corriendo en algun lugar (linux, windows, mac o lo que sea)
+
+Al acceder al Load Balancer, "se reparte el bacalao"
+-> http://wasabi.com -> el nginix va a un sitio -> a los servidores donde está alojado mi página web html+css+JavaScript (un string)
+
+-> http://api.wasabi.com -> el nginix va a otro sitio
+
+-> http://wasabi.com/user/32 (path) -> el nginix va a otro sitio
+
+Caché -> se utiliza para no molestar a la base de datos constantemente
+(El "id" 75, estos son sus datos en un json -> Si vuelves a pedirlos, lo tengo en caché)
+
+Microservicios: cachitos de aplicación.
+
+MQTT (Suscripción)
+- Broke
+- Publishers (publican en un topic)
+- Suscribers (Se suscriben a esos mensajes de manera total o parcial)
+
+WEBRTC -> juno
+

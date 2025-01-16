@@ -1,0 +1,50 @@
+/*
+	↓↓↓ Haz aquí el CSS, fijándote en las zonas que TÚ creaste en el HTML ↓↓↓
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#zona1 {
+	background-color: orange;
+	width: 25%;
+	height: 100px;
+	float: left;
+}
+
+#zona2 {
+	background-color: green;
+	width: 50%;
+	height: 100px;
+	float: left;
+}
+
+#zona3 {
+	background-color: blue;
+	width: 25%;
+	height: 100px;
+	float: right;
+}
+
+#zona4 {
+	background-color: yellow;
+	width: 50%;
+	height: 500px;
+	float: left;
+}
+
+#zona5 {
+	background-color: red;
+	width: 50%;
+	height: 500px;
+	float: right;
+}
+
+#zona6 {
+	background-color: purple;
+	height: 100px;
+	width: 100%;
+	float: left;
+}

@@ -246,21 +246,28 @@ SELECT DISTINCT O.linea_direccion1
 
 -- 38. Devuelve un listado con el nombre de los empleados junto con el nombre de sus jefes
 -- (debes utilizar dos alias para la tabla EMPLEADOS).
-SELECT nombre AS Empleado, (SELECT nombre FROM EMPLEADOS WHERE codEmpleado = codEmplJefe) AS Jefe
-  FROM EMPLEADOS 
- 
-SELECT nombre AS Empleado, 
-   FROM EMPLEADOS JOIN emp
+SELECT E.nombre AS Empleado, EJ.nombre AS Jefe
+  FROM EMPLEADOS E LEFT JOIN EMPLEADOS EJ ON E.codEmpleado = EJ.codEmplJefe
 
--- 39. Devuelve el nombre de los clientes a los que no se les ha entregado a tiempo un pedido. Si se han retrasado varios pedidos, el cliente solo debe aparecer una vez.
-SELECT ;
+-- 39. Devuelve el nombre de los clientes a los que no se les ha entregado a tiempo un pedido.
+-- Si se han retrasado varios pedidos, el cliente solo debe aparecer una vez.
+SELECT DISTINCT C.codCliente, C.nombre_cliente
+  FROM CLIENTES C LEFT JOIN PEDIDOS P ON C.codCliente = P.codCliente
+ WHERE P.fecha_esperada < P.fecha_entrega
 
 -- 40. Muestra el nombre de los clientes y el número de pagos que han realizado.
 -- Deben aparecer todos, independientemente de si han realizado un pago o no.
-SELECT ;
+SELECT C.codCliente, C.nombre_cliente, COUNT(P.codCliente) AS NumPagos
+  FROM CLIENTES C LEFT JOIN PAGOS P ON C.codCliente = P.codCliente
+ GROUP BY C.codCliente, C.nombre_cliente
+ ORDER BY NumPagos DESC
 
 -- 41. Muestra el nombre de los clientes y el número de pedidos que han sido Entregados.
 -- Deben aparecer todos, independientemente de si han realizado un pedido o no.
-SELECT ;
+SELECT C.nombre_cliente, COUNT(P.codPedido) AS PedidosEntregados
+  FROM CLIENTES C LEFT JOIN PEDIDOS P ON C.codCliente = P.codCliente
+ WHERE P.fecha_entrega IS NOT NULL
+ GROUP BY C.codCliente, C.nombre_cliente
+ ORDER BY PedidosEntregados
 
 
