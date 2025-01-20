@@ -1,0 +1,30 @@
+/*
+	Completa tú el CSS. Pistas:
+	- Solo para que lo sepas, en este caso SE HA PUESTO AL CONTENEDOR GRANDE ALTURA FIJA DE 800px
+	  (porque ahora pondremos las alturas del grid con porcentajes, y si no no funcionaría...)
+	- En este apartado E habrá 4 COLUMNAS y todas son igual de anchas
+	- Las filas tendrán, esta vez, altura en % (20-60-20)
+    
+	[Debes añadir 3 líneas en total]	  
+*/
+
+#contenedorGrid {
+	height: 800px;
+	width: 80%;
+	margin: auto;
+	background-color: lightyellow;
+	border: 1px solid black;
+	padding: 10px;
+
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	grid-template-rows: 20% 60% 20%;
+}
+
+.hijo-grid {
+	border: 1px solid black;
+	background-color: pink;
+	text-align: center;
+	font-size: 24px;
+	font-family: Arial;
+}

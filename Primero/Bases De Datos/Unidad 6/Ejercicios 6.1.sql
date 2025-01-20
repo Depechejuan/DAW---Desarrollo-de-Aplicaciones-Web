@@ -284,6 +284,36 @@ CREATE TABLE HISTORICO_CLIENTES(
 		REFERENCES EMPLEADOS(codEmpleado)
 )
 
+INSERT INTO HISTORICO_CLIENTES (codHistorico, nombre_cliente, nombre_contacto,
+																	apellido_contacto, telefono, email,
+																	linea_direccion1, linea_direccion2, ciudad,
+																	pais, codPostal, codEmpl_ventas,
+																	limite_credito, fechaAlta)
+			SELECT codCliente, nombre_cliente, nombre_contacto, apellido_contacto, telefono, email, linea_direccion1, linea_direccion2, 
+							ciudad, pais, codPostal, codEmpl_ventas, limite_credito, GETDATE()
+			  FROM CLIENTES
+			WHERE nombre_cliente LIKE '%s%'
 
---22. Actualiza a NULL los campos region, pais y codigo_postal en la tabla CLIENTES para todos los registros. Utiliza una sentencia de actualización en la que se actualicen estos 3 campos a partir de los datos existentes en la tabla HISTORICO_CLIENTES. Comprueba que los datos se han trasladado correctamente.
 
+
+--22. Actualiza a NULL los campos region, pais y codigo_postal en la tabla CLIENTES para todos los registros. 
+-- Utiliza una sentencia de actualización en la que se actualicen estos 3 campos a partir de los datos existentes en la tabla HISTORICO_CLIENTES.
+-- Comprueba que los datos se han trasladado correctamente.
+SELECT codCliente, nombre_cliente, ciudad, pais, codPostal FROM CLIENTES
+SELECT codHistorico, nombre_cliente, ciudad, pais, codPostal FROM HISTORICO_CLIENTES
+
+
+ALTER TABLE CLIENTES
+ALTER COLUMN ciudad VARCHAR(50) NULL
+
+UPDATE CLIENTES
+		SET ciudad = NULL,
+				pais = NULL,
+				codPostal = NULL
+
+-- Utiliza una sentencia de actualización en la que se actualicen estos 3 campos a partir de los datos existentes en la tabla HISTORICO_CLIENTES.
+UPDATE C
+		SET C.ciudad = HC.ciudad,
+				C.pais = HC.pais,
+				C.codPostal = HC.codPostal
+		FROM CLIENTES C INNER JOIN HISTORICO_CLIENTES HC ON C.codCliente = HC.codHistorico

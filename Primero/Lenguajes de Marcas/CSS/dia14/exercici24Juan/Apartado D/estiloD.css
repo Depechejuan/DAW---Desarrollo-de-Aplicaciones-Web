@@ -1,0 +1,31 @@
+/*
+	Completa tú el CSS. Pistas:
+	- Solo para que lo sepas, en este caso SE HA QUITADO LA LÍNEA DE LINE-HEIGHT a las "cajitas"
+	  (porque ahora jugaremos con las alturas del grid, y esa línea ya no nos interesa...)
+	- En este apartado D habrá 3 COLUMNAS y sus anchos serán de 50%, 25% y 25% respectivamente
+	- La 1ª fila tendrá una altura de 100px, la 2ª de 200px, la 3ª de 300px...
+	  y a la 4ª le pondremos altura automática. ¿Entiendes lo que pasa con esa?
+      Simplemente se ajusta al contenido, que en este caso es muy poco...
+    
+	[Debes añadir 3 líneas en total]	  
+*/
+
+#contenedorGrid {
+	width: 80%;
+	margin: auto;
+	background-color: lightyellow;
+	border: 1px solid black;
+	padding: 10px;
+
+	display: grid;
+	grid-template-columns: 50% 25% 25%;
+	grid-template-rows: 100px 200px 300px auto;
+}
+
+.hijo-grid {
+	border: 1px solid black;
+	background-color: pink;
+	text-align: center;
+	font-size: 24px;
+	font-family: Arial;
+}

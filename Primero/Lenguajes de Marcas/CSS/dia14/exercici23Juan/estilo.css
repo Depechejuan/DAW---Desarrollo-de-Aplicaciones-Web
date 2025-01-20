@@ -1,0 +1,66 @@
+#zonaArriba {
+	float: left;
+	height: 75px;
+	width: 100%;
+	background-color: #332F2C;
+	/* Aquí deberás añadir 2 líneas */
+	/* Una es la básica de FLEX. Y para la otra... Mira cómo se distribuyen horizontalmente... */
+	display: flex;
+	justify-content: space-between;
+	color: white;
+}
+
+#zonaIzquierda {
+	float: left;
+	height: 375px;
+	width: 25%;
+	background-color: lightgray;
+	/* Aquí deberás añadir 2 líneas */
+	/* Una es la básica de FLEX. Y para la otra... Mira la dirección de los elementos... */
+	display: flex;
+	flex-direction: column;
+}
+
+#zonaDerecha {
+	float: left;
+	height: 375px;
+	width: 75%;
+	background-color: #FCF3CF;
+	/* Aquí deberás añadir 4 líneas */
+	/* Una es la básica de FLEX. Otra para que bajen línea. Y las otras para que se queden así... */
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: flex-start;
+}
+
+/* ↓↓↓ Aquí abajo deberás dar estilo a las 3 clases (cajitaArriba, cajitaIzquierda y cajitaDerecha) ↓↓↓ */
+/* ↓↓↓ Pistas:
+		- Las cajas de la zona de arriba tienen margen de 10px, y no necesitan altura ni anchura
+		- Las cajas de la izquierda tienen altura 100px, margen 20px, borde 1px y color de fondo darkgray. Sin ancho
+	   - Las cajas de la derecha tienen altura 100px, ancho 200px, margen 10px y borde 1px */
+
+.cajitaArriba {
+	margin: 10px;
+}
+
+.cajitaIzquierda {
+	background-color:  darkgray;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid;
+	height: 100px;
+	margin: 20px;
+}
+/*- Las cajas de la derecha tienen altura 100px, ancho 200px, margen 10px y borde 1px */
+
+.cajitaDerecha {
+	height: 100px;
+	width: 200px;
+	margin: 10px;
+	border: 1px solid gray;
+	background-color: white;
+	text-align: center;
+}

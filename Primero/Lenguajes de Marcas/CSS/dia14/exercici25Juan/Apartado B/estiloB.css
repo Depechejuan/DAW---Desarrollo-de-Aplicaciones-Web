@@ -1,0 +1,42 @@
+/*
+	Haz tú el CSS.
+	Es exactamente igual que en el Apartado A...
+	...salvo los SELECTORES para acceder a cada zona, claro.
+	Cambia esa tontería y ¡¡lo tienes!! :-)
+*/
+
+body {
+	height: 800px;
+	display: grid;
+	grid-template-columns: 80% 20%;
+	grid-template-rows: 20% 10% auto 10%;
+	grid-template-areas: "header header"
+						"menu side"
+						"main side"
+						"foot foot";
+}
+
+header  {
+	background-color: black;
+	grid-area: header;
+}
+
+nav {
+	background-color: lightgray;
+	grid-area: menu;
+}
+
+aside {
+	background-color: gray;
+	grid-area: side;
+}
+
+main {
+	background-color: lightyellow;
+	grid-area: main;
+}
+
+footer {
+	background-color: black;
+	grid-area: foot;
+}
