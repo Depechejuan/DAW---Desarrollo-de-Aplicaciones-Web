@@ -225,8 +225,27 @@ UPDATE CLIENTES
 											   AND cantidad = (SELECT MIN(cantidad) AS cantidad
 																			FROM DETALLE_PEDIDOS 
 																		 WHERE codProducto = @OR179))
+-- corrección:
+SELECT codCliente, SUM(cantidad)
+  FROM PRODUCTOS pr,
+			DETALLE_PEDIDOS de,
+			PEDIDOS pe
+ WHERE pr.codProducto = de.codProducto
+   AND pe.codPedido = de.codPedido
+   AND refInterna = 'OR-179'
+ GROUP BY codCliente
+ORDER BY SUM(cantidad) ASC
 
+  
 
+  -- COrrección con TOP
+  SELECT TOP(1) pr.codProducto
+  FROM PRODUCTOS pr,
+			DETALLE_PEDIDOS de,
+			PEDIDOS pe
+ WHERE pr.codProducto = de.codProducto
+   AND pe.codPedido = de.codPedido
+   AND refInterna = 'OR-179'
 
 --19. Modifica la tabla DETALLE_PEDIDOS para insertar un campo numérico llamado IVA. Establece el
 --valor de ese campo a 1.18 para aquellos registros cuyo pedido tenga fecha de pedido a partir de Enero de 2022

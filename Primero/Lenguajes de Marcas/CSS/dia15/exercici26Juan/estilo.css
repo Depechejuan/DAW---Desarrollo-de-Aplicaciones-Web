@@ -1,0 +1,72 @@
+/* Todo el CSS que te doy no lo toques. Está bien */
+
+#contenedor {
+	height: 500px;
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-template-rows: 250px 250px 100px;
+	grid-template-areas: "naranja rosa"
+						 "amarilla roja"
+						 "lila lila";
+}
+
+#zonaNaranja {
+	background-color: orange;
+	grid-area: naranja;
+}
+
+#zonaRosa {
+	background-color: pink;
+	grid-area: rosa;
+}
+
+#zonaAmarilla {
+	background-color: yellow;
+	grid-area: amarilla;
+}
+
+#zonaRoja {
+	background-color: red;
+	grid-area: roja;
+}
+
+#zonaCielo {
+	background-image: url("fotopoke/fondoCielo.png");
+	background-size: cover;
+	grid-column: 1/3;
+	grid-area: lila;
+
+	display: flex;
+	justify-content: space-around
+	/* Aquí faltan 2 líneas */
+}
+
+/* ↓↓↓ Y aquí termina lo que falta... ↓↓↓ 
+        Recuerda que accederás a las
+    cosas usando la selección jerárquica */
+	
+
+
+#zonaNaranja > ul > li {
+	color: blue;
+}
+
+#zonaAmarilla > table {
+	margin: 0 auto;
+}
+
+#zonaRoja >  table{
+	margin-left: auto;
+}
+
+#zonaRoja > h1 {
+	color: white;
+}
+
+img {
+	margin: 15px;
+}
+
+#zonaCielo > img {
+	margin: 15px;
+}

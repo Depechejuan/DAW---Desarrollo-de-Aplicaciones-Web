@@ -1,0 +1,6 @@
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\Practica 4.3\Bank\Bank\bin\Debug\Bank.dll
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\Practica 4.3\Bank\Bank\bin\Debug\Bank.pdb
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\Practica 4.3\Bank\Bank\obj\Debug\Bank.csproj.AssemblyReference.cache
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\Practica 4.3\Bank\Bank\obj\Debug\Bank.csproj.CoreCompileInputs.cache
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\Practica 4.3\Bank\Bank\obj\Debug\Bank.dll
+C:\Users\Depechejuan\Desktop\DAW\Primero\Entornos de Desarrollo\Practica 4.3\Bank\Bank\obj\Debug\Bank.pdb

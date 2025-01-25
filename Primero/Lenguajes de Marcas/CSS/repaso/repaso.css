@@ -1,0 +1,224 @@
+#Repaso {
+    color: blue; /* color de LETRAS */
+    background-color: red; /* color de FONDO */
+    /* Colores que se usan en examen: white, black, grey */
+
+    font-family: 'Arial'; /* Fuente de las letras */
+    font-size: 20px; /* tamaño de letra (pixels, %, rem, em) */
+    text-align: center; /* por defecto, LEFT. alinea el texto */
+    
+    /* Ancho y alto. Auto, px, % */
+    height: auto;
+    width: auto;
+
+    /*
+        Bordes.
+        COLOR: el color del borde
+        witdh: Ancho del borde
+        style: dotted (puntos), solid (linea), dashed (líneas pequeñas)
+    */
+    border-color:green;
+    border-width: 10px;
+    border-style: dotted;
+    /* En una línea -- pixels, tipo, color*/
+    border: 10px solid red;
+}
+
+.Clase {
+    /* Se usa para estilos a clases */
+}
+
+#id {
+    /* Se usa para dar estilo a un ID */
+}
+
+span {
+    /* 
+        Utilizada para atacar a algo dentro de una etiqueta 
+        Ejemplo:
+        <p>Vivo en ALICANTE y mola mucho</p>
+        Si quiero pintar solo alicante, etiqueta SPAN a Alicante.
+    */
+}
+
+.Repaso2 {
+    /* 
+        Propiedades para TEXTOS
+        Negrita, cursiva, subrallado
+    */
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: underline;
+
+    /* 
+        Cambiar el tipo de "circulito" de las listas
+        o tipo (circulo, cuadrado...) o imágen
+    */
+    list-style-type: circle;
+    list-style-image: url("imagne.jpg");
+
+    /* Fondo con imágenes */
+    background-image: url("fondo.jpg");
+
+}
+
+/* PSEUDO-SELECTORES */
+
+a:link {
+
+}
+a:visited {
+
+}
+a:hover {
+
+}
+a:active {
+
+}
+
+p::first-letter {
+
+}
+p::first-line {
+
+}
+
+/*
+    REPASAR EN APUNTES. ya que el nth tiene curiosidades
+*/
+
+.selector:first-child {
+
+}
+.selector:last-child {
+
+}
+.selector:nth-child()
+{
+
+}
+
+
+/*
+    Seleccionar a varios
+*/
+
+p, h1 {
+    font-family: 'Courier New', Courier, monospace;
+    /* parafos y h1 tienen esa fuente. */
+}
+
+/*
+    Mejorar bordes de tabla:
+*/
+
+table, th, td {
+    border: 1px solid black; /* tipico border */
+    border-collapse: collapse; /* colapse colapse a  TODOS*/
+    /* Si no se pone todo puede ser que salgan duplicadas o solo un unico borde depende del caso */
+}
+
+#repaso2 {
+    /* Curvar las esquinas. Pueden haber hasta 4 valores
+    
+        borde 1     borde 2
+        borde 4     borde 3
+
+        Si se ponen 3, el borde 1 es = al borde 4
+    */
+    border-radius: 15px;
+
+    /*
+        Desplazamiento horizontal (positivo: hacia la derecha -- negativo izquierda)
+        Deslazamiento vertical (positivo: hacia abajo -- negativo, arriba)
+        Difuminación
+        Color
+    */
+    text-shadow: 2px 2px 5px red;
+    box-shadow: 2px 2px 5px blue;
+
+    /* Por defecto es de arriba a abajo. */
+    background-image: linear-gradient(white, black);
+    background-image: linear-gradient(to right, white, black);
+
+    /* Distancias - margin externo, paddin interno.*/
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+* {
+    /* Reset */
+}
+
+#repaso3 {
+    /* 
+        inline separa las "cajas" en la misma linea
+        block ocupa toda la línea
+    */
+    display: inline;
+    display: block;
+
+    /*
+        Ejercicio del charizar:
+        Todos los elementos por defecto pertenecen al flujo y tienen propiedad static.
+        Relative respetaban el "hueco" donde estaba y se "empuja" DESDE la propiedad.
+        LEFT = empujo DESDE LA IZQUIERDA
+
+        Fixed fijaba, sale del flujo y nadie guarda su sitio.
+
+        absolute repasalo con apuntes.
+    */
+
+    position: static;
+    position: relative;
+    position: fixed;
+    position: absolute;
+
+    /* 
+        Colocar (imagen) con texto rodeando.
+        No se le pone al texto sino a la foto (junto con margin)
+        Mira la foto de apuntes.
+    */
+    float: left;
+
+    /* REVISA: Maquetar con float */
+    float: left;
+    height: 100px;
+    width: 10%;
+
+    /*
+        Flex y Grid siempre se pone a los PADRES.
+        display: flex; ya funciona, grid necesita más datos
+        flex-directon: columnas;
+
+        flex-wrap = wrap "obligamos a bajar", sino, no bajan.
+
+    */
+    display: flex;
+    
+    justify-content: flex-start; /*defecto --- center (centra horizontal). Space around tiene hueco siempre. between pega los lados y mete en medio*/
+    align-items: flex-start; /* defecto ------ center o flex end (ubicación) */
+    
+    /* Cuadricula */
+    display: grid;
+    grid-template-columns: auto; /* Tantas columnas como valores se pongan.*/
+    grid-template-rows: auto; /* para filas*/
+
+    grid-template-areas: "zona1 zona2 zona3"
+                        "zona4 zona4 zona5";
+}
+
+table {
+    /* No se centra con  text align, sino margin-left / right */
+    margin-left: auto;
+
+}
+
+#id > .clase {
+    /* hijo directo*/
+}
+
+#id .clase {
+    /* afecto a todos los hijos de id que sean clase*/
+}
