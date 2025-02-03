@@ -346,61 +346,176 @@ ADD CONSTRAINT PK_JUEGOS PRIMARY KEY (codJuego)
 
 
 -- 33. Añade 3 datos de ejemplo en la tabla de juegos. Para uno indicarás todos los campos, para otro no indicarás el streamer, ayudándote de NULL, y para el tercero no indicarás el streamer porque no detallarás todos los nombres de los campos.
-INSERT INTO JUEGOS (nombre, codStreamer, codJuego)
-			VALUES	('Final Fantasy VII', 1, 1001)
-							('Starcraft')
-							('Counter Strike')
+INSERT INTO JUEGOS (nombre, codStreamer)
+			VALUES	('Final Fantasy VII', 'DMV'),
+							('Starcraft', null),
+							('Counter Strike', null)
 
-
+							
 -- 34. Borra el segundo dato de ejemplo que has añadido en la tabla de juegos, a partir de su código.
+DELETE
+  FROM JUEGOS
+WHERE nombre = 'Starcraft'
 
 -- 35. Muestra el nombre de cada juego junto al nombre del streamer que más habla de él, si existe. Los datos aparecerán ordenados por nombre de juego y, en caso de coincidir éste, por nombre de streamer.
+SELECT S.nombre, J.nombre
+  FROM STREAMERS S  LEFT JOIN JUEGOS J
+	ON s.codStreamer = j.codStreamer
+ WHERE J.nombre IS NOT NULL
 
 -- 36. Modifica el último dato de ejemplo que has añadido en la tabla de juegos, para que sí tenga asociado un streamer que hable de él.
+UPDATE JUEGOS
+	  SET codStreamer = 'ILL'
+ WHERE nombre = 'Counter Strike'
 
 -- 37. Crea una tabla "juegosStreamers", volcando en ella el nombre de cada juego (con el alias "juego") y el nombre del streamer que habla de él (con el alias "streamer").
+CREATE TABLE JUEGOS_STREAMERS(
+	juego VARCHAR(20) NOT NULL,
+	streamer VARCHAR(100) NOT NULL
+
+	CONSTRAINT PK_JUEGOS_STREAMERS
+		PRIMARY KEY (juego, streamer)
+)
+
+INSERT INTO JUEGOS_STREAMERS(juego, streamer)
+		SELECT J.nombre, CONCAT(S.nombre, ' ', S.apellidos)
+		FROM JUEGOS J RIGHT JOIN STREAMERS S
+			ON j.codStreamer = s.codStreamer
+		WHERE J.nombre IS NOT NULL
 
 -- 38. Añade a la tabla "juegosStreamers" un campo "fechaPrueba".
+ALTER TABLE JUEGOS_STREAMERS
+	ADD fechaPrueba SMALLDATETIME
 
 -- 39. Pon la fecha de hoy (prefijada, sin usar GetDate) en el campo "fechaPrueba" de todos los registros de la tabla "juegosStreamers".
+UPDATE JUEGOS_STREAMERS
+	SET fechaPrueba = '2025-01-27'
 
 -- 40. Muestra juego, streamer y fecha de ayer (día anterior al valor del campo "fechaPrueba") para todos los registros de la tabla "juegosStreamers".
+SELECT juego, streamer, DATEADD(DAY, -1, fechaPrueba) AS fechaAyer
+  FROM JUEGOS_STREAMERS
 
 -- 41. Muestra todos los datos de los registros de la tabla "juegosStreamers" que sean del año actual de 2 formas distintas (por ejemplo, usando comodines o funciones de cadenas).
+SELECT *
+FROM JUEGOS_STREAMERS
+WHERE YEAR(fechaPrueba) = YEAR('2025')
+
+SELECT *
+  FROM JUEGOS_STREAMERS
+ WHERE fechaPrueba LIKE '%2025%'
 
 -- 42. Elimina la columna "streamer" de la tabla "juegosStreamers".
+ALTER TABLE JUEGOS_STREAMERS
+	DROP CONSTRAINT PK_JUEGOS_STREAMERS
+
+ALTER TABLE JUEGOS_STREAMERS
+	DROP COLUMN streamer
 
 -- 43. Vacía la tabla de "juegosStreamers", conservando su estructura.
+TRUNCATE TABLE JUEGOS_STREAMERS
 
 -- 44. Elimina por completo la tabla de "juegosStreamers".
+DELETE FROM JUEGOS_STREAMERS
 
 -- 45. Borra los canales del streamer "Caddac Tech".
+DECLARE @codStreamer AS CHAR(3)
+SET @codStreamer = (SELECT codStreamer FROM STREAMERS WHERE nombre = 'Caddac' AND apellidos = 'Tech')
+DELETE FROM STREAMERS_TEMATICAS
+	WHERE codStreamer = @codStreamer
+DELETE FROM STREAMERS
+	WHERE codStreamer = @codStreamer
 
 -- 46. Muestra la diferencia entre el canal con más seguidores y la media, mostrada en millones de seguidores. Usa el alias "diferenciaMillones".
+SELECT (SELECT s.nombre
+  FROM STREAMERS_TEMATICAS ST  LEFT JOIN STREAMERS S
+	ON st.codStreamer = s.codStreamer
+ WHERE st.milesSeguidores >= (SELECT MAX(milesSeguidores) FROM STREAMERS_TEMATICAS)) AS Streamer, AVG(milesSeguidores) /1000 AS diferenciaMillones
+ FROM STREAMERS_TEMATICAS
 
 -- 47. Medios en los que tienen canales los creadores de código "ill", "ng" y "ltt", sin duplicados, usando IN (pero no en una subconsulta).
+SELECT DISTINCT medio 
+  FROM STREAMERS_TEMATICAS
+ WHERE codStreamer IN ('ill', 'ng', 'ltt')
 
 -- 48. Medios en los que tienen canales los creadores de código "ill", "ng" y "ltt", sin duplicados, sin usar IN.
+SELECT DISTINCT medio 
+  FROM STREAMERS_TEMATICAS
+ WHERE codStreamer = 'ill' OR codStreamer = 'ng' OR codStreamer = 'ltt'
 
 -- 49. Nombre de streamer y nombre del medio en el que habla, para aquellos de los que no conocemos el país.
+SELECT s.nombre, medio
+  FROM STREAMERS_TEMATICAS ST RIGHT JOIN STREAMERS S
+	ON st.codStreamer = s.codStreamer
+ WHERE s.pais IS NULL
 
 -- 50. Nombre del streamer y medio de los canales que sean del mismo medio que el canal de Ibai Llanos que tiene 12800 miles de seguidores (puede aparecer el propio Ibai Llanos).
+SELECT s.nombre, ST.medio
+  FROM STREAMERS S LEFT JOIN STREAMERS_TEMATICAS ST
+	ON s.codStreamer = st.codStreamer
+ WHERE medio = (SELECT medio FROM STREAMERS_TEMATICAS WHERE codStreamer = 'ill')
 
 -- 51. Nombre del streamer y medio de los canales que sean del mismo medio que el canal de Ibai Llanos que tiene 12800 miles de seguidores (sin incluir a Ibai Llanos).
+SELECT s.nombre, ST.medio
+  FROM STREAMERS S LEFT JOIN STREAMERS_TEMATICAS ST
+	ON s.codStreamer = st.codStreamer
+ WHERE medio = (SELECT medio FROM STREAMERS_TEMATICAS WHERE codStreamer = 'ill') AND S.codStreamer <> 'ill'
 
 -- 52. Nombre de cada streamer, medio y temática, incluso si para algún streamer no aparece ningún canal o para alguna temática no aparece ningún canal.
+SELECT s.nombre, ST.medio, T.nombre AS NombreTematica
+ FROM STREAMERS S LEFT JOIN STREAMERS_TEMATICAS ST
+	ON s.codStreamer = st.codStreamer LEFT JOIN TEMATICAS T
+	ON st.codTematica = t.codTematica
 
 -- 53. Nombre de medio y nombre de cada temática, como parte de una única lista (quizá desordenada).
+SELECT DISTINCT st.medio, t.nombre
+  FROM STREAMERS_TEMATICAS ST LEFT JOIN TEMATICAS T
+		ON st.codTematica = t.codTematica
 
+SELECT medio
+	FROM STREAMERS_TEMATICAS
+UNION
+SELECT nombre
+	FROM TEMATICAS
 -- 54. Nombre de medio y nombre de cada temática, como parte de una única lista ordenada alfabéticamente.
+CREATE VIEW Vmedios AS
+SELECT DISTINCT medio
+	FROM STREAMERS_TEMATICAS
+
+CREATE VIEW VnombreTematicas AS
+SELECT nombre
+	FROM TEMATICAS
+
+SELECT medio
+  FROM Vmedios
+UNION
+SELECT nombre
+FROM VnombreTematicas
+
+
+DROP VIEW Vmedios
+DROP VIEW VnombreTematicas
 
 -- 55. Nombre de medio y cantidad media de suscriptores en ese medio, para los que están por encima de la media de suscriptores de los canales.
+SELECT medio, AVG(milesSeguidores)
+  FROM STREAMERS_TEMATICAS
+WHERE milesSeguidores >= (SELECT AVG(milesSeguidores)
+  FROM STREAMERS_TEMATICAS)
+ GROUP BY medio
 
 -- 56. Nombre de los streamers que emiten en YouTube y que o bien hablan en español o bien sus miles de seguidores están por encima de 12.000.
+SELECT DISTINCT nombre
+  FROM STREAMERS S LEFT JOIN STREAMERS_TEMATICAS ST
+	ON s.codStreamer = st.codStreamer
+ WHERE medio = 'YouTube' 
+		OR milesSeguidores >= 12000
+		OR idioma = 'Español'
 
 -- 57. Añade información ficticia sobre ti: datos como streamer, temática sobre la que supuestamente y medio en el que hablas sobre ella, sin indicar cantidad de seguidores. Crea una consulta que muestre todos esos datos a partir de tu código.
+INSERT INTO STREAMERS
+		VALUES ('Depeche', 'MV')
 
 -- 58. Muestra el nombre de cada streamer, medio en el que emite y cantidad de seguidores, en millones, redondeados a 1 decimal.
+
 
 -- 59. Muestra el nombre de cada streamer y el país de origen. Si no se sabe este dato, deberá aparecer "(País desconocido)".
 

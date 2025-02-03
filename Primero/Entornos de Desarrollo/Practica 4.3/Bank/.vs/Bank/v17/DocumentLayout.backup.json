@@ -14,12 +14,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -28,9 +24,9 @@
               "RelativeDocumentMoniker": "Bank\\BankAccount.cs",
               "ToolTip": "C:\\Users\\Depechejuan\\Desktop\\DAW\\Primero\\Entornos de Desarrollo\\Practica 4.3\\Bank\\Bank\\BankAccount.cs",
               "RelativeToolTip": "Bank\\BankAccount.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-23T14:54:54.551Z",
+              "WhenOpened": "2025-02-03T09:24:07.588Z",
               "EditorCaption": ""
             }
           ]

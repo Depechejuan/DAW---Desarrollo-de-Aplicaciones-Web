@@ -9,8 +9,7 @@ namespace BankAccountNS
     {
         private string m_customerName;
         private double m_balance;
-        private bool m_frozen =
-        false;
+        private bool m_frozen = false;
         private BankAccount()
         {
         }
