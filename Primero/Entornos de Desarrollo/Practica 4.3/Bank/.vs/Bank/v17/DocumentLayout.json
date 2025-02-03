@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\Depechejuan\\Desktop\\DAW\\Primero\\Entornos de Desarrollo\\Practica 4.3\\Bank\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FE508E89-CD03-496B-8D0C-FE9EE1904DE2}|BankTest\\BankTest.csproj|c:\\users\\depechejuan\\desktop\\daw\\primero\\entornos de desarrollo\\practica 4.3\\bank\\banktest\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE508E89-CD03-496B-8D0C-FE9EE1904DE2}|BankTest\\BankTest.csproj|solutionrelative:banktest\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FE508E89-CD03-496B-8D0C-FE9EE1904DE2}|BankTest\\BankTest.csproj|c:\\users\\depechejuan\\desktop\\daw\\primero\\entornos de desarrollo\\practica 4.3\\bank\\banktest\\bankaccounttests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE508E89-CD03-496B-8D0C-FE9EE1904DE2}|BankTest\\BankTest.csproj|solutionrelative:banktest\\bankaccounttests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E8A7A45A-F4D7-42CC-81B4-696663F4F66C}|Bank\\Bank.csproj|c:\\users\\depechejuan\\desktop\\daw\\primero\\entornos de desarrollo\\practica 4.3\\bank\\bank\\bankaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E8A7A45A-F4D7-42CC-81B4-696663F4F66C}|Bank\\Bank.csproj|C:\\Users\\Depechejuan\\Desktop\\DAW\\Primero\\Entornos de Desarrollo\\Practica 4.3\\Bank\\bank\\bankaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E8A7A45A-F4D7-42CC-81B4-696663F4F66C}|Bank\\Bank.csproj|solutionrelative:bank\\bankaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -23,12 +23,12 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UnitTest1.cs",
-              "DocumentMoniker": "C:\\Users\\Depechejuan\\Desktop\\DAW\\Primero\\Entornos de Desarrollo\\Practica 4.3\\Bank\\BankTest\\UnitTest1.cs",
-              "RelativeDocumentMoniker": "BankTest\\UnitTest1.cs",
-              "ToolTip": "C:\\Users\\Depechejuan\\Desktop\\DAW\\Primero\\Entornos de Desarrollo\\Practica 4.3\\Bank\\BankTest\\UnitTest1.cs",
-              "RelativeToolTip": "BankTest\\UnitTest1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "BankAccountTests.cs",
+              "DocumentMoniker": "C:\\Users\\Depechejuan\\Desktop\\DAW\\Primero\\Entornos de Desarrollo\\Practica 4.3\\Bank\\BankTest\\BankAccountTests.cs",
+              "RelativeDocumentMoniker": "BankTest\\BankAccountTests.cs",
+              "ToolTip": "C:\\Users\\Depechejuan\\Desktop\\DAW\\Primero\\Entornos de Desarrollo\\Practica 4.3\\Bank\\BankTest\\BankAccountTests.cs",
+              "RelativeToolTip": "BankTest\\BankAccountTests.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAIwBcAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-03T09:53:22.762Z",
               "EditorCaption": ""
@@ -41,7 +41,7 @@
               "RelativeDocumentMoniker": "Bank\\BankAccount.cs",
               "ToolTip": "C:\\Users\\Depechejuan\\Desktop\\DAW\\Primero\\Entornos de Desarrollo\\Practica 4.3\\Bank\\Bank\\BankAccount.cs",
               "RelativeToolTip": "Bank\\BankAccount.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAkwA0AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAswEIAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-03T09:24:07.588Z",
               "EditorCaption": ""
