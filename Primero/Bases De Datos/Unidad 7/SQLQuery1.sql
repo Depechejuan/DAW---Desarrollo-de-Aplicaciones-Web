@@ -144,3 +144,51 @@ BEGIN
 	END
 	SET @i +=1
 END
+
+
+
+
+-- COMO HACER UN BACKUP SUPER RAPIDO
+
+SELECT *
+  INTO PRODUCTOS_BACKUP
+  FROM PRODUCTOS
+
+-- Crea automáticamente la tabla exacta, sin declararla con CREATE TABLE.
+
+
+
+
+/*
+	CURSORES
+*/
+
+DECLARE @cont INT = 1
+SELECT codCliente, nombre_cliente
+  FROM CLIENTES
+ ORDER BY codCliente ASC
+ OFFSET @cont ROWS
+ FETCH NEXT 3 ROWS ONLY
+
+ -- Offset es como una ventana. Es un desplazamiento (hacia abajo)
+
+ DECLARE @cont  INT = 0,
+				@Cliente VARCHAR(156),
+				@numElementos INT =  (SELECT COUNT(codCliente) FROM CLIENTES)
+
+IF ISNULL(@cont, 0) < 0
+BEGIN
+	PRINT 'ERROR'
+	RETURN
+END
+
+ WHILE @cont < @numElementos
+  BEGIN
+		SELECT CONCAT(codCliente, ', ', nombre_cliente) AS codNombreCliente
+		  FROM CLIENTES
+		 ORDER BY codCliente ASC
+		 OFFSET @cont ROWS
+		FETCH NEXT 10 ROWS ONLY
+		SET @cont = @cont + 10
+END
+
