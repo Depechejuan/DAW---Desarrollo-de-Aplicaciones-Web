@@ -245,11 +245,11 @@ BEGIN CATCH
 	PRINT ERROR_PROCEDURE()
 	-- Mejorar 4 lineas a una:
 	PRINT CONCAT('  ->   ERROR NUMBER: ', ERROR_NUMBER(), CHAR(10),
-				'  ->   ERROR_MESSAGE:  ', ERROR_MESSAGE(), CHAR(10),
-				'  ->   ERROR_LINE:  ', ERROR_LINE(), CHAR(10),
-				'  ->   ERROR_PROCEDURE:  ', ERROR_PROCEDURE(), CHAR(10),
-				'  ->   FECHA:  ', GETDATE(), CHAR(10),
-				'  ->   VARIABLE DIVIDENDO:', @dividendo,';', CHAR(10),
-				'  ->   VARIABLE DIVISOR:', @divisor,';', CHAR(10)
+								'  ->   ERROR_MESSAGE:  ', ERROR_MESSAGE(), CHAR(10),
+								'  ->   ERROR_LINE:  ', ERROR_LINE(), CHAR(10),
+								'  ->   ERROR_PROCEDURE:  ', ERROR_PROCEDURE(), CHAR(10),
+								'  ->   FECHA:  ', GETDATE(), CHAR(10),
+								'  ->   VARIABLE DIVIDENDO:', @dividendo,';', CHAR(10),
+								'  ->   VARIABLE DIVISOR:', @divisor,';', CHAR(10)
 				)
 END CATCH
