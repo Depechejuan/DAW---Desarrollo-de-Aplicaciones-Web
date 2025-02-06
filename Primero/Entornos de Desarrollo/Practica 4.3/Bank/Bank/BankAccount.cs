@@ -36,13 +36,12 @@ namespace BankAccountNS
             {
                 throw new ArgumentOutOfRangeException("amount");
             }
-            if (amount
-            < 0)
+            if (amount < 0)
             {
                 throw new ArgumentOutOfRangeException("amount");
             }
 
-            m_balance += amount; // código intencionadamente incorrecto
+            m_balance -= amount; // Codigo corregido
         }
         public void Credit(double amount)
         {
