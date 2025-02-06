@@ -144,3 +144,112 @@ BEGIN
 	END
 	SET @i +=1
 END
+
+
+
+
+-- COMO HACER UN BACKUP SUPER RAPIDO
+
+SELECT *
+  INTO PRODUCTOS_BACKUP
+  FROM PRODUCTOS
+
+-- Crea automáticamente la tabla exacta, sin declararla con CREATE TABLE.
+
+
+
+
+/*
+	CURSORES
+*/
+
+DECLARE @cont INT = 1
+SELECT codCliente, nombre_cliente
+  FROM CLIENTES
+ ORDER BY codCliente ASC
+ OFFSET @cont ROWS
+ FETCH NEXT 3 ROWS ONLY
+
+ -- Offset es como una ventana. Es un desplazamiento (hacia abajo)
+
+ DECLARE @cont  INT = 0,
+				@Cliente VARCHAR(156),
+				@numElementos INT =  (SELECT COUNT(codCliente) FROM CLIENTES)
+
+IF ISNULL(@cont, 0) < 0
+BEGIN
+	PRINT 'ERROR'
+	RETURN
+END
+
+ WHILE @cont < @numElementos
+  BEGIN
+		SELECT CONCAT(codCliente, ', ', nombre_cliente) AS codNombreCliente
+		  FROM CLIENTES
+		 ORDER BY codCliente ASC
+		 OFFSET @cont ROWS -- IMPORTANTE
+		FETCH NEXT 10 ROWS ONLY -- IMPORTANTE
+		SET @cont = @cont + 10
+END
+
+
+
+/*
+	TRY/CATCH EN SQL
+*/
+
+BEGIN TRY -- solo utilizarlo cuando hagamos cambios en la BBDD
+	-- codigo TRY
+	SET IMPLICIT_TRANSACTIONS OFF -- Desactiva el modo transacciones, para controlar nosotros cuándo actualizamos la base de datos.
+
+END TRY
+BEGIN CATCH
+	-- codigo catch
+END CATCH
+
+-- TRANSACCIONES
+
+BEGIN TRY
+	BEGIN TRAN
+	-- codigo inserts/delete/selects
+	COMMIT
+	END TRAN
+END TRY
+
+BEGIN CATCH
+	ERROR_NUMBER(),
+	ERROR_MESSAGE(),
+	ERROR_LINE(),
+	ERROR_PROCEDURE()
+	ROLLBACK
+END CATCH
+
+
+
+
+DECLARE @dividendo INT, @divisor INT, @resultado INT
+-- Prefijamos el dividendo a 50
+SET @dividendo = 50
+SET @divisor = 0
+
+BEGIN TRY
+	SET @resultado = @dividendo / @divisor
+	PRINT @resultado
+END TRY
+
+BEGIN CATCH
+	-- PRIMERO ROLLBACK!!!! Luego lo demás por si peta algo
+	PRINT ERROR_NUMBER()
+	PRINT ERROR_MESSAGE()
+	PRINT ERROR_LINE()
+	PRINT ERROR_PROCEDURE()
+	-- Mejorar 4 lineas a una:
+	PRINT CONCAT('  ->   ERROR NUMBER: ', ERROR_NUMBER(), CHAR(10),
+								'  ->   ERROR_MESSAGE:  ', ERROR_MESSAGE(), CHAR(10),
+								'  ->   ERROR_LINE:  ', ERROR_LINE(), CHAR(10),
+								'  ->   ERROR_PROCEDURE:  ', ERROR_PROCEDURE(), CHAR(10),
+								'  ->   FECHA:  ', GETDATE(), CHAR(10),
+								'  ->   VARIABLE DIVIDENDO:', @dividendo,';', CHAR(10),
+								'  ->   VARIABLE DIVISOR:', @divisor,';', CHAR(10)
+				)
+END CATCH
