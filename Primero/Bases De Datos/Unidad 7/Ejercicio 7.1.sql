@@ -36,9 +36,9 @@ PRINT @CategoriaMasAmplia
 SELECT @CategoriaMasAmplia = nombre
 	FROM CATEGORIA_PRODUCTOS
 WHERE codCategoria = (SELECT TOP(1) codCategoria
-											FROM PRODUCTOS
-										 GROUP BY codCategoria
-										 ORDER BY COUNT(codProducto) DESC)
+						FROM PRODUCTOS
+						GROUP BY codCategoria
+						ORDER BY COUNT(codProducto) DESC)
 
 
 -------------------------------------------------------------------------------------------
