@@ -1,47 +1,68 @@
 
-public class avion             {	
-	public avion (float ALTURA, float 
-    vel,  float combustible, int o)	{
-	this.ALTURA = ALTURA;this.v = vel;
-	this.combustible = combustible;this.o = o;	}
-	
-			public float Altura 	{		get { return ALTURA;}
-			}
-	
-					public int Orientacion
-					{
-						get { 
-			return
-				o;}
+public class avion
+{
+    private float _altura;
+    private float _velocidadAvion;
+	private float _combustible;
+    private int _o;
+    
+	public avion(float altura, float vel, float combustible, int o)
+	{
+		this._altura = altura;
+		this._velocidadAvion = vel;
+		this._combustible = combustible;
+		this._o = o;
 	}
-	public void Virar(int 
-	  grados){
-		o= (o + 
-		    grados)%360;consumir_fuel (grados * 0.1);
+	
+	public float Altura
+	{
+		get 
+		{
+			return _altura;
+		}
+	}
+	
+	public int Orientacion
+	{
+		get
+		{ 
+			return _o;
+		}
 	}
 
-	public float Combustible
-	{get{return combustible;}}
-//Metodos que sirve para ascender los metros indicados
-public void a(float M) //M son los metros
-{
-ALTURA=ALTURA+M;consumir_fuel(M*0.3);		
-}
-	//Metodos que sirve para descender los metros indicados
-	public void m(float 
-	                      metros)
+    public float Combustible
+    {
+        get
+        {
+            return _combustible;
+        }
+    }
+
+    public void Virar(int grados)
 	{
-		ALTURA=ALTURA-metros;
-		if (ALTURA<0)		
-		ALTURA=0;		
-	}	
-	private float ALTURA;
-	private float v; // Velocidad del avion
-	private float combustible;private int o;	
-private void consumir_fuel (float litros)
-{		combustible=combustible-litros;
-	if (combustible<0)
-combustible = 0;		
+		_o = (_o + grados) % 360;
+		consumir_fuel(grados * 0.1);
+	}
+
+	//Metodos que sirve para ascender los metros indicados
+	public void ascender(float metros)
+	{
+		_altura = _altura + metros;
+		consumir_fuel(metros * 0.3);		
+	}
+
+	//Metodos que sirve para descender los metros indicados
+	public void descender(float metros)
+	{
+		_altura = _altura - metros;
+		if (_altura < 0)		
+			_altura = 0;		
+	}
+
+	private void consumir_fuel(float litros)
+	{
+		_combustible = _combustible - litros;
+		if (_combustible < 0)
+			_combustible = 0;
+	}
 }
-	
-		}
