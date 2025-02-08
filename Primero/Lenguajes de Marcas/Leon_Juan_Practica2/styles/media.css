@@ -1,7 +1,39 @@
 @media (min-width: 701px) {
-    article, section {
+    /*
+        Biography
+    */
+    #members, section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #members > section {
         display: flex;
         flex-direction: row;
-        align-items: center;
+    }
+    
+    .infoMember {
+        width: 30%;
+        text-align: center;
+        margin: 10px;
+    }
+    
+    .descMember {
+        width: 70%;
+        margin: 10px;
+    }
+
+    /*
+        DISCOGRAPHY
+    */
+
+    #discography > section {
+        display: grid;
+        grid-template-columns: 25% 20% 5% 20% 30%;
+        gap: 10px;
+        width: 100%;
+        text-align: center;
+        align-content: center;
     }
 }

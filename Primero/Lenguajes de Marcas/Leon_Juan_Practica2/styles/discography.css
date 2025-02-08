@@ -1,17 +1,39 @@
-article {
+#discography {
     display: grid;
+    gap: 10px;
     width: 100%;
 }
 
-article > section {
 
-}
-
-#sticky {
+#discography > section {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    gap: 10px;
     width: 100%;
     text-align: center;
+    align-content: center;
+}
+
+.record > p, .record > div > p {
+    text-align: center;
+}
+
+#discography ol {
+    list-style: none;
+    counter-reset: lista;
+    padding-left: 0;
+    text-align: center; /* Centra toda la lista */
+}
+
+#discography ol li {
+    counter-increment: lista;
+    position: relative;
+    text-align: center;
+}
+
+#discography ol li::before {
+    content: counter(lista, decimal-leading-zero) ". ";
+    font-weight: bold;
 }
 
 #sticky > div {
