@@ -1,0 +1,24 @@
+article {
+    display: grid;
+    width: 100%;
+}
+
+article > section {
+
+}
+
+#sticky {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 100%;
+    text-align: center;
+}
+
+#sticky > div {
+    border: 5px solid yellow;
+    height: 30px;
+    margin: auto;
+    width: 100%;
+}
+
+

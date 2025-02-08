@@ -1,0 +1,28 @@
+article, section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.infoMember {
+    width: 30%;
+    text-align: center;
+    margin: 10px;
+}
+
+.descMember {
+    width: 70%;
+    margin: 10px;
+}
+
+.imgMiembro {
+    border: 2px solid red;
+}
+
+section > div > p > a {
+    color: rgb(6, 79, 80);
+}
+
+section > div > p > a:visited {
+    color: rgb(97, 106, 11);
+}

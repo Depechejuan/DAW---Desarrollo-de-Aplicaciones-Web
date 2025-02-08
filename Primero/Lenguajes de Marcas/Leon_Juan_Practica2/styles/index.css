@@ -1,42 +1,73 @@
 /*
-    Reset 2024 from MiduDev
+    Estilos BASE
 */
-* {
-    margin: 0;
-    padding: 0;
-}
-
-*, *::before, *::after {
-    box-sizing: border-box;
-}
 
 body {
-    min-height: 100dvh;
+    background-image: linear-gradient(rgb(178, 176, 176), black   );
+    color: white;
+    font-size: 16px; /* Fuente estandar para luego trabajar con "rem" */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-input, button, textarea, select {
-    font: inherit;
+header {
+    margin: 20px;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+nav, #menu {
+    display: flex;
+    flex-direction: row;
+}
+
+nav {
+    margin-bottom: 10px;
+}
+
+ul, li {
+    list-style-type: none;
+}
+
+#menu > li {
+    margin: 0 10px 10px 10px;
+}
+
+.botonMenu {
+    display: inline-block; 
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none; /* Quita el subrayado del enlace */
+    border-radius: 5px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.botonMenu:hover {
+    background-color: #445c75;
+    animation: mover 0.4s ease-in-out infinite alternate;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 p {
-    text-wrap: pretty;
+    text-align: justify;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    text-wrap: balance;
-}
-
-img, video, svg {
-    height: auto;
-    max-width: 100%;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    *, **, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-        transition: none;
+@keyframes mover {
+    0% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(5px);
     }
 }
