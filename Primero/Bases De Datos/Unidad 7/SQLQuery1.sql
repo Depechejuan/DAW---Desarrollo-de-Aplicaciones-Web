@@ -250,6 +250,35 @@ BEGIN CATCH
 								'  ->   ERROR_PROCEDURE:  ', ERROR_PROCEDURE(), CHAR(10),
 								'  ->   FECHA:  ', GETDATE(), CHAR(10),
 								'  ->   VARIABLE DIVIDENDO:', @dividendo,';', CHAR(10),
-								'  ->   VARIABLE DIVISOR:', @divisor,';', CHAR(10)
-				)
-END CATCH
+								'  ->   VARIABLE DIVISOR:', @divisor,';', CHAR(10))
+END CATCH-- DESDE YA OBLIGATORIA ESTA LINEASET IMPLICIT_TRANSACTIONS OFFBEGIN TRANUPDATE CLIENTES	SET nombre_cliente = 'Juan'WHERE codCliente = 1DELETE FROM PAGOSROLLBACKEND TRANSSELECT *
+FROM SYS.MESSAGES
+WHERE message_id = 8134
+
+EXEC sp_addmessage @msgnum = 50001, -- Siempre >= 50001 para los personalizados
+@severity = 11, -- Si queremos que salte en el TRY >= 11
+@msgtext = 'Creación de usuarios'
+
+
+EXEC sp_addmessage @msgnum = 50002, -- Siempre >= 50001 para los personalizados
+@severity = 11, -- Si queremos que salte en el TRY >= 11
+@msgtext = 'Modificación de Usuarios'
+
+SELECT *
+FROM SYS.MESSAGES
+WHERE message_id IN (50001, 50002)
+
+-- GESTION DE USUARIOS (CRUD)
+
+-- Crear Usuario
+-- Como un trhow new error (num Error, severidad, estado)
+RAISERROR(50001, 11,0)
+RAISERROR(50001, 11,1)
+-- Borrar Usuario
+RAISERROR(50001, 11,2)
+-- Modificar Usuario
+RAISERROR(50001, 11,3)
+-- Consultar Usuarios
+RAISERROR(50001, 11,4)
+
+-- Sabré qué tipo de error y qué estado,y podré identificar y solucionar la incidencia mucho más rápida

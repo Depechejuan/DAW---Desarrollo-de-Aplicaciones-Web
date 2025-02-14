@@ -198,6 +198,9 @@ SELECT P.codCliente, C.nombre_cliente
  GROUP BY P.codCliente, C.nombre_cliente
 HAVING COUNT(P.codCliente) > 2
  ORDER BY P.codCliente ASC
+
+ --
+
 ----------------------------------------------------------------
 --				C) Consultas multitabla (10)				  --
 ----------------------------------------------------------------
