@@ -284,6 +284,8 @@ END
 -------------------------------------------------------------------------------------------
 USE JARDINERIA
 GO
+
+
 DECLARE @nombreCliente VARCHAR(50),
 				@cont INT = 0,
 				@numElementos INT = (SELECT COUNT(codCliente) FROM CLIENTES),
@@ -299,29 +301,24 @@ END
 
 WHILE @numElementos > @cont
 BEGIN
-	SELECT @codCliente = c.codCliente, @nombreCliente = nombre_cliente, 
-				@cantidadPedidos = COUNT(p.codPedido), @precioTotal = SUM(dp.precio_unidad)
-	  FROM CLIENTES C JOIN PEDIDOS P
-		ON c.codCliente = p.codCliente  JOIN DETALLE_PEDIDOS DP
+
+	SELECT @codCliente = codCliente, @nombreCliente = nombre_cliente
+	  FROM CLIENTES
+	  ORDER BY codCliente ASC
+		OFFSET @cont ROWS
+		FETCH NEXT 1 ROW ONLY
+
+	SELECT @cantidadPedidos = COUNT(DISTINCT P.codPedido), @precioTotal = SUM(dp.precio_unidad)
+	  FROM PEDIDOS P LEFT JOIN DETALLE_PEDIDOS DP
 		ON p.codPedido = DP.codPedido
-	GROUP BY c.codCliente, nombre_cliente
-	ORDER BY c.codCliente
-	OFFSET @cont ROWS
-	FETCH NEXT 1 ROWS ONLY
-	IF @cantidadPedidos = 1
-	BEGIN -- Con esto controlamos si sólo ha hecho 1 único pedido, aparezca "ha realizado 1 pedido", y no "ha realizado 1 pedidos".
-		PRINT CONCAT('El cliente ', @nombreCliente, 'ha realizado ', @cantidadPedidos, ' Pedido por un coste total de ', @precioTotal)
-	END
-		PRINT CONCAT('El cliente ', @nombreCliente, 'ha realizado ', @cantidadPedidos, ' Pedidos por un coste total de ', @precioTotal)
-	SET @cont = @cont + 1
+	  WHERE P.codCliente = @codCliente
+	   -- Con esto controlamos si sólo ha hecho 1 único pedido, aparezca "ha realizado 1 pedido", y no "ha realizado 1 pedidos".
+		PRINT CONCAT('El cliente ', @nombreCliente, 'ha realizado ', @cantidadPedidos, ' Pedido', IIF(@cantidadPedidos=1, '', 's'), ' por un coste total de ', @precioTotal)
+
+			SET @cont = @cont + 1
 END
 
-SELECT c.codCliente, c.nombre_cliente, COUNT(p.codPedido) AS 'cantidad Pedidos', SUM(dp.precio_unidad)
-	FROM CLIENTES C LEFT JOIN PEDIDOS P
-		ON c.codCliente = p.codCliente RIGHT JOIN DETALLE_PEDIDOS DP
-		ON p.codPedido = dp.codPedido
-	GROUP BY c.codCliente, nombre_cliente
-
+	-- Primero select con codcliente y nombre, fetch, y luego en otra consulta sacar a un select con el count de pedidos y la suma de los mismos. SIN AGRUPAR!!
 
 
 -------------------------------------------------------------------------------------------
@@ -335,8 +332,8 @@ SELECT c.codCliente, c.nombre_cliente, COUNT(p.codPedido) AS 'cantidad Pedidos',
 -------------------------------------------------------------------------------------------
 USE JARDINERIA
 GO
-DECLARE @codEmpleado INT = (	SELECT MAX(codEmpleado)
-													  FROM EMPLEADOS) + 1,
+DECLARE @codEmpleado INT = (	SELECT MAX(codEmpleado) +1 
+													  FROM EMPLEADOS),
 				@codCliente INT = (SELECT MAX(codCliente)
 												  FROM CLIENTES) + 1,
 				@codOficina CHAR(6) = 'ALC-ES',
@@ -351,7 +348,7 @@ DECLARE @codEmpleado INT = (	SELECT MAX(codEmpleado)
 				@tfnExtensionOfiEmpleado CHAR(5) = '633',
 				@emailEmpleado VARCHAR(100) = 'depechejuan@gmail.com',
 				@puestoCargoEmpleado VARCHAR(50) = 'CEO',
-				@salarioEmpleado DECIMAL(9,2) = 5000.50,
+				@salarioEmpleado DECIMAL(9,2) = 5050,
 				@nombreCliente VARCHAR(50) = 'Jardineria Leon',
 				@nombreContactoCliente VARCHAR(50) = 'Gabriel',
 				@apellidoContactoCliente VARCHAR(50) = 'Leon Medina',
@@ -361,8 +358,7 @@ DECLARE @codEmpleado INT = (	SELECT MAX(codEmpleado)
 				@ciudadCliente VARCHAR(50) = 'Alicante',
 				@paisCliente VARCHAR(50) = 'España',
 				@codPostalCliente CHAR(5) = '03001',
-				@limiteCreditoCliente DECIMAL(9,2) = 10000000
-
+				@limiteCreditoCliente DECIMAL(9,2) = 1000000
 IF  EXISTS(SELECT * FROM OFICINAS WHERE codOficina = @codOficina)
 BEGIN
 	PRINT 'ERROR: Esta oficina ya está creada'
@@ -370,29 +366,31 @@ BEGIN
 END
 
 SET IMPLICIT_TRANSACTIONS OFF
+
 BEGIN TRY
-	INSERT INTO OFICINAS
-				VALUES	(@codOficina, @ciudadOficina, @paisOficina, 
-								@codPostalOficina, @telefonoOficina, @lineaDireccion1Oficina, 
-								NULL)
+	BEGIN TRANSACTION
+		INSERT INTO OFICINAS
+					VALUES	(@codOficina, @ciudadOficina, @paisOficina, 
+									@codPostalOficina, @telefonoOficina, @lineaDireccion1Oficina, 
+									NULL)
 
-	INSERT INTO EMPLEADOS
-				VALUES	(@codEmpleado, @nombreEmpleado, @apellido1Empleado,
-								@apellido2Empleado, @tfnExtensionOfiEmpleado, @emailEmpleado,
-								@puestoCargoEmpleado, @salarioEmpleado, @codOficina, 
-								NULL)
+		INSERT INTO EMPLEADOS
+					VALUES	(@codEmpleado, @nombreEmpleado, @apellido1Empleado,
+									@apellido2Empleado, @tfnExtensionOfiEmpleado, @emailEmpleado,
+									@puestoCargoEmpleado, @salarioEmpleado, @codOficina, 
+									NULL)
 
-	INSERT INTO CLIENTES
-				VALUES	(@nombreCliente, @nombreContactoCliente, @apellidoContactoCliente,
-								@telefonoCliente, @emailCliente, @lineaDireccion1Cliente,
-								@ciudadCliente, @paisCliente, @codPostalCliente,
-								NULL, @limiteCreditoCliente)
+		INSERT INTO CLIENTES
+					VALUES	(@codCliente, @nombreCliente, @nombreContactoCliente,
+									@apellidoContactoCliente, @telefonoCliente, @emailCliente,
+									@lineaDireccion1Cliente, NULL, @ciudadCliente,
+									@paisCliente, @codPostalCliente, NULL, @limiteCreditoCliente)
 
-	UPDATE CLIENTES
-		  SET codEmpl_ventas = @codEmpleado
-	WHERE codCliente = @codCliente
+		UPDATE CLIENTES
+			  SET codEmpl_ventas = @codEmpleado
+		WHERE codCliente = @codCliente
 
-	COMMIT
+		COMMIT
 END TRY
 
 BEGIN CATCH
@@ -405,12 +403,6 @@ END CATCH
 SET IMPLICIT_TRANSACTIONS ON
 
 
-EXEC sp_columns EMPLEADOS
-EXEC sp_columns OFICINAS
-EXEC sp_columns CLIENTES
-
-
-
 
 -------------------------------------------------------------------------------------------
 -- 8. Utilizando la BD JARDINERIA, crea un script que realice las siguientes operaciones:
@@ -420,9 +412,35 @@ EXEC sp_columns CLIENTES
 --		Debes crear variables con los identificadores de clave primaria para eliminar
 --			todos los datos de cada una de las tablas en una sola ejecución
 -------------------------------------------------------------------------------------------
+DECLARE @codOficina CHAR(6) = 'ALC-ES',
+				@codCliente INT = (SELECT MAX(codCliente) FROM CLIENTES),
+				@codEmpleado INT = (SELECT MAX(codEmpleado) FROM EMPLEADOS)
 
+SET IMPLICIT_TRANSACTIONS OFF				
+BEGIN TRY
+	BEGIN TRANSACTION
+		DELETE 
+			FROM CLIENTES
+		WHERE codCliente = @codCliente
 
+		DELETE
+			FROM EMPLEADOS
+		WHERE codEmpleado = @codEmpleado
 
+		DELETE
+			FROM OFICINAS
+		WHERE codOficina = @codOficina
+	COMMIT
+END TRY
+
+BEGIN CATCH
+	ROLLBACK
+	PRINT ERROR_NUMBER()
+	PRINT ERROR_MESSAGE()
+	PRINT ERROR_LINE()
+	PRINT ERROR_PROCEDURE()
+END CATCH
+SET IMPLICIT_TRANSACTIONS ON
 
 -------------------------------------------------------------------------------------------
 -- 9. Utilizando la BD JARDINERIA, crea un script que realice lo siguiente:
@@ -444,5 +462,88 @@ EXEC sp_columns CLIENTES
 --				utilizando funciones de SQL Server (piensa que los 6 últimos caracteres son números...)
 --				Forma de pago debe ser: 'PayPal' y Fechapago la del día
 -------------------------------------------------------------------------------------------
+-- REVISAR !!!! DA ERROR CODCLIENTE
+DECLARE @codCliente INT = (SELECT MAX(codCliente) + 1 FROM CLIENTES),
+				@nombreCliente VARCHAR(50) = 'Jardineria Leon',
+				@nombreContactoCliente VARCHAR(50) = 'Gabriel',
+				@apellidoContactoCliente VARCHAR(50) = 'Leon Medina',
+				@telefonoCliente VARCHAR(12) = '666123456',
+				@emailCliente VARCHAR(100) = 'gabileon10@gmail.com',
+				@lineaDireccion1Cliente VARCHAR(100) = 'Calle Verdadera 123',
+				@ciudadCliente VARCHAR(50) = 'Alicante',
+				@paisCliente VARCHAR(50) = 'España',
+				@codPostalCliente CHAR(5) = '03001',
+				@limiteCreditoCliente DECIMAL(9,2) = 1000000,
+				@codPedido INT = (SELECT MAX(codPedido) + 1 FROM PEDIDOS),
+				@fechaPedido DATE = GETDATE(),
+				@fechaEsperada DATE = GETDATE() + DAY(10),
+				@codEstado CHAR(1) = (SELECT codEstado FROM ESTADOS_PEDIDO WHERE LOWER(descripcion) = 'pendiente'),
+				@codProducto1 INT = (SELECT MIN(codProducto) FROM PRODUCTOS),
+				@codProducto2 INT = (SELECT MAX(codproducto) FROM PRODUCTOS)
+
+DECLARE	@cantidadProducto1 INT = 5,
+				@precioProducto1 DECIMAL(9,2) = (SELECT precio_venta FROM PRODUCTOS WHERE codProducto = @codProducto1),
+				@cantidadProducto2 INT = 5,
+				@precioProducto2 DECIMAL(9,2) = (SELECT precio_venta FROM PRODUCTOS WHERE codProducto = @codProducto2),
+				@numLinea INT = 1
 
 
+
+SET IMPLICIT_TRANSACTIONS OFF
+BEGIN TRY
+	BEGIN TRANSACTION
+
+		INSERT INTO CLIENTES
+					VALUES	(@codCliente, @nombreCliente, @nombreContactoCliente,
+									@apellidoContactoCliente, @telefonoCliente, @emailCliente,
+									@lineaDireccion1Cliente, NULL, @ciudadCliente,
+									@paisCliente, @codPostalCliente, NULL, @limiteCreditoCliente)
+								
+		INSERT INTO PEDIDOS
+					VALUES	(@codPedido, @fechaPedido, @fechaEsperada,
+									NULL, @codEstado, NULL, 
+									@codCliente)
+
+	INSERT INTO DETALLE_PEDIDOS
+					VALUES	(@codPedido, @codProducto1, @cantidadProducto1,
+								@precioProducto1, @numLinea)
+
+		SET @numLinea = @numLinea + 1
+
+		INSERT INTO DETALLE_PEDIDOS
+				VALUES	(@codPedido, @codProducto2, @cantidadProducto2,
+								@precioProducto2, @numLinea)
+
+
+		DECLARE @idTransactionNumber INT = (SELECT MAX(RIGHT(id_transaccion, 6)) + 1
+			FROM PAGOS)
+		DECLARE @LengthTrans INT = LEN(@idTransactionNumber)
+
+		DECLARE @idTransaccionPago CHAR(200) = CONCAT('ak-std-', REPLICATE(0, (8 - @LengthTrans)), @idTransactionNumber),
+				@fechaPago DATE = GETDATE(),
+				@codFormaPago CHAR(1) = (SELECT codFormaPago FROM FORMA_PAGO WHERE LOWER(descripcion) = 'paypal'),
+				@importePago DECIMAL(9,2) = (SELECT SUM(precio_unidad * cantidad)
+																	FROM DETALLE_PEDIDOS
+																  WHERE codPedido = @codPedido)
+
+		INSERT INTO PAGOS
+				VALUES (@codCliente, @idTransaccionPago, @fechaPago,
+								@importePago, @codFormaPago, @codPedido)
+
+	COMMIT
+END TRY
+
+BEGIN CATCH
+	ROLLBACK
+END CATCH
+SET IMPLICIT_TRANSACTIONS ON
+
+EXEC sp_columns PEDIDOS
+EXEC sp_columns PRODUCTOS
+EXEC sp_columns DETALLE_PEDIDOS
+EXEC sp_columns PAGOS
+EXEC sp_columns EMPLEADOS
+EXEC sp_columns OFICINAS
+EXEC sp_columns CLIENTES
+
+SELECT * FROM DETALLE_PEDIDOS
