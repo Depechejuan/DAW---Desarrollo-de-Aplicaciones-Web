@@ -1,0 +1,13 @@
+/*
+	¡¡¡ESTE ARCHIVO NO SE TOCA!!!
+	NO TIENES QUE HACER NADA AQUÍ...
+*/
+
+body
+{
+	background-color: yellow;
+}
+
+li {
+	list-style-image: url('imagenes/pokeball1.png');
+}

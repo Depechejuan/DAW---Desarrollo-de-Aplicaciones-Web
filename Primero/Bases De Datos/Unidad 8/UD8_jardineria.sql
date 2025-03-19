@@ -692,7 +692,69 @@ END
 --
 --     Recuerda llamar al procedimiento y gestionar correctamente su finalización
 -------------------------------------------------------------------------------------------
+GO
+CREATE OR ALTER PROCEDURE invertirOrden (@codPedido INT)
+AS
+BEGIN
+	DECLARE @count INT = (SELECT COUNT(*) 
+											  FROM DETALLE_PEDIDOS
+											 WHERE codPedido = 1),
+					@codProducto INT
+
+	WHILE @count > 0
+	BEGIN
+		SELECT @codProducto = codProducto
+		   FROM DETALLE_PEDIDOS
+		 WHERE codPedido = 1
+		 ORDER BY codProducto ASC
+		 OFFSET @count ROWS
+		 FETCH NEXT 1 ROWS ONLY
+		 PRINT CONCAT(@codProducto, ' - ', @codPedido)
+
+		UPDATE DETALLE_PEDIDOS
+		SET numeroLinea = @count
+		WHERE codProducto = @codProducto
+			AND codPedido = 1
+
+		SET @count = @count - 1;
+	END
+END
+
+
+CREATE OR ALTER PROCEDURE invert2 (@codPedido INT)
+AS
+BEGIN
+		DECLARE @count INT = (SELECT COUNT(*) 
+											  FROM DETALLE_PEDIDOS
+											 WHERE codPedido = @codPedido)
+	
+	SELECT *
+	  FROM DETALLE_PEDIDOS
+	WHERE codPedido = @codPedido
+	OFFSET @count ROWS
+	FETCH NEXT 1 ROWS ONLY
+
+	--UPDATE DETALLE_PEDIDOS
+		--	SET numeroLinea = numeroLinea + @count + 1
+
+
+
+END
 
 
 
 
+DECLARE @r INT,
+				@codPedido INT = 1
+
+EXEC @r = invertirOrden @codPedido
+IF @r <> 0
+BEGIN
+	PRINT 'El procedimiento ha fallado'
+END
+
+
+	SELECT *
+	  FROM DETALLE_PEDIDOS
+	 WHERE codPedido = 1
+	 ORDER BY numeroLinea

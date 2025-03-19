@@ -1,0 +1,46 @@
+/*
+	¡¡¡ESTE ARCHIVO NO SE TOCA!!!
+	NO TIENES QUE HACER NADA AQUÍ...
+*/
+body { font-family: Arial }
+
+#contenedor {
+	display: grid;
+	grid-template-columns: 33% 33% 33%;
+}
+
+.zona {
+	border: 5px solid black;
+	margin: 10px;
+	text-align: center;
+}
+
+h1, h2 { margin: 3px }
+
+.pregunta {
+	display: flex;
+	justify-content: center;
+}
+
+.opcionA {
+	width: 40%;
+	background-color: red;
+	margin: 5px;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.opcionB {
+	width: 40%;
+	background-color: blue;
+	color: white;
+	margin: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+img { height: 100px; }
+
+h3 { color: red; margin: 10px; }
