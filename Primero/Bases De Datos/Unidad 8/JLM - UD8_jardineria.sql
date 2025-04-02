@@ -693,61 +693,50 @@ END
 --     Recuerda llamar al procedimiento y gestionar correctamente su finalización
 -------------------------------------------------------------------------------------------
 GO
-CREATE OR ALTER PROCEDURE invertirOrden (@codPedido INT)
+CREATE OR ALTER PROCEDURE invertirPedidos (@codPedido INT)
 AS
 BEGIN
-	DECLARE @count INT = (SELECT COUNT(*) 
-											  FROM DETALLE_PEDIDOS
-											 WHERE codPedido = 1),
+	SELECT *
+	 INTO TEMP_DETALLE_PEDIDOS
+	  FROM DETALLE_PEDIDOS
+	 WHERE 1 = 0 
+
+	INSERT INTO TEMP_DETALLE_PEDIDOS
+	SELECT * FROM DETALLE_PEDIDOS WHERE codPedido = @codPedido
+
+	DECLARE @ICount  INT = (SELECT COUNT(*)
+												 FROM DETALLE_PEDIDOS
+												WHERE codPedido = @codPedido),
+					@numLinea INT = 1,
 					@codProducto INT
 
-	WHILE @count > 0
-	BEGIN
-		SELECT @codProducto = codProducto
-		   FROM DETALLE_PEDIDOS
-		 WHERE codPedido = 1
-		 ORDER BY codProducto ASC
-		 OFFSET @count ROWS
-		 FETCH NEXT 1 ROWS ONLY
-		 PRINT CONCAT(@codProducto, ' - ', @codPedido)
 
-		UPDATE DETALLE_PEDIDOS
-		SET numeroLinea = @count
-		WHERE codProducto = @codProducto
-			AND codPedido = 1
+		WHILE @ICount > 0
+		BEGIN
+			SELECT @codProducto = codProducto
+			  FROM TEMP_DETALLE_PEDIDOS
+			WHERE codPedido = @codPedido
+			ORDER BY numeroLinea ASC
+			OFFSET @ICount- 1 ROWS
+			FETCH NEXT 1 ROWS ONLY
 
-		SET @count = @count - 1;
-	END
+			UPDATE DETALLE_PEDIDOS
+					SET numeroLinea = @numLinea
+			WHERE codPedido = @codPedido
+				AND codProducto = @codProducto
+
+			SET @numLinea += 1
+			SET @ICount -= 1
+		END
+
+	DROP TABLE  TEMP_DETALLE_PEDIDOS
 END
-
-
-CREATE OR ALTER PROCEDURE invert2 (@codPedido INT)
-AS
-BEGIN
-		DECLARE @count INT = (SELECT COUNT(*) 
-											  FROM DETALLE_PEDIDOS
-											 WHERE codPedido = @codPedido)
-	
-	SELECT *
-	  FROM DETALLE_PEDIDOS
-	WHERE codPedido = @codPedido
-	OFFSET @count ROWS
-	FETCH NEXT 1 ROWS ONLY
-
-	--UPDATE DETALLE_PEDIDOS
-		--	SET numeroLinea = numeroLinea + @count + 1
-
-
-
-END
-
-
 
 
 DECLARE @r INT,
 				@codPedido INT = 1
 
-EXEC @r = invertirOrden @codPedido
+EXEC @r = invertirPedidos @codPedido
 IF @r <> 0
 BEGIN
 	PRINT 'El procedimiento ha fallado'

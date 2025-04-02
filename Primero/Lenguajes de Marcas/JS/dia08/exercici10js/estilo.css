@@ -1,0 +1,42 @@
+/*
+	¡¡¡ESTE ARCHIVO NO SE TOCA!!!
+	NO TIENES QUE HACER NADA AQUÍ...
+*/
+body { font-family: Arial }
+
+div { 
+	width: 1000px;
+	border: 3px solid black;
+}
+
+#zonaCielo {
+	background-image: url('imagenes/fondoCielo.png');
+	background-size: cover;
+	height: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#zonaCentral {
+	background-color: lightgray;
+	height: 60px;
+	border-top-style: none;
+	border-bottom-style: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#zonaHabitacion {
+	background-image: url('imagenes/fondoHabitacion.png');
+	background-size: cover;
+	height: 400px;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+}
+
+#zonaCielo img { height: 150px; }
+
+#zonaHabitacion img { height: 250px; }

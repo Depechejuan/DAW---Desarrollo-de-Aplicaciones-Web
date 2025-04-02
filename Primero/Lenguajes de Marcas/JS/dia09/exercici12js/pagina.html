@@ -1,0 +1,43 @@
+<!--
+	¡¡¡ESTE ARCHIVO CASI NI SE TOCA!!!
+	SOLO AÑADIRÁS 1 LÍNEA (LA DE CONECTAR CON EL JS)
+	Y LE AÑADIRÁS UN ATRIBUTO A OTRA (LA DEL 1ER BOTÓN)
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>EVENTOS DEL RATÓN</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="estilo.css" type="text/css">
+		<!-- Esta vez NO conectarás aquí con el JS... -->
+	</head>	
+	<body>
+		<div id="contenedor">
+			<div id="zona1">
+				<h1 id="titulo">EVENTOS DEL RATÓN</h1>
+				<h2 id="subtitulo">Pascu Martínez</h2>
+			</div>
+			<div id="zona2">
+				<button onclick=saludar()>Insulto de gratis (forma 1)</button> <!-- A este botón (SOLO A ESTE)
+																  le añadirás el evento aquí --><br><br>
+				<button id="boton2">Cambiar color del H1 por darkgreen (forma 2)</button> <br><br>
+			</div>
+			<div id="zona3">
+				<img src="fotos/badbunny.png" id="badbunny">
+			</div>
+		</div>
+		<h3 id="pregunta">¿Puedes poner el ratón aquí encima? (forma 3)</h3>
+		Cambiar texto del H2 por <input type="text" id="cajaTexto"></input> (forma 3) <button id="boton3">Enviar</button>
+		
+		<!-- ...y será AQUÍ donde conectarás con el JS
+			(para asegurarnos de que se ha cargado la web)
+		-->
+			<script>
+				function saludar() {
+					alert("Tu mamá no tomó ácido fólico cuando estaba embarazada de ti")
+				}
+			</script>
+			<script src="./miscript.js"></script>
+	</body>	
+</html>
