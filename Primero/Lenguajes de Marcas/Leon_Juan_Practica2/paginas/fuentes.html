@@ -3,39 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <title>FUENTES</title>
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/index.css">
     <!--No he querido abusar demasiado de "FONT", ya que la próxima práctica CSS tomaré esta misma página como referencia para hacerla mejor. -->
 </head>
 <body>
-    <font color="BLUE" font-family="Comic Sans MS">
-        <h1>FUENTES</h1>
-    </font>
-    <img src="../imagenes/stage.jpg" alt="Stage">
-    <p>Aquí recopilaremos las fuentes que hemos usado para obtener la información de esta página web</p>
-    <ol>
-        <li>
-            <a href="https://www.depechemode.com" target="_blank">https://www.depechemode.com</a>
-            <p>Por supuesto, la web oficial es la base de la información. <b>Sólo en Inlgés</b></p>
-        </li>
-        <li>
-            <a href="https://dmlive.wiki" target="_blank">dmlive.wiki</a>
-            <p>El santo grial de la información sobre Depeche Mode. <b>Sólo en Inlgés</b></p>
-        </li>
-        <li>
-            <a href="https://www.depechemode.es" target="_blank">https://www.depechemode.es</a>
-            <p>El foro "Made In Spain" administrado por el creador de este HTML, donde se dispone de información muy detallada, especialmente utilizada para obtener información de las giras.</p>
-        </li>
-        <li>
-            <a href="https://www.depeche-mode.com" target="_blank">https://www.depeche-mode.cpm</a>
-            <p>El foro por excelencia, donde están los fans más activos y con más noticias. <b>Sólo en Inlgés</b></p>
-        </li>
-    </ol>
+    <header>
+        <!-- La imágen también es un link a la web oficial :) -->
+        <a href="https://www.depechemode.com" target="_blank" ><img src="./imagenes/dmlogo.webp" alt="Foto Printipal"></a>
+        <h1>TODO SOBRE DEPECHE MODE</h1>
+    </header>
 
-    <p>Cabe destacar que las fotografías se han obtenido de diferentes enlaces de google y directamente de YouTube.</p>
-    <p>Algunas de las fotos desaparecerán en futuras actualizaciones, como las de los vídeos de YouTube, ya que se podrá procesar directamente desde un enlace externo.</p>
-    <br>
-    <br>
-    <hr>
+    <nav>
+        <ul id="menu">
+            <li><a href="../index.html" class="botonMenu">Home</a></li>
+            <li><a href="./bio.html" class="botonMenu">Biografia</a></li>
+            <li><a href="./discografia.html" class="botonMenu">Discografía</a></li>
+            <li><a href="./tours.html" class="botonMenu">Tour</a></li>
+            <li><a href="./formulario.html" class="botonMenu">¡Inscríbete!</a></li>
+        </ul>
+    </nav>
+    <main>
+        <font color="BLUE" font-family="Comic Sans MS">
+            <h1>FUENTES</h1>
+        </font>
+        <img src="../imagenes/stage.jpg" alt="Stage">
+        <p>Aquí recopilaremos las fuentes que hemos usado para obtener la información de esta página web</p>
+        <ol>
+            <li>
+                <a href="https://www.depechemode.com" target="_blank">https://www.depechemode.com</a>
+                <p>Por supuesto, la web oficial es la base de la información. <b>Sólo en Inlgés</b></p>
+            </li>
+            <li>
+                <a href="https://dmlive.wiki" target="_blank">dmlive.wiki</a>
+                <p>El santo grial de la información sobre Depeche Mode. <b>Sólo en Inlgés</b></p>
+            </li>
+            <li>
+                <a href="https://www.depechemode.es" target="_blank">https://www.depechemode.es</a>
+                <p>El foro "Made In Spain" administrado por el creador de este HTML, donde se dispone de información muy detallada, especialmente utilizada para obtener información de las giras.</p>
+            </li>
+            <li>
+                <a href="https://www.depeche-mode.com" target="_blank">https://www.depeche-mode.cpm</a>
+                <p>El foro por excelencia, donde están los fans más activos y con más noticias. <b>Sólo en Inlgés</b></p>
+            </li>
+        </ol>
 
-    <a href="../index.html"><img src="../imagenes/ico/atras-ico.jpg" alt="boton atras">VOLVER ATRÁS</a>
+        <p>Cabe destacar que las fotografías se han obtenido de diferentes enlaces de google y directamente de YouTube.</p>
+        <p>Algunas de las fotos desaparecerán en futuras actualizaciones, como las de los vídeos de YouTube, ya que se podrá procesar directamente desde un enlace externo.</p>
+        <br>
+        <br>
+        <hr>
+
+        <a href="../index.html"><img src="../imagenes/ico/atras-ico.jpg" alt="boton atras">VOLVER ATRÁS</a>
+    </main>
 </body>
 </html>

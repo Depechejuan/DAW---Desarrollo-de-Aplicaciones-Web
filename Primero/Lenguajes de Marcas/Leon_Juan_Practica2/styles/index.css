@@ -1,14 +1,41 @@
 /*
+    IMPORTS
+*/
+@font-face {
+    font-family: "Delta Machine";
+    src: url("../assets/dm_delta_font.ttf");
+}
+
+@font-face {
+    font-family: "Counterfeit";
+    src: url("../assets/Counterfeit2B.TTF");
+}
+
+/*
+    VARIABLES
+*/
+
+:root {
+    --background-linear: linear-gradient(rgb(178, 176, 176), rgb(63, 63, 63));
+    --color-letras: rgb(255, 255, 255);
+    --link-regular: rgb(179, 124, 216);
+    --link-visited: red;
+    --button-background: #007bff;
+}
+
+
+/*
     Estilos BASE
 */
 
 body {
-    background-image: linear-gradient(rgb(178, 176, 176), black   );
-    color: white;
+    background-image: var(--background-linear);
+    color: var(--color-letras);
     font-size: 16px; /* Fuente estandar para luego trabajar con "rem" */
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100%;
 }
 
 header {
@@ -18,6 +45,12 @@ header {
 
 h1 {
     text-align: center;
+    font-family: "Delta Machine";
+}
+
+h2 {
+    margin-top: 20px;
+    font-family: "Counterfeit";
 }
 
 nav, #menu {
@@ -40,8 +73,8 @@ ul, li {
 .botonMenu {
     display: inline-block; 
     padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
+    background-color: var(--button-background);
+    color: white !important;
     text-decoration: none; /* Quita el subrayado del enlace */
     border-radius: 5px;
     text-align: center;
@@ -57,15 +90,39 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 80%;
+}
+
+.main-page {
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 p {
     text-align: justify;
+    margin-bottom: 10px;
 }
 
 .move-up {
     margin: 0 auto;
 }
+
+a:link {
+    color: var(--link-regular);
+}
+
+.front-image {
+    margin: 20px;
+}
+
+/* footer {
+    margin: 0 auto;
+    width: 100%;
+    position: fixed; 
+    bottom: 0px; 
+    left: 0px; 
+} */
+
 
 @keyframes mover {
     0% {

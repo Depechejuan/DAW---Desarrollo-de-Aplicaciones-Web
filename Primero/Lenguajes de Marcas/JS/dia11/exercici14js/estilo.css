@@ -1,0 +1,44 @@
+/*
+	¡¡¡ESTE ARCHIVO NO SE TOCA!!!
+	NO TIENES QUE HACER NADA AQUÍ...
+*/
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+h1 {
+	margin-top: 10px;
+}
+
+#zonaIzquierda {
+	float: left;
+	height: 400px;
+	width: 300px;
+	background-color:yellow;
+	text-align: center;
+}
+
+#zonaDerecha {
+	float: left;	
+	height: 400px;
+	width: 660px;
+	background-color:pink;	
+}
+
+img {
+	margin: 5px;
+}
+
+img[src^="img/piz"] {
+	margin-top: 50px;
+}
+
+input {
+	margin-top: 20px;
+	margin-bottom: 1px;
+}
+
+img[src^="img/log"] {
+	height: 120px;
+}
