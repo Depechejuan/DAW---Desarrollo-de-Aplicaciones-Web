@@ -1,0 +1,61 @@
+.tour-section {
+    width: 80%;
+    margin: 0 auto 40px;
+    padding: 25px;
+    background-color: rgba(40, 40, 40, 0.3);
+    border-radius: 8px;
+    border-left: 4px solid #9d7cff;
+    text-align: center; 
+}
+
+.tour-section > ul {
+    display: inline-block;
+    width: 100%; 
+}
+
+.track-list {
+    counter-reset: track-counter;
+    list-style: none;
+    padding-left: 2em;
+    column-gap: 30px;
+    columns: 1;
+    margin-bottom: 20px;
+}
+
+.track-list li {
+    counter-increment: track-counter;
+    break-inside: avoid;
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 0;
+    text-indent: -1.8em;
+    margin-left: 1.8em;
+}
+
+.track-list li::before {
+    content: counter(track-counter, decimal-leading-zero) ".";
+    position: relative;
+    left: auto;
+    color: #9d7cff;
+    font-weight: bold;
+    display: inline;
+    padding-right: 0.3em;
+    width: auto;
+}
+
+
+.album-link {
+    color: #9d7cff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.album-link:hover {
+    text-decoration: underline;
+    color: #7d5cdf;
+}
+
+.tour-section > ul > li {
+    margin-top: 15px;
+}

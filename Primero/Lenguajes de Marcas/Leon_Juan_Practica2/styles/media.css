@@ -1,3 +1,15 @@
+@media (max-width: 768px) {
+    .index-list {
+        grid-template-columns: 1fr;
+    }
+
+    .index-list {
+        grid-template-columns: 1fr;
+    }
+    
+    
+}
+
 @media (min-width: 701px) {
     /*
         Biography
@@ -35,5 +47,31 @@
         width: 100%;
         text-align: center;
         align-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .index-list {
+        padding: 15px;
+    }
+    
+    .track-list li {
+        padding-left: 25px;
+    }
+    
+    .track-list li::before {
+        width: 20px;
+    }
+    
+    .index-list a {
+        padding-left: 25px;
+    }
+    
+    .index-list {
+        padding: 15px;
+    }
+    
+    .tour-section {
+        padding: 15px;
     }
 }

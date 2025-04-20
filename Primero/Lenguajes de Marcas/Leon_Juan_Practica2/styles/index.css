@@ -16,7 +16,7 @@
 */
 
 :root {
-    --background-linear: linear-gradient(rgb(178, 176, 176), rgb(63, 63, 63));
+    --background-linear: linear-gradient(rgb(178, 176, 176), rgb(166, 163, 163));
     --color-letras: rgb(255, 255, 255);
     --link-regular: rgb(179, 124, 216);
     --link-visited: red;
@@ -115,13 +115,151 @@ a:link {
     margin: 20px;
 }
 
-/* footer {
-    margin: 0 auto;
-    width: 100%;
-    position: fixed; 
-    bottom: 0px; 
-    left: 0px; 
-} */
+.index-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    background-color: rgba(40, 40, 40, 0.5);
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.index-list ol, 
+.index-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.index-list li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.index-list li::before {
+    content: "→";
+    position: absolute;
+    left: 5px;
+    color: #9d7cff;
+}
+
+.index-list a {
+    color: #bbbbbb;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+    padding: 8px 10px;
+    border-radius: 4px;
+    background-color: rgba(60, 60, 60, 0.3);
+}
+
+.index-list a:hover {
+    color: #ffffff;
+    background-color: rgba(157, 124, 255, 0.2);
+    transform: translateX(5px);
+}
+
+
+.track-list {
+    columns: 2;
+    column-gap: 30px;
+}
+
+.track-list li {
+    break-inside: avoid;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.track-list li::before {
+    content: "♫";
+    position: absolute;
+    left: 0;
+    color: #9d7cff;
+}
+
+
+.tour-section {
+    background-color: rgba(40, 40, 40, 0.3);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border-left: 4px solid #9d7cff;
+}
+
+.tour-section h3 {
+    color: #ffffff;
+    margin-top: 0;
+    font-size: 1.4rem;
+}
+
+
+.nav-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    color: white;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    border-radius: 4px;
+    background-color: rgba(40, 40, 40, 0.7);
+    transition: all 0.3s ease;
+    margin: 10px;
+}
+
+/* Triángulo base */
+.nav-button::before {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    transition: all 0.3s ease;
+}
+
+/* Botón "Atrás" */
+.btn-back::before {
+    border-width: 6px 10px 6px 0;
+    border-color: transparent #ff3b30 transparent transparent;
+}
+
+/* Botón "Arriba" */
+.btn-top::before {
+    border-width: 0 6px 10px 6px;
+    border-color: transparent transparent #ff3b30 transparent;
+}
+
+.nav-button:hover {
+    background-color: rgba(60, 60, 60, 0.9);
+    transform: translateY(-2px);
+}
+
+.btn-back:hover::before {
+    border-right-color: #ff1a0d;
+}
+
+.btn-top:hover::before {
+    border-bottom-color: #ff1a0d;
+}
+
+/* Versión pequeña */
+.nav-button.small {
+    padding: 4px 8px;
+    font-size: 12px;
+}
+
+.nav-button.small::before {
+    border-width: 4px 6px 4px 0; /* Para atrás */
+}
+
+.nav-button.small.btn-top::before {
+    border-width: 0 4px 6px 4px; /* Para arriba */
+}
 
 
 @keyframes mover {
