@@ -1,0 +1,26 @@
+160h
+Formación para desempeñar función laboral d desarrollo de aplicaciones y servicios destinados a su ejecución por servidores en entornos web
+
+
+
+Generación dinámica de Paginas web. Arquitecturas y herramientas de desarrollo
+Inserción de controles de servidor en pag. web
+Programación basad en código ógico de servidor
+Desarrollo de app web
+Técnica de acceso a Datos
+---- Model 3 capas)
+Modelo Vista Controlador 1
+M V C 2
+Desarrollo de servicios web
+
+Supuesto práctico -> Posiblemente NO por tiempo.
+
+
+Metodología: Constructivista - Autodidacta.
+
+
+
+10% actitud
+50% actividades
+40% examen
+
