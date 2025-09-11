@@ -1,0 +1,26 @@
+Yosune - Diseño interfaces web.
+
+
+TEMARIO:
+- Repaso de HTML/CSS
+- HTML5/CSS3
+- Boostrap
+- Tailwind
+- flex/grid
+
+
+Índice General.
+PRIMERA EVALUACIÓN:
+- Planificación de Interfaces Gráficas. Diseño Web
+	Paletas de colores, accesibilidad, logos...
+- Introducción al HTML5 y CSS3 con Flexbox
+	Lenguaje, estilos...
+- CSS3 Avanzado
+	Flexbox/Grid y preprocesadores CSS: SASS (CSS con JS *)
+- Diseño Responsive y Boostrap, ¿Tailwind?
+
+SEGUNDA EVALUACIÓN
+- Drag & Drop 
+- Animaciones y Transformaciones (Posiblemente acabe aquí)
+- Fuentes y multimedia (Licencias y derechos de Autor)
+- Interfaces interactivas

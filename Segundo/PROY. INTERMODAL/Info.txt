@@ -1,0 +1,42 @@
+Antonio Roig - 3h
+
+No hay tribunal, pero se tiene que presentar un proyecto en clase
+
+
+
+- Fase de Formación (1er trimestre)
+	"píldoras" de concocimiento.
+
+- Implementación del proyecto (2º y 3er trimestre)
+	Desarrollo e implementación del proyecto, Documentación + defensa (Memoria)
+
+
+
+Metodología práctica. Puede tener repasos puntuales de teoría.
+
+
+
+Criterios de Evaluación:
+	- Nota de 1º: 5%
+	- Formación Previa: 15%
+	- Desarrollo del proyecto: 55%
+	- Documentación y defensa: 20%
+**PODRÍA CAMBIAR**
+
+
+
+Recursos:
+	- AWS?
+
+Comunicaciones:
+	- a.roighernandez@edu.gva.es
+	- Foro preguntas
+	- Teams??
+
+
+Buenas prácticas:
+	- Sentido Común
+
+
+
+

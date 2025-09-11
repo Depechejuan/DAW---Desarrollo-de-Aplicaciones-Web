@@ -1,0 +1,30 @@
+Antonio Roig - 6h semanales.
+
+(Hace recuperaciones)
+
+Práctica 1:
+- Gestor de presupuesto (App web a partir de un repo en GitHub)
+- Se utilizará JavaScript y HTML/CSS
+
+
+TEMAS
+- Presentación y Herramientas de trabajo
+	git, GitHub, editores...
+- Introducción a JS (1 esmana)
+	Node, Navegadores, etc
+- Fundamentos de JS (3 semanas)
+	JS Fundamentos, calidad de código, objetos, tipos de datos…
+- Interacción con el DOM (1 semana)
+- Eventos en JavaScript (1 semana)
+- Formularios (1 semana)
+- Expresiones Regulares (1 semana)
+	REGEX (Expresión regular)
+- Almacenamiento en el Navegador (1 semana)
+- Comunicación asíncrona (1 semana)
+- Gestión de paquetes (2 semanas)
+- Frameworks (2 semanas)
+	React, Vue, Angular (6 semanas)
+- Diseño web con VueJS (6 semanas)
+
+
+

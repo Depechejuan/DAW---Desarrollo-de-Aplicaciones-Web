@@ -24,3 +24,13 @@ Metodología: Constructivista - Autodidacta.
 50% actividades
 40% examen
 
+
+Plantillas de proyecto y de elemento de .NET
+Características avanzadas de ASP.NET
+
+
+
+
+
+
+
