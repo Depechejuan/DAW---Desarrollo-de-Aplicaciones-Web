@@ -1,0 +1,39 @@
+﻿body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding: 2px;
+    font-size: 16px;
+    flex: 1 1 calc(50% - 10px);
+}
+
+a {
+    color: blue;
+}
+
+.text {
+    text-align: center;
+    margin: 5px;
+}
+
+nav {
+    text-align: center;
+    margin: 10px;
+}
+
+
+.forms {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid red;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
