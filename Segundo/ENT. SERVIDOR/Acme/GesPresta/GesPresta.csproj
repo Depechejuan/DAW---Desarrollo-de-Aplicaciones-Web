@@ -69,8 +69,11 @@
   <ItemGroup>
     <Content Include="Cabecera.ascx" />
     <Content Include="Default.aspx" />
+    <Content Include="Empleados1.aspx" />
     <Content Include="Empleados.aspx" />
+    <Content Include="Prestaciones1.aspx" />
     <Content Include="Prestaciones.aspx" />
+    <Content Include="Prestaciones1Respuesta.aspx" />
     <Content Include="Styles\forms.css" />
     <Content Include="Styles\style.css" />
     <Content Include="Web.config" />
@@ -90,6 +93,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Empleados1.aspx.cs">
+      <DependentUpon>Empleados1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleados1.aspx.designer.cs">
+      <DependentUpon>Empleados1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Empleados.aspx.cs">
       <DependentUpon>Empleados.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -97,12 +107,26 @@
     <Compile Include="Empleados.aspx.designer.cs">
       <DependentUpon>Empleados.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Prestaciones1.aspx.cs">
+      <DependentUpon>Prestaciones1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Prestaciones1.aspx.designer.cs">
+      <DependentUpon>Prestaciones1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Prestaciones.aspx.cs">
       <DependentUpon>Prestaciones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Prestaciones.aspx.designer.cs">
       <DependentUpon>Prestaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Prestaciones1Respuesta.aspx.cs">
+      <DependentUpon>Prestaciones1Respuesta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Prestaciones1Respuesta.aspx.designer.cs">
+      <DependentUpon>Prestaciones1Respuesta.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
