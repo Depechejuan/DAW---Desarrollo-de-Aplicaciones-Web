@@ -2,13 +2,14 @@
 
 console.log(null == 0);
 console.log(null === 0);
-console.log(null !== 0);
-console.log(null != 0);
-console.log(isNaN(null));
+console.log(null >= 0);
+console.log(null <= 0);
+// console.log(null !== 0);
+// console.log(null != 0);
+// console.log(isNaN(null));
 // console.log(null > 0);
 // console.log(null >= <0);
 // console.log(null < 0);
-// console.log(null <= 0);
 
 let edad = "10"
 edad -= 0;
@@ -48,3 +49,8 @@ let message = (login == 'Employee') ? 'Hello' :
     (login == '') ? 'No login' :
     '';
     console.log(message);
+
+let object1 = {name: "Juan"}
+let object2 = {}
+Object.assign(object1, object2)
+

@@ -10,6 +10,77 @@
     <link rel="stylesheet" href="~/Styles/forms.css" type="text/css" runat="server">
 
         <title></title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding: 2px;
+            font-size: 16px;
+        }
+
+        a {
+            color: blue;
+        }
+
+        .text {
+            text-align: center;
+            margin: 5px;
+        }
+
+        nav {
+            text-align: center;
+            margin: 10px;
+        }
+
+        .forms {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #888; /* más elegante que el rojo */
+            border-radius: 5px;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .title {
+            text-align: right;
+            width: 30%;
+            padding-right: 10px;
+        }
+
+        .input {
+            text-align: left;
+            width: 70%;
+            margin-top: 0px;
+        }
+
+        input[type="text"], select {
+            width: 90%;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        #cmdEnviar {
+            margin-top: 15px;
+            padding: 6px 12px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+    </style>
     </head>
     <body>
         <form id="form1" runat="server">
@@ -21,7 +92,7 @@
                         <asp:Label ID="Label1" runat="server" Text="Código Empleado:"></asp:Label>
                     </p>
                     <div class="input">
-                        <asp:TextBox ID="txtCodEmp" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtCodEmp" runat="server" Width="257px"></asp:TextBox>
                     </div>
                 </div>
                 <div class="row">

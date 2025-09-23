@@ -3,7 +3,6 @@
     font-family: Arial, sans-serif;
     padding: 2px;
     font-size: 16px;
-    flex: 1 1 calc(50% - 10px);
 }
 
 a {
@@ -20,20 +19,50 @@ nav {
     margin: 10px;
 }
 
-
 .forms {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 12px;
     max-width: 600px;
     margin: 0 auto;
-    border: 1px solid red;
+    padding: 20px;
+    border: 1px solid #888; /* más elegante que el rojo */
+    border-radius: 5px;
 }
 
 .row {
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: center;
+    width: 100%;
 }
 
+.title {
+    text-align: right;
+    width: 30%;
+    padding-right: 10px;
+}
 
+.input {
+    text-align: left;
+    width: 70%;
+    margin-top: 0px;
+}
+
+input[type="text"], select {
+    width: 90%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+#cmdEnviar {
+    margin-top: 15px;
+    padding: 6px 12px;
+    font-size: 14px;
+    cursor: pointer;
+}

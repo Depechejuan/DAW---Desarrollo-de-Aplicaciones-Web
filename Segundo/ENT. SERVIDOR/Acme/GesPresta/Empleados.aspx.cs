@@ -11,10 +11,15 @@ namespace GesPresta
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            txtCodEmp.Focus();
         }
 
         protected void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void TextBox1_TextChanged1(object sender, EventArgs e)
         {
 
         }
