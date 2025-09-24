@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="Cabecera.ascx" />
     <Content Include="Default.aspx" />
+    <Content Include="EmpleadosCalendar.aspx" />
     <Content Include="Empleados1.aspx" />
     <Content Include="Empleados.aspx" />
     <Content Include="Prestaciones1.aspx" />
@@ -92,6 +93,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmpleadosCalendar.aspx.cs">
+      <DependentUpon>EmpleadosCalendar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmpleadosCalendar.aspx.designer.cs">
+      <DependentUpon>EmpleadosCalendar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Empleados1.aspx.cs">
       <DependentUpon>Empleados1.aspx</DependentUpon>

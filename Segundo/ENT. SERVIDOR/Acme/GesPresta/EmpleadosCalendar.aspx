@@ -36,10 +36,10 @@
             display: flex;
             flex-direction: column;
             gap: 12px;
-            max-width: 600px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            border: 1px solid #888; /* más elegante que el rojo */
+            border: 1px solid #888;
             border-radius: 5px;
         }
 
@@ -64,7 +64,6 @@
         }
 
         input[type="text"], select {
-            width: 90%;
             padding: 5px;
             box-sizing: border-box;
         }
@@ -122,10 +121,6 @@
                     <div class="input"><asp:TextBox ID="txtTelEmp" runat="server"></asp:TextBox></div>
                 </div>
                 <div class="row">
-                    <p class="title"><asp:Label ID="Label7" runat="server" Text="Fecha de Nacimiento:"></asp:Label></p>
-                    <div class="input"><asp:TextBox ID="txtFnaEmp" runat="server"></asp:TextBox></div>
-                </div>
-                <div class="row">
                     <p class="title"><asp:Label ID="Label8" runat="server" Text="Fecha de Ingreso"></asp:Label></p>
                     <div class="input"><asp:TextBox ID="txtFinEmp" runat="server"></asp:TextBox></div>
                 </div>
@@ -148,12 +143,70 @@
                         </asp:DropDownList>
                     </div>
                 </div>
-                <asp:Button ID="cmdEnviar" runat="server" Text="Enviar" OnClick="cmdEnviar_Click" Width="30%" />
+
+                <div class="row">
+                    <p class="title">
+                        <asp:Label ID="Label11" runat="server" Text="Fecha de Nacimiento: "></asp:Label>
+                        <asp:TextBox ID="TxtCal1" runat="server" AutoPostBack="True" 
+                                     OnTextChanged="txtCal1_TextChanged"></asp:TextBox>
+                    </p>
+                    <div class="input">
+                        <asp:Calendar ID="Calendar1" runat="server" OnSelectionChanged="Calendar1_SelectionChanged" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" CellPadding="1" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" SelectedDate="2000-01-01" VisibleDate="2000-01-01" Width="220px">
+                            <DayHeaderStyle BackColor="#99CCCC" ForeColor="#336666" Height="1px" />
+                            <NextPrevStyle Font-Size="8pt" ForeColor="#CCCCFF" />
+                            <OtherMonthDayStyle ForeColor="#999999" />
+                            <SelectedDayStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
+                            <SelectorStyle BackColor="#99CCCC" ForeColor="#336666" />
+                            <TitleStyle BackColor="#003399" BorderColor="#3366CC" BorderWidth="1px" Font-Bold="True" Font-Size="10pt" ForeColor="#CCCCFF" Height="25px" />
+                            <TodayDayStyle BackColor="#99CCCC" ForeColor="White" />
+                            <WeekendDayStyle BackColor="#CCCCFF" />
+                        </asp:Calendar>
+                    </div>
+
+                    <p class="title">
+                        <asp:Label ID="Label12" runat="server" Text="Fecha de Ingreso: "></asp:Label>
+                        <asp:TextBox ID="TxtCal2" runat="server" AutoPostBack="True" 
+                                     OnTextChanged="txtCal2_TextChanged"></asp:TextBox>
+                    </p>
+                    <div class="input">
+                        <asp:Calendar ID="Calendar2" runat="server" 
+                                      OnSelectionChanged="Calendar2_SelectionChanged" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" CellPadding="1" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" Width="220px">
+                            <DayHeaderStyle BackColor="#99CCCC" ForeColor="#336666" Height="1px" />
+                            <NextPrevStyle Font-Size="8pt" ForeColor="#CCCCFF" />
+                            <OtherMonthDayStyle ForeColor="#999999" />
+                            <SelectedDayStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
+                            <SelectorStyle BackColor="#99CCCC" ForeColor="#336666" />
+                            <TitleStyle BackColor="#003399" BorderColor="#3366CC" BorderWidth="1px" Font-Bold="True" Font-Size="10pt" ForeColor="#CCCCFF" Height="25px" />
+                            <TodayDayStyle BackColor="#99CCCC" ForeColor="White" />
+                            <WeekendDayStyle BackColor="#CCCCFF" />
+                        </asp:Calendar>
+                    </div>
+                    <div class="extra">
+                        <asp:Label ID="Label13" runat="server" Text="Antigüedad"></asp:Label>
+                        <br />
+                        &nbsp;<asp:TextBox ID="TxtAños" runat="server" Width="116px" OnTextChanged="TxtAños_TextChanged"></asp:TextBox>
+                        &nbsp;<asp:Label ID="Label14" runat="server" Text="Años"></asp:Label>
+                        &nbsp;<asp:TextBox ID="TxtMeses" runat="server" Width="116px"></asp:TextBox>
+                        &nbsp;<asp:Label ID="Label15" runat="server" Text="Meses"></asp:Label>
+                        &nbsp;<asp:TextBox ID="txtDias" runat="server" Width="116px"></asp:TextBox>
+                        &nbsp;<asp:Label ID="Label16" runat="server" Text="Días"></asp:Label>
+                    </div>
+                </div>
+                <asp:Button ID="cmdEnviar" runat="server" Text="Enviar" OnClick="cmdEnviar_Click" Width="30%" BorderColor="#666699" />
       
 
             </div>
             <p>
                 &nbsp;</p>
+            <p>
+                <asp:Label ID="lblError1" runat="server"></asp:Label>
+            </p>
+            <p>
+                <asp:Label ID="lblError2" runat="server"></asp:Label>
+            </p>
+            <p>
+                <asp:Label ID="lblError3" runat="server"></asp:Label>
+            </p>
             <p>
                 <asp:Label ID="lblValores" runat="server" BackColor="#66FFFF" Visible="False" Width="60%"></asp:Label>
             </p>
