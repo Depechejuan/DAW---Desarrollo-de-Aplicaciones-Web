@@ -14,16 +14,6 @@ namespace GesPresta
             txtCodEmp.Focus();
         }
 
-        protected void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void TextBox1_TextChanged1(object sender, EventArgs e)
-        {
-
-        }
-
         protected void cmdEnviar_Click(object sender, EventArgs e)
         {
             lblValores.Visible = true;
@@ -38,8 +28,8 @@ namespace GesPresta
             "<br/> Sexo: " + rblSexEmp.SelectedItem.Value +
             "<br/> Departamento: " + ddlDepEmp.Text +
             "<br/> Fecha de Nacimiento: " + TxtCal1.Text +
+            "<br/> Fecha de Ingreso: " + TxtCal2.Text + 
             "<br/> Años, Meses y Días en la Compañía: " + TxtAños.Text + " años, " + TxtMeses.Text + " meses y " + txtDias.Text + " días";
-            
         }
 
         protected void Calendar1_SelectionChanged(object sender, EventArgs e)
@@ -52,14 +42,21 @@ namespace GesPresta
 
         private void VerificarFechaNacimiento(DateTime fechaNacimiento)
         {
+
             DateTime now = System.DateTime.Now;
-            if (fechaNacimiento > now)
+            if (fechaNacimiento == DateTime.MinValue)
+            {
+                lblError4.Text = "La fecha ingresada no es válida";
+                lblError4.Visible = true;
+            }
+            else if (fechaNacimiento > now)
             {
                 lblError3.Text = "La fecha de nacimiento es mayor que la fecha actual";
                 lblError3.Visible = true;
             }
             else
             {
+                lblError4.Visible = false;
                 lblError3.Visible = false;
             }
         }
@@ -72,8 +69,6 @@ namespace GesPresta
             DateTime fechaIngreso = Calendar2.SelectedDate;
 
             ComprobarIngresoYNacimiento(fechaIngreso, fechaNacimiento);
-
-
             VerificarFechaIngreso(fechaIngreso);
 
             if (fechaIngreso < DateTime.Now)
@@ -101,13 +96,19 @@ namespace GesPresta
 
         private void VerificarFechaIngreso(DateTime fechaIngreso)
         {
-            if (fechaIngreso > DateTime.Now)
+            if (fechaIngreso == DateTime.MinValue)
+            {
+                lblError4.Text = "La fecha ingresada no es válida";
+                lblError4.Visible = true;
+            }
+            else if (fechaIngreso > DateTime.Now)
             {
                 lblError2.Text = "La fecha de ingreso en la compañía es mayor que la fecha actual";
                 lblError2.Visible = true;
             }
             else
             {
+                lblError4.Visible = false;
                 lblError2.Visible = false;
             }
         }
@@ -135,8 +136,8 @@ namespace GesPresta
 
             DateTime fechaNacimiento = Calendar1.SelectedDate;
             ComprobarIngresoYNacimiento(fechaIngreso, fechaNacimiento);
-
             VerificarFechaIngreso(fechaIngreso);
+
             if (fechaIngreso < DateTime.Now)
                 CheckDiffTime(fechaIngreso);
             else

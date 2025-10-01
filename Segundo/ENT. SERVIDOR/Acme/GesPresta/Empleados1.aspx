@@ -39,7 +39,7 @@
             max-width: 600px;
             margin: 0 auto;
             padding: 20px;
-            border: 1px solid #888; /* más elegante que el rojo */
+            border: 1px solid red; 
             border-radius: 5px;
         }
 

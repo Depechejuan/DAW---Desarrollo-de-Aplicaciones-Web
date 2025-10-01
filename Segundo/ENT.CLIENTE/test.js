@@ -54,3 +54,61 @@ let object1 = {name: "Juan"}
 let object2 = {}
 Object.assign(object1, object2)
 
+
+// REVISAR
+function saludar(prev, post) {
+    return prev + this.nombre + post
+}
+let nombre = {nombre: "Juan"}
+let saludos = ["Hola, ", " ¿Qué tal?"]
+
+console.log(saludar.apply(nombre, saludos));
+console.log(saludar.apply(nombre, ["Hola, ", " ¿Qué tal?"]));
+
+
+console.log("--------------------------");
+let usuario = {
+    nombre: "Miguel",
+    saluda: function() {
+
+        return this.nombre;
+    }
+}
+
+let a = usuario.saluda();
+console.log(a);
+
+let ciudadano = {
+    nombre: "David", 
+    saludaConRetardo: function() {
+        setTimeout(function() {
+            console.log(this.nombre);
+        }, 1000)
+    }
+}
+
+ciudadano.saludaConRetardo();
+
+
+// Al usar bind, setTimeOut tendrá el mismo contexto que "ciudadano"
+ciudadano = {
+    nombre: "David", 
+    saludaConRetardo: function() {
+        setTimeout(function() {
+            console.log(this.nombre);
+        }.bind(this), 1000)
+    }
+}
+ciudadano.saludaConRetardo();
+
+ciudadano = {
+    nombre: "Paco", 
+    saludaConRetardo: function() {
+        setTimeout(() => {
+            console.log(this.nombre);
+        }, 1000);
+    }
+}
+ciudadano.saludaConRetardo();
+
+

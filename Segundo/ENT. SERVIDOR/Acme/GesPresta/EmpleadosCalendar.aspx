@@ -39,7 +39,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            border: 1px solid #888;
+            border: 3px solid red;
             border-radius: 5px;
         }
 
@@ -91,7 +91,7 @@
                         <asp:Label ID="Label1" runat="server" Text="Código Empleado:"></asp:Label>
                     </p>
                     <div class="input">
-                        <asp:TextBox ID="txtCodEmp" runat="server" Width="257px"></asp:TextBox>
+                        <asp:TextBox ID="txtCodEmp" runat="server" Width="257px" required></asp:TextBox>
                     </div>
                 </div>
                 <div class="row">
@@ -99,33 +99,33 @@
                         <asp:Label ID="Label2" runat="server" Text="NIF:"></asp:Label>
                     </p>
                     <div class="input">
-                        <asp:TextBox ID="txtNifEmp" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtNifEmp" runat="server" required></asp:TextBox>
                     </div>
                 </div>
                 <div class="row">
                     <p class="title">
                         <asp:Label ID="Label3" runat="server" Text="Apellidos y Nombre:"></asp:Label>
                     </p>
-                    <div class="input"> <asp:TextBox ID="txtNomEmp" runat="server"></asp:TextBox></div>
+                    <div class="input"> <asp:TextBox ID="txtNomEmp" runat="server" required></asp:TextBox></div>
                 </div>
                 <div class="row">
                     <p class="title"><asp:Label ID="Label4" runat="server" Text="Dirección:"></asp:Label></p>
-                    <div class="input"><asp:TextBox ID="txtDirEmp" runat="server"></asp:TextBox></div>
+                    <div class="input"><asp:TextBox ID="txtDirEmp" runat="server" required></asp:TextBox></div>
                 </div>
                 <div class="row">
                     <p class="title"><asp:Label ID="Label5" runat="server" Text="Ciudad:"></asp:Label></p>
-                    <div class="input"><asp:TextBox ID="txtCiuEmp" runat="server"></asp:TextBox></div>
+                    <div class="input"><asp:TextBox ID="txtCiuEmp" runat="server" required></asp:TextBox></div>
                 </div>
                 <div class="row">
                     <p class="title"><asp:Label ID="Label6" runat="server" Text="Teléfonos:"></asp:Label></p>
-                    <div class="input"><asp:TextBox ID="txtTelEmp" runat="server"></asp:TextBox></div>
+                    <div class="input"><asp:TextBox ID="txtTelEmp" runat="server" required></asp:TextBox></div>
                 </div>
                 <div class="row">
                     <p class="title"><asp:Label ID="Label8" runat="server" Text="Fecha de Ingreso"></asp:Label></p>
-                    <div class="input"><asp:TextBox ID="txtFinEmp" runat="server"></asp:TextBox></div>
+                    <div class="input"><asp:TextBox ID="txtFinEmp" runat="server" required></asp:TextBox></div>
                 </div>
                  <div class="row">
-                    <p class="title"><asp:Label ID="Label9" runat="server" Text="Sexo:"></asp:Label></p>
+                    <p class="title"><asp:Label ID="Label9" runat="server" Text="Sexo:" required></asp:Label></p>
                     <div class="input">
                         <asp:RadioButtonList ID="rblSexEmp" runat="server">
                             <asp:ListItem Selected="True">Hombre</asp:ListItem>
@@ -133,7 +133,7 @@
                         </asp:RadioButtonList></div>
                 </div>
                 <div class="row">
-                    <p class="title"><asp:Label ID="Label10" runat="server" Text="Departamento:"></asp:Label></p>
+                    <p class="title"><asp:Label ID="Label10" runat="server" Text="Departamento:" required></asp:Label></p>
                     <div class="input">
                         <asp:DropDownList ID="ddlDepEmp" runat="server">
                             <asp:ListItem Selected="True">Investigación</asp:ListItem>
@@ -148,10 +148,10 @@
                     <p class="title">
                         <asp:Label ID="Label11" runat="server" Text="Fecha de Nacimiento: "></asp:Label>
                         <asp:TextBox ID="TxtCal1" runat="server" AutoPostBack="True" 
-                                     OnTextChanged="txtCal1_TextChanged"></asp:TextBox>
+                                     OnTextChanged="txtCal1_TextChanged" required></asp:TextBox>
                     </p>
                     <div class="input">
-                        <asp:Calendar ID="Calendar1" runat="server" OnSelectionChanged="Calendar1_SelectionChanged" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" CellPadding="1" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" SelectedDate="2000-01-01" VisibleDate="2000-01-01" Width="220px">
+                        <asp:Calendar ID="Calendar1" runat="server" OnSelectionChanged="Calendar1_SelectionChanged" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" CellPadding="1" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" SelectedDate="2000-01-01" VisibleDate="2000-01-01" Width="220px" required>
                             <DayHeaderStyle BackColor="#99CCCC" ForeColor="#336666" Height="1px" />
                             <NextPrevStyle Font-Size="8pt" ForeColor="#CCCCFF" />
                             <OtherMonthDayStyle ForeColor="#999999" />
@@ -166,11 +166,11 @@
                     <p class="title">
                         <asp:Label ID="Label12" runat="server" Text="Fecha de Ingreso: "></asp:Label>
                         <asp:TextBox ID="TxtCal2" runat="server" AutoPostBack="True" 
-                                     OnTextChanged="txtCal2_TextChanged"></asp:TextBox>
+                                     OnTextChanged="txtCal2_TextChanged" required></asp:TextBox>
                     </p>
                     <div class="input">
                         <asp:Calendar ID="Calendar2" runat="server" 
-                                      OnSelectionChanged="Calendar2_SelectionChanged" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" CellPadding="1" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" Width="220px">
+                                      OnSelectionChanged="Calendar2_SelectionChanged" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" CellPadding="1" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" Width="220px" required>
                             <DayHeaderStyle BackColor="#99CCCC" ForeColor="#336666" Height="1px" />
                             <NextPrevStyle Font-Size="8pt" ForeColor="#CCCCFF" />
                             <OtherMonthDayStyle ForeColor="#999999" />
@@ -199,13 +199,19 @@
             <p>
                 &nbsp;</p>
             <p>
-                <asp:Label ID="lblError1" runat="server"></asp:Label>
+                <asp:Label ID="lblError1" runat="server" BackColor="#66FFFF"></asp:Label>
             </p>
             <p>
-                <asp:Label ID="lblError2" runat="server"></asp:Label>
+                <asp:Label ID="lblError2" runat="server" BackColor="#66FFFF"></asp:Label>
             </p>
             <p>
-                <asp:Label ID="lblError3" runat="server"></asp:Label>
+                <asp:Label ID="lblError3" runat="server" BackColor="#66FFFF"></asp:Label>
+            </p>
+            <p>
+                <asp:Label ID="lblError4" runat="server" BackColor="#66FFFF"></asp:Label>
+            </p>
+            <p>
+                <asp:Label ID="lblError5" runat="server" BackColor="#66FFFF"></asp:Label>
             </p>
             <p>
                 <asp:Label ID="lblValores" runat="server" BackColor="#66FFFF" Visible="False" Width="60%"></asp:Label>
