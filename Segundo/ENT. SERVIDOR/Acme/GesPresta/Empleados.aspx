@@ -62,6 +62,7 @@
             text-align: right;
             width: 30%;
             padding-right: 10px;
+            margin-left: 40px;
         }
 
         .input {
@@ -89,7 +90,6 @@
             font-size: 14px;
             cursor: pointer;
         }
-
     </style>
                         
     </head>
@@ -105,7 +105,8 @@
                     <div class="input">
                         <asp:TextBox ID="txtCodEmp" runat="server" Width="257px"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rqdTxtCodEmp" runat="server" ControlToValidate="txtCodEmp" ErrorMessage="El Código
-Empleado es obligatorio" ForeColor="#CC3300"></asp:RequiredFieldValidator>
+Empleado es obligatorio" ForeColor="#CC3300">*</asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="regtxtCodEmp" runat="server" ControlToValidate="txtCodEmp" ErrorMessage="El formato de los datos a introducir debe ser:  1letra-5dígitos" ForeColor="#CC3300" ValidationExpression="\w\d{5}">*</asp:RegularExpressionValidator>
                     </div>
                 </div>
                 <div class="row">
@@ -114,7 +115,8 @@ Empleado es obligatorio" ForeColor="#CC3300"></asp:RequiredFieldValidator>
                     </p>
                     <div class="input">
                         <asp:TextBox ID="txtNifEmp" runat="server" ></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rqdtxtNifEmp" runat="server" ControlToValidate="txtNifEmp" ErrorMessage="El NIF del empleado es obligatorio" ForeColor="#CC3300"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="rqdtxtNifEmp" runat="server" ControlToValidate="txtNifEmp" ErrorMessage="El NIF del empleado es obligatorio" ForeColor="#CC3300">*</asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="regtxtNifEmp" runat="server" ControlToValidate="txtNifEmp" ErrorMessage="El formato de los datos a introducir debe ser:  8numeros-1letra" ForeColor="#CC3300" ValidationExpression="\d{8}-\w">*</asp:RegularExpressionValidator>
                     </div>
                 </div>
                 <div class="row">
@@ -122,7 +124,7 @@ Empleado es obligatorio" ForeColor="#CC3300"></asp:RequiredFieldValidator>
                         <asp:Label ID="Label3" runat="server" Text="Apellidos y Nombre:"></asp:Label>
                     </p>
                     <div class="input"> <asp:TextBox ID="txtNomEmp" runat="server" ></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rqdtxtNomEmp" runat="server" ControlToValidate="txtNomEmp" ErrorMessage="Los apellidos y Nombre del empleado son obligatorios" ForeColor="#CC3300"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="rqdtxtNomEmp" runat="server" ControlToValidate="txtNomEmp" ErrorMessage="Los apellidos y Nombre del empleado son obligatorios" ForeColor="#CC3300">*</asp:RequiredFieldValidator>
                     </div>
                 </div>
                 <div class="row">
@@ -136,7 +138,7 @@ Empleado es obligatorio" ForeColor="#CC3300"></asp:RequiredFieldValidator>
                 <div class="row">
                     <p class="title"><asp:Label ID="Label6" runat="server" Text="Teléfonos:"></asp:Label></p>
                     <div class="input"><asp:TextBox ID="txtTelEmp" runat="server" ></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rqdtxtTelEmp" runat="server" ControlToValidate="txtTelEmp" ErrorMessage="El Teléfono del empleado es obligatorio" ForeColor="#CC3300"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="rqdtxtTelEmp" runat="server" ControlToValidate="txtTelEmp" ErrorMessage="El Teléfono del empleado es obligatorio" ForeColor="#CC3300">*</asp:RequiredFieldValidator>
                     </div>
                 </div>
                 <div class="row">
@@ -167,6 +169,8 @@ Empleado es obligatorio" ForeColor="#CC3300"></asp:RequiredFieldValidator>
                         <asp:Label ID="Label11" runat="server" Text="Fecha de Nacimiento: "></asp:Label>
                         <asp:TextBox ID="TxtCal1" runat="server" AutoPostBack="True" 
                                      OnTextChanged="txtCal1_TextChanged" ></asp:TextBox>
+                        <asp:RegularExpressionValidator ID="regTxtCal1" runat="server" ControlToValidate="TxtCal1" ErrorMessage="*" ForeColor="Green" ValidationExpression="^(?:\d{4}([-\/])\d{2}\1\d{2}|\d{2}([-\/])\d{2}\2\d{4})$
+"></asp:RegularExpressionValidator>
                     </p>
                     <div class="input">
                         <asp:Calendar ID="Calendar1" runat="server" OnSelectionChanged="Calendar1_SelectionChanged" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" CellPadding="1" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" SelectedDate="2000-01-01" VisibleDate="2000-01-01" Width="220px" >
@@ -179,13 +183,15 @@ Empleado es obligatorio" ForeColor="#CC3300"></asp:RequiredFieldValidator>
                             <TodayDayStyle BackColor="#99CCCC" ForeColor="White" />
                             <WeekendDayStyle BackColor="#CCCCFF" />
                         </asp:Calendar>
-                        <asp:RequiredFieldValidator ID="rqdTxtCal1" runat="server" ControlToValidate="TxtCal1" ErrorMessage="La fecha de nacimiento del empleado es obligatoria." ForeColor="#CC3300"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="rqdTxtCal1" runat="server" ControlToValidate="TxtCal1" ErrorMessage="La fecha de nacimiento del empleado es obligatoria." ForeColor="#CC3300">*</asp:RequiredFieldValidator>
                     </div>
 
                     <p class="title">
                         <asp:Label ID="Label12" runat="server" Text="Fecha de Ingreso: "></asp:Label>
                         <asp:TextBox ID="TxtCal2" runat="server" AutoPostBack="True" 
                                      OnTextChanged="txtCal2_TextChanged" ></asp:TextBox>
+                        <asp:RegularExpressionValidator ID="regTxtCal2" runat="server" ControlToValidate="TxtCal2" ErrorMessage="*" ForeColor="Green" ValidationExpression="^(?:\d{4}([-\/])\d{2}\1\d{2}|\d{2}([-\/])\d{2}\2\d{4})$
+"></asp:RegularExpressionValidator>
                     </p>
                     <div class="input">
                         <asp:Calendar ID="Calendar2" runat="server" 
@@ -199,7 +205,7 @@ Empleado es obligatorio" ForeColor="#CC3300"></asp:RequiredFieldValidator>
                             <TodayDayStyle BackColor="#99CCCC" ForeColor="White" />
                             <WeekendDayStyle BackColor="#CCCCFF" />
                         </asp:Calendar>
-                        <asp:RequiredFieldValidator ID="rqdTxtCal2" runat="server" ControlToValidate="TxtCal2" ErrorMessage="La fecha de ingreso del empleado es obligatoria." ForeColor="#CC3300"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="rqdTxtCal2" runat="server" ControlToValidate="TxtCal2" ErrorMessage="La fecha de ingreso del empleado es obligatoria." ForeColor="#CC3300">*</asp:RequiredFieldValidator>
                     </div>
                     <div class="extra">
                         <asp:Label ID="Label13" runat="server" Text="Antigüedad"></asp:Label>
@@ -233,6 +239,10 @@ Empleado es obligatorio" ForeColor="#CC3300"></asp:RequiredFieldValidator>
             <p>
                 <asp:Label ID="lblError5" runat="server" BackColor="#66FFFF"></asp:Label>
             </p>
+              <p>
+                  <asp:CompareValidator ID="cmpTxtCal1" runat="server" ControlToCompare="TxtCal2" ControlToValidate="TxtCal1" ErrorMessage="La Fecha de Ingreso del Empleado debe ser mayor que la Fecha de Nacimiento" ForeColor="#CC3300" Operator="LessThan" Type="Date"></asp:CompareValidator>
+            </p>
+              <asp:ValidationSummary ID="ValidationSummary1" runat="server" DisplayMode="List" ForeColor="Red" />
             <p>
                 <asp:Label ID="lblValores" runat="server" BackColor="#66FFFF" Visible="False" Width="60%"></asp:Label>
             </p>
