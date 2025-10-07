@@ -7,8 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<link rel="stylesheet" href="~/Styles/style.css" type="text/css" runat="server">
-<link rel="stylesheet" href="~/Styles/forms.css" type="text/css" runat="server">
+
 
     <title></title>
 </head>

@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="prestacionesBuscar.ascx.cs" Inherits="GesPresta.prestacionesBuscar" %>
-<asp:ListBox ID="lstPrestaciones" runat="server" Height="371px" Width="1142px">
+<asp:ListBox ID="lstPrestaciones" runat="server" Height="151px" Width="175px">
     <asp:ListItem Selected="True" Value="123-456-789">Gafas</asp:ListItem>
     <asp:ListItem>Gafas progresivas</asp:ListItem>
     <asp:ListItem Value="123-787-001">Lentes de contacto</asp:ListItem>

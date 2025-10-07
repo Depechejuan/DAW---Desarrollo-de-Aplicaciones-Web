@@ -1,5 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Prestaciones1.aspx.cs" Inherits="GesPresta.Prestaciones1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Prestaciones2.aspx.cs" Inherits="GesPresta.Prestaciones2" %>
 <%@ Register src="Cabecera.ascx" tagname="Cabecera" tagprefix="uc1" %>
+
+<%@ Register src="prestacionesBuscar.ascx" tagname="prestacionesBuscar" tagprefix="uc2" %>
 
 <!DOCTYPE html>
 
@@ -96,10 +98,21 @@
                     </p>
                     <div class="input">
                         <asp:TextBox ID="txtCodPre" runat="server" Width="300px"></asp:TextBox>
+        <asp:Button ID="btnVerPrestaciones" runat="server" Text="Ver Prestaciones" CausesValidation="False"
+    OnClick="btnVerPrestaciones_Click" />
+
                         <asp:RequiredFieldValidator ID="rqdtxtCodPre" runat="server" ControlToValidate="txtCodPre" ErrorMessage="El Código
 Empleado es obligatorio" ForeColor="#CC3300"></asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="regtxtCodPre" runat="server" ControlToValidate="txtCodPre" ErrorMessage="El formato debe ser: 000-000-000" ForeColor="Green" ValidationExpression="\d{3}-\d{3}-\d{3}"></asp:RegularExpressionValidator>
                     </div>
+                    <div style="margin: 0 40px">
+                        <uc2:prestacionesBuscar ID="prestacionesBuscar1" runat="server" Visible="False"/>
+                    </div>
+                    <br />
+                    <div style="margin: 0 40px">
+                        <asp:Button ID="btnSeleccionar" runat="server" CausesValidation="False" Text="Seleccionar" Visible="False" OnClick="btnSeleccionar_Click" />
+                    </div>
+                    <p>&nbsp;</p>
                 </div>
                 <div class="row">
                     <p class="title">
@@ -145,9 +158,14 @@ Empleado es obligatorio" ForeColor="#CC3300"></asp:RequiredFieldValidator>
                         </asp:DropDownList>
                     </div>
                 </div>
-                <asp:Button ID="cmdEnviar" runat="server" Text="Enviar" PostBackUrl="~/Prestaciones1Respuesta.aspx" OnClick="Page_Load" />
+                <asp:Button ID="cmdEnviar" runat="server" Text="Enviar" PostBackUrl="~/Prestaciones1Respuesta.aspx" OnClick="Page_Load" Width="132px" />
 
             </div>
+        <br />
+
+        <br />
+        <br />
+        
     </form>
 </body>
 </html>

@@ -1,0 +1,47 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="GesPresta.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Master Page</title>
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding: 2px;
+            font-size: 16px;
+        }
+
+        a {
+            color: blue;
+        }
+
+        nav {
+            text-align: center;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <nav style="display: flex; justify-content: center; align-items: center; gap: 15px; text-align: center;">
+            <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="false" PostBackUrl="~/MPDefault.aspx">Inicio</asp:LinkButton>
+            <asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="false" PostBackUrl="~/MPEmpleados.aspx">Empleados</asp:LinkButton>
+            <asp:LinkButton ID="LinkButton3" runat="server" CausesValidation="false" PostBackUrl="~/MPPrestaciones.aspx">Prestaciones</asp:LinkButton>
+        </nav>
+
+        <header style="text-align: center; margin: 0 auto;">
+            <h1>ACME INNOVACIÓN, S. FIG.</h1>
+            <h2>Gestión de Prestaciones Sociales</h2>
+            <hr />
+        </header>
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>

@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace GesPresta
 {
-    public partial class Prestaciones : System.Web.UI.Page
+    public partial class MPPrestaciones : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

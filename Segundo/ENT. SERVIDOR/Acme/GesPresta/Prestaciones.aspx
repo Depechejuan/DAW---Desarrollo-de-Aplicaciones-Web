@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Prestaciones.aspx.cs" Inherits="GesPresta.Prestaciones" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Prestaciones.aspx.cs" Inherits="GesPresta.Prestaciones1" %>
 <%@ Register src="Cabecera.ascx" tagname="Cabecera" tagprefix="uc1" %>
 
 <!DOCTYPE html>
@@ -35,10 +35,10 @@
         display: flex;
         flex-direction: column;
         gap: 12px;
-        max-width: 600px;
+        max-width: 1200px;
         margin: 0 auto;
         padding: 20px;
-        border: 1px solid #888; /* más elegante que el rojo */
+        border: 3px solid red; 
         border-radius: 5px;
     }
 
@@ -60,9 +60,13 @@
         text-align: left;
         width: 70%;
         margin-top: 0px;
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
     }
 
     input[type="text"], select {
+        width: 90%;
         padding: 5px;
         box-sizing: border-box;
     }
@@ -84,9 +88,7 @@
     <form id="form1" runat="server" class="prestaciones">
         <uc1:Cabecera ID="Cabecera1" runat="server" />
 
-        <div class="forms">
             <h2>DATOS DE LAS PRESTACIONES</h2>
-
             <div class="forms">
                 <div class="row">
                     <p class="title">
@@ -94,6 +96,9 @@
                     </p>
                     <div class="input">
                         <asp:TextBox ID="txtCodPre" runat="server" Width="300px"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rqdtxtCodPre" runat="server" ControlToValidate="txtCodPre" ErrorMessage="El Código
+Empleado es obligatorio" ForeColor="#CC3300"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="regtxtCodPre" runat="server" ControlToValidate="txtCodPre" ErrorMessage="El formato debe ser: 000-000-000" ForeColor="Green" ValidationExpression="\d{3}-\d{3}-\d{3}"></asp:RegularExpressionValidator>
                     </div>
                 </div>
                 <div class="row">
@@ -111,6 +116,8 @@
                     </p>
                     <div class="input">
                         <asp:TextBox ID="txtImpPre" runat="server" Width="300px"></asp:TextBox>
+                        <asp:RangeValidator ID="rngtxtImpPre" runat="server" BorderStyle="None" ControlToValidate="txtImpPre" ErrorMessage="El importe debe estar entre 0 y 500" ForeColor="#CC3300" MaximumValue="500,00" MinimumValue="0"></asp:RangeValidator>
+                        <asp:RequiredFieldValidator ID="rqdtxtImpPre" runat="server" ControlToValidate="txtImpPre" ErrorMessage="El importe fijo es obligatoria" ForeColor="#CC3300"></asp:RequiredFieldValidator>
                     </div>
                 </div>
 
@@ -120,6 +127,8 @@
                     </p>
                     <div class="input">
                         <asp:TextBox ID="txtPorPre" runat="server" Width="300px"></asp:TextBox>
+                        <asp:RangeValidator ID="rngtxtPorPre" runat="server" ControlToValidate="txtPorPre" ErrorMessage="El porcentaje debe estar entre 0 y 15" ForeColor="#CC3300" MaximumValue="15,00" MinimumValue="0,00"></asp:RangeValidator>
+                        <asp:RequiredFieldValidator ID="rqdtxtPorPre" runat="server" ControlToValidate="txtPorPre" ErrorMessage="El porcentaje del informe es obligatorio" ForeColor="#CC3300"></asp:RequiredFieldValidator>
                     </div>
                 </div>
 
@@ -136,10 +145,9 @@
                         </asp:DropDownList>
                     </div>
                 </div>
-                <asp:Button ID="cmdEnviar" runat="server" Text="Enviar" />
+                <asp:Button ID="cmdEnviar" runat="server" Text="Enviar" PostBackUrl="~/Prestaciones1Respuesta.aspx" OnClick="Page_Load" />
 
             </div>
-        </div>
     </form>
 </body>
 </html>

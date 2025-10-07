@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace GesPresta
 {
-    public partial class EmpleadosCalendar : System.Web.UI.Page
+    public partial class MPEmpleados : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            txtCodEmp.Focus();
+
         }
 
         protected void cmdEnviar_Click(object sender, EventArgs e)
@@ -24,11 +24,10 @@ namespace GesPresta
             "<br/> Dirección: " + txtDirEmp.Text +
             "<br/> Ciudad: " + txtCiuEmp.Text +
             "<br/> Teléfonos: " + txtTelEmp.Text +
-            "<br/> Fecha de Incorporación: " + txtFinEmp.Text +
             "<br/> Sexo: " + rblSexEmp.SelectedItem.Value +
             "<br/> Departamento: " + ddlDepEmp.Text +
             "<br/> Fecha de Nacimiento: " + TxtCal1.Text +
-            "<br/> Fecha de Ingreso: " + TxtCal2.Text + 
+            "<br/> Fecha de Ingreso: " + TxtCal2.Text +
             "<br/> Años, Meses y Días en la Compañía: " + TxtAños.Text + " años, " + TxtMeses.Text + " meses y " + txtDias.Text + " días";
         }
 
@@ -157,10 +156,11 @@ namespace GesPresta
             TxtMeses.Text = ((fechamin + diferencia).Month - 1).ToString();
             txtDias.Text = ((fechamin + diferencia).Day).ToString();
         }
-
         protected void TxtAños_TextChanged(object sender, EventArgs e)
         {
 
         }
+
+
     }
 }
