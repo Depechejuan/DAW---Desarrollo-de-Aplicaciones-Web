@@ -29,6 +29,7 @@ namespace TestPruebasUnitariasApp
             Assert.AreEqual(mensajeEsperado, ex.Message);
         }
 
+        [DataTestMethod]
         [DataRow("", "prueba@gmail.com", false)]
         [DataRow("", "prueba.gmail.com", false)]
         [DataRow("Paco", "prueba@gmail.com", true)]
