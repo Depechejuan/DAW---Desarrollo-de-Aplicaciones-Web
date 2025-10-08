@@ -129,7 +129,7 @@ Empleado es obligatorio" ForeColor="#CC3300"></asp:RequiredFieldValidator>
                     </p>
                     <div class="input">
                         <asp:TextBox ID="txtImpPre" runat="server" Width="300px"></asp:TextBox>
-                        <asp:RangeValidator ID="rngtxtImpPre" runat="server" BorderStyle="None" ControlToValidate="txtImpPre" ErrorMessage="El importe debe estar entre 0 y 500" ForeColor="#CC3300" MaximumValue="500,00" MinimumValue="0"></asp:RangeValidator>
+                        <asp:RangeValidator ID="rngtxtImpPre" runat="server" BorderStyle="None" ControlToValidate="txtImpPre" ErrorMessage="El importe debe estar entre 0 y 500" ForeColor="#CC3300" MaximumValue="500,00" MinimumValue="0,00" Type="Double"></asp:RangeValidator>
                         <asp:RequiredFieldValidator ID="rqdtxtImpPre" runat="server" ControlToValidate="txtImpPre" ErrorMessage="El importe fijo es obligatoria" ForeColor="#CC3300"></asp:RequiredFieldValidator>
                     </div>
                 </div>
@@ -140,7 +140,7 @@ Empleado es obligatorio" ForeColor="#CC3300"></asp:RequiredFieldValidator>
                     </p>
                     <div class="input">
                         <asp:TextBox ID="txtPorPre" runat="server" Width="300px"></asp:TextBox>
-                        <asp:RangeValidator ID="rngtxtPorPre" runat="server" ControlToValidate="txtPorPre" ErrorMessage="El porcentaje debe estar entre 0 y 15" ForeColor="#CC3300" MaximumValue="15,00" MinimumValue="0,00"></asp:RangeValidator>
+                        <asp:RangeValidator ID="rngtxtPorPre" runat="server" ControlToValidate="txtPorPre" ErrorMessage="El porcentaje debe estar entre 0 y 15" ForeColor="#CC3300" MaximumValue="15,00" MinimumValue="0,00" Type="Double"></asp:RangeValidator>
                         <asp:RequiredFieldValidator ID="rqdtxtPorPre" runat="server" ControlToValidate="txtPorPre" ErrorMessage="El porcentaje del informe es obligatorio" ForeColor="#CC3300"></asp:RequiredFieldValidator>
                     </div>
                 </div>

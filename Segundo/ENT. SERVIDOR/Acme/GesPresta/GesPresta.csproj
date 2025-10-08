@@ -74,7 +74,6 @@
     <Content Include="MPEmpleados.aspx" />
     <Content Include="MPPrestaciones.aspx" />
     <Content Include="Prestaciones2.aspx" />
-    <Content Include="Prestaciones.aspx" />
     <Content Include="Prestaciones1Respuesta.aspx" />
     <Content Include="prestacionesBuscar.ascx" />
     <Content Include="Styles\forms.css" />
@@ -137,13 +136,6 @@
     </Compile>
     <Compile Include="Prestaciones2.aspx.designer.cs">
       <DependentUpon>Prestaciones2.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Prestaciones.aspx.cs">
-      <DependentUpon>Prestaciones.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Prestaciones.aspx.designer.cs">
-      <DependentUpon>Prestaciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="Prestaciones1Respuesta.aspx.cs">
       <DependentUpon>Prestaciones1Respuesta.aspx</DependentUpon>
