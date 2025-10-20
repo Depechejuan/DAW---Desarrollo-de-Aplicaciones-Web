@@ -14,26 +14,27 @@ namespace GesPresta
 
         }
 
-    //    protected void btnVerPrestaciones_Click(object sender, EventArgs e)
-    //    {
-    //        if (btnSeleccionar.Visible == false)
-    //        {
-    //            btnSeleccionar.Visible = true;
-    //            prestacionesBuscar1.Visible = true;
-    //            btnVerPrestaciones.Text = "Ocultar prestaciones";
-    //        }
-    //        else
-    //        {
-    //            btnSeleccionar.Visible = false;
-    //            prestacionesBuscar1.Visible = false;
-    //            btnVerPrestaciones.Text = "Ver prestaciones";
-    //        }
-    //    }
+        protected void btnVerPrestaciones_Click(object sender, EventArgs e)
+        {
+            if (btnSeleccionar.Visible == false)
+            {
+                btnSeleccionar.Visible = true;
+                prestacionesBuscar1.Visible = true;
+                btnVerPrestaciones.Text = "Ocultar prestaciones";
+            }
+            else
+            {
+                btnSeleccionar.Visible = false;
+                prestacionesBuscar1.Visible = false;
+                btnVerPrestaciones.Text = "Ver prestaciones";
+            }
+        }
 
-    //    protected void btnSeleccionar_Click(object sender, EventArgs e)
-    //    {
-    //        txtCodPre.Text = prestacionesBuscar1.Codigo;
-    //        txtDesPre.Text = prestacionesBuscar1.Descripcion;
-    //    }
+        protected void btnSeleccionar_Click(object sender, EventArgs e)
+        {
+            txtCodPre.Text = prestacionesBuscar1.Codigo;
+            txtDesPre.Text = prestacionesBuscar1.Descripcion;
+        }
+
     }
 }
