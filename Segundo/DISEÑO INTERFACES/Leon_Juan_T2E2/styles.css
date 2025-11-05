@@ -1,0 +1,90 @@
+.outfit {
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+html {
+    box-sizing: border-box;
+    height: 100%;
+    font-family: "Outfit";
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+body {
+    display: flex;
+    /* flex-direction: column; */
+}
+
+header {
+    background-color: #DF5C53;
+    width: 95%;
+    height: 15vh;
+}
+
+body > div {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+}
+
+div:last-child {
+    width: 30%;
+    display: flex;
+    /* flex-direction: column; */
+}
+
+main {
+    background-color: #3993DD;
+    width: 65%;
+    height: fit-content;
+}
+
+article {
+    background-color: #44CF6C;
+    width: 95%;
+    margin: 10px auto;
+    min-height: 100px;
+    height: fit-content;
+    padding: 10px;
+}
+
+section {
+    margin-bottom: 10px;
+    background-color: #A9FDAC;
+    height: 50px;
+}
+
+footer {
+    background-color: #E0ACD5;
+    width: 95%;
+    height: 10vh;
+}
+
+main > footer {
+    width: 97%;
+    height: 5vh;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+body > div > div > nav {
+    background-color: #EAFA73;
+    display: inline-block;
+    width: 95%;
+    height: 10%;
+    margin-top: 0px;
+}
+
+body > div > div > aside {
+    background-color: #13B6C5;
+    width: 95%;
+    display: inline-block;
+    height: 100%;
+    margin-bottom: 0px;
+}

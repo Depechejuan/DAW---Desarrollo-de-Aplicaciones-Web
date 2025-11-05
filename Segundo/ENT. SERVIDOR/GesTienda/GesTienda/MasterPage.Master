@@ -32,7 +32,7 @@
             </div>
             <div id="cuerpo">
                <div id="menu">
-                   <asp:TreeView ID="TreeView1" runat="server" ImageSet="Arrows">
+                   <asp:TreeView ID="TreeView1" runat="server" ImageSet="Arrows" OnSelectedNodeChanged="TreeView1_SelectedNodeChanged">
                        <Nodes>
                            <asp:TreeNode Text="Inicio" Value="Inicio" NavigateUrl="~/InicioUsuario.aspx"></asp:TreeNode>
                            <asp:TreeNode Expanded="False" SelectAction="Expand" Text="Productos" Value="Productos">
@@ -72,6 +72,8 @@
                </div>
                <div id="contenido">
                    <asp:ContentPlaceHolder ID="InfoContenido" runat="server">
+                       <p>
+                           <a href="ProductosPorTipoVer.aspx">ProductosPorTipoVer.aspx</a></p>
                    </asp:ContentPlaceHolder>
                </div>
             </div>

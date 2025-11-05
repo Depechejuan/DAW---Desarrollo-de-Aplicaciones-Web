@@ -21,6 +21,9 @@ const alumnos = [
 function pintarAlumno() {
     let fragment = new DocumentFragment();
     let template = document.getElementById("tpl");
+    let aprobados = 0;
+    let total = 0;
+    let notas = [];
 
     for (let obj of alumnos) {
         let clone = template.content.cloneNode(true);
@@ -31,13 +34,31 @@ function pintarAlumno() {
 
         name.textContent = obj.n;
         nota.textContent = obj.nota;
+        notas.push(obj.nota)
 
-        li.dataset.aprobado = obj.nota >= 5 ? "si" : "no";
+        if (obj.nota >= 5) {
+            aprobados++;
+            total++;
+            li.dataset.aprobado = "si"
+        } else {
+            total++;
+            li.dataset.aprobado = "no"
+        }
         
         fragment.append(li);
     }
-
+    let resumen = document.getElementById("resumen");
+    let media = calcularMedia(notas)
+    resumen.textContent = `${aprobados}/${total} - media ${media}`
     return fragment
+}
+
+function calcularMedia(notas) {
+    let media = 0;
+    for (let i = 0; i < notas.length; i++) {
+        media += notas[i];
+    }
+    return media / notas.length;
 }
 
 let lista = document.getElementById("lista");

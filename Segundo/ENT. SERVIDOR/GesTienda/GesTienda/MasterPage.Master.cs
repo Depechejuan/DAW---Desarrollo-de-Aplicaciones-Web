@@ -19,5 +19,9 @@ namespace Prueba
             
         }
 
+        protected void TreeView1_SelectedNodeChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
