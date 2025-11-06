@@ -18,5 +18,10 @@ namespace GesTienda
         {
 
         }
+
+        protected void grdProductos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

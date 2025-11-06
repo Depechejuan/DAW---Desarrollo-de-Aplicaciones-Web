@@ -1,8 +1,8 @@
-.outfit {
+/* .outfit {
     font-family: "Outfit", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-}
+} */
 
 html {
     box-sizing: border-box;
@@ -16,27 +16,20 @@ html {
     margin: 5px;
 }
 
-body {
-    display: flex;
-    /* flex-direction: column; */
-}
-
 header {
     background-color: #DF5C53;
     width: 95%;
-    height: 15vh;
+    height: 18vh;
 }
 
-body > div {
+body > span {
     display: flex;
     width: 100%;
     height: fit-content;
 }
 
-div:last-child {
+span > span:last-child {
     width: 30%;
-    display: flex;
-    /* flex-direction: column; */
 }
 
 main {
@@ -73,7 +66,7 @@ main > footer {
     margin-bottom: 10px;
 }
 
-body > div > div > nav {
+body > span > span > nav {
     background-color: #EAFA73;
     display: inline-block;
     width: 95%;
@@ -81,10 +74,10 @@ body > div > div > nav {
     margin-top: 0px;
 }
 
-body > div > div > aside {
+body > span > span > aside {
     background-color: #13B6C5;
     width: 95%;
     display: inline-block;
-    height: 100%;
+    height: 88%;
     margin-bottom: 0px;
 }
