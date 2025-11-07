@@ -1,0 +1,74 @@
+<div id="personas">
+<!-- Aquí se mostrará el listado de personas junto con sus botones de edición y borrado -->
+</div>
+
+<script>
+    // Datos
+    let personas = [
+        {
+        nombre: "Ana",
+        apellido: "López"
+        },
+        {
+        nombre: "Inés",
+        apellido: "García"
+        }
+    ];
+
+    // Prototipos para los manejadores de eventos
+    // Definen el método 'handleEvent'
+    let editarPersona = {
+        handleEvent: function(evento) {
+        // Lógica para la tarea de edición
+        alert(`Editando datos de ${this.datosPersona.nombre} ${this.datosPersona.apellido}`);
+        }
+    }
+
+    let borrarPersona = {
+        handleEvent: function(evento) {
+        // Lógica para la tarea de borrado
+        alert(`Borrando datos de ${this.datosPersona.nombre} ${this.datosPersona.apellido}`);
+        }
+    }
+
+    // Lugar donde se mostrará el listado de personas
+    let listadoDiv = document.getElementById("personas");
+
+    // Creación de la estructura HTML para cada persona
+    for (let persona of personas) {
+        // Contenedor de la estructura
+        let divPersona = document.createElement("div");
+
+        // Datos de la persona
+        divPersona.innerHTML = `<span>${persona.nombre} ${persona.apellido}</span>`;
+
+        // Botón de editar
+        let editarBoton = document.createElement("button");
+        editarBoton.setAttribute("type", "button");
+        editarBoton.textContent = "Editar";
+        // Manejador de evento de editar
+        let editarManejador = Object.create(editarPersona);
+        // Incorporamos en la propiedad 'datosPersona' el objeto persona que se está procesando
+        editarManejador.datosPersona = persona;
+        // Añadimos el manejador al botón
+        editarBoton.addEventListener("click", editarManejador);
+        // Añadimos el botón a la estructura HTML
+        divPersona.append(editarBoton);
+
+        // Botón de borrar
+        let borrarBoton = document.createElement("button");
+        borrarBoton.setAttribute("type", "button");
+        borrarBoton.textContent = "Borrar";
+        // Manejador de evento de borrar
+        let borrarManejador = Object.create(borrarPersona);
+        // Incorporamos en la propiedad 'datosPersona' el objeto persona que se está procesando
+        borrarManejador.datosPersona = persona;
+        // Añadimos el manejador al botón
+        borrarBoton.addEventListener("click", borrarManejador);
+        // Añadimos el botón a la estructura HTML
+        divPersona.append(borrarBoton);
+
+        // Por último, añadimos la estructura al listado
+        listadoDiv.append(divPersona);
+    }
+</script>
