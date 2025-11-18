@@ -11,13 +11,23 @@ namespace Prueba
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            if (Convert.ToString(Session["Rol"]) != "A")
+            {
+                Response.Redirect("~/Default.aspx");
+            }
+            lblDatosUsuario.Text = Convert.ToString(Session["Nombre"]);
         }
 
         protected void btnCerrar_Click(object sender, EventArgs e)
         {
-           
+            Session.Clear();
+            Session.Abandon();
+            Response.Redirect("~/Default.aspx", false);
         }
 
+        protected void TreeView1_SelectedNodeChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -336,6 +336,9 @@ namespace GesTienda
             }
         }
 
+        protected void ddlIdTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }

@@ -32,7 +32,7 @@
             </div>
             <div id="cuerpo">
                <div id="menu" style="background:#d0d0d0">
-                   <asp:TreeView ID="TreeView1" runat="server" ImageSet="Arrows">
+                   <asp:TreeView ID="TreeView1" runat="server" ImageSet="Arrows" OnSelectedNodeChanged="TreeView1_SelectedNodeChanged">
                        <Nodes>
                            <asp:TreeNode Text="Inicio" Value="Inicio" NavigateUrl="~/InicioAdmin.aspx"></asp:TreeNode>
                            <asp:TreeNode Expanded="False" SelectAction="Expand" Text="Productos" Value="Productos">

@@ -5,7 +5,7 @@ html {
 *, *:before, *:after {
     box-sizing: inherit;
 }
-
+/* 
 nav, header, section, aside, footer  {
     border-radius: 30px;
     margin: 1em 10px;
@@ -51,8 +51,56 @@ aside {
 footer {
     background-color: #EFE991;
 }
-
+ */
 
 
 /* CORRECCION */
 
+*{
+    margin: 1%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    font-size: 2.5rem;
+    font-size: 3vw;
+    /* font-size: 3vh; */
+    font-size: clamp(0.5rem, 3vw, 1.5rem); /*minimo, preferido, maximo -- Sólo funcina con el zoom*/
+    border-radius: 40px;
+    text-align: center;
+    height: 100vh;
+}
+
+body {
+    overflow: hidden;
+}
+
+nav {
+    background-color: #DB96E8;
+    height: fit-content;
+    align-content: center;
+    border: solid 3px rgba(0,0,0,0.336)
+}
+
+main {
+    display: flex;
+    height: 80%;
+}
+
+article {
+    width: 100%;
+    align-content: center;
+    margin-top: 0;
+}
+
+header {
+    background-color: #7CEC8F;
+    height: calc(100% - 65%);
+    text-align: left;
+    padding: 30%;
+    margin: 0% 2% 3% 0;
+}
+
+section {
+    float: left;
+    width: calc();
+}
