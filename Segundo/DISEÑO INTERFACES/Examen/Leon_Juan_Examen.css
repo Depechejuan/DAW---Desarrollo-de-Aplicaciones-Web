@@ -1,0 +1,94 @@
+html {
+    box-sizing: border-box;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 1vw;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+nav {
+    display: flex;
+    width: 98vw;
+    height: 15vh;
+}
+
+nav > p {
+    background-color: plum;
+    margin: 1%;
+    width: 22vw;
+    text-decoration: none;
+    color: white;
+    padding: 4vh;
+    font-size: 1em;
+}
+
+nav > p:first-child {
+    background-color: palevioletred;
+    margin-left: 0%;
+    width: 18vw;
+}
+nav > p:last-child {
+    background-color: palevioletred;
+    margin-right: 0%;
+    width: 18vw;
+}
+
+main {
+    height: 75vh;
+    display: flex;
+    width: 98vw;
+}
+
+aside {
+    background-color: salmon;
+    width: 37.3vw;
+    margin-right: 1%;
+    padding-top: 40vh;
+}
+
+main > section {
+    margin-left: 1%;
+    width: 58vw;
+}
+
+section > article {
+    display: flex;
+    width: 30vw;
+    margin: 1%;
+    width: 98%;
+    height: 36vh;
+}
+
+section > article > section {
+    margin: 1%;
+    background-color: firebrick;
+    padding-top: 15vh;
+}
+
+section > article:first-child > section:first-child,
+section > article:first-child > section:nth-child(2) {
+    width: 20%;
+}
+
+section > article:first-child > section:last-child {
+    width: 65%;
+}
+
+section > article:last-child > section:first-child {
+    width: 30%;
+}
+
+section > article:last-child > section:last-child {
+    width: 80%;
+}
+
+footer {
+    margin-top: 1%;
+    background-color: plum;
+    height: 3vh;
+    padding-top: 0.5vh;
+}
