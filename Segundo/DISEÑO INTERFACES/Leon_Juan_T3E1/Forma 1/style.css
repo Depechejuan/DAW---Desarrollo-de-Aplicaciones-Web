@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#menu {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.link-menu {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: red;
+}
+.link-menu:hover {
+    color: blue;
+    text-decoration: underline;
+}
