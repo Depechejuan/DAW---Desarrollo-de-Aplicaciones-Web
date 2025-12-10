@@ -34,9 +34,10 @@ namespace MvcSoporte.Controllers
                 return NotFound();
             }
 
-            var equipo = await _context.Equipos
-                .Include(e => e.Localizacion)
+            var equipo = await _context.Equipos.Include(e => e.Localizacion).Include(e => e.Avisos)
+                .ThenInclude(a => a.Empleado).Include(e => e.Avisos).ThenInclude(b => b.TipoAveria)
                 .FirstOrDefaultAsync(m => m.Id == id);
+
             if (equipo == null)
             {
                 return NotFound();
