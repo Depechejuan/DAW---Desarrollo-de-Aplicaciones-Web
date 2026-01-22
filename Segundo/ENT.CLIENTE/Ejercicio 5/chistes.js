@@ -22,10 +22,10 @@ let chistes = [
 class MiElemento extends HTMLElement {
     constructor() {
         super()
+        this.shadow = this.attachShadow({mode: "open"}) // crear shadow en constructor
     }
 
     connectedCallback() {
-        const shadow = this.attachShadow({mode: "open"})
         const tpl = document.getElementById("tpl")
         const clon = tpl.content.cloneNode(true)
         let enunciado = clon.querySelector(".chiste")
@@ -35,7 +35,7 @@ class MiElemento extends HTMLElement {
         btn.addEventListener("click", (e) => {
             alert(this.punchline)
         })
-        shadow.append(clon)
+        this.shadow.append(clon)
     }
 }
 

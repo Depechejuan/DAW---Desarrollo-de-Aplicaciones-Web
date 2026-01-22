@@ -1,0 +1,115 @@
+*, *::after *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 30dvw 65dvw;
+    height: 100dvh;
+    text-align: center;
+}
+
+section {
+    border: 3px solid black;
+    margin: 10px;
+}
+
+main {
+    margin: 0 2dvw;
+}
+
+aside, .header, article {
+    background-color: #00FFFF;
+    border: 2px solid black;
+    padding: 10px;
+    margin: 1dvw;
+    margin-bottom: 3dvw;
+}
+
+aside {
+    height: 94dvh;
+    width: 28dvw;
+    display: grid;
+}
+
+.header {
+    width: 62dvw;
+    height: 25dvh;
+}
+
+.aside1 {
+    height: 50dvh;
+}
+.aside2 {
+    height: 5dvh;
+}
+.aside3 {
+    height: 30dvh;
+}
+
+header {
+    display: grid;
+    grid-template-columns: repeat(3,max-content);
+    grid-template-rows: auto auto;
+}
+
+.header1, .header2, .header3, .header4, .header5 {
+    height: 10dvh;
+}
+
+.header1, .header3 {
+    width: 15dvw;
+}
+.header2, .header5 {
+    width: 25dvw;
+}
+
+.header4 {
+    width: 30dvw;
+}
+
+
+section, article {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.div {
+    margin: 0;
+    
+}
+
+.down {
+    width: 62dvw;
+    height: 62dvb;
+    border: 0px;
+}
+
+.down {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+}
+
+.main-down {
+    margin: 0;
+}
+
+.long {
+    height: 61dvh;
+}
+
+.shorts {
+    height: 27dvh;
+}
+
+.long, .shorts {
+    width: 29dvw;
+}
+
+.big {
+    width: 100%;
+    height: 95%;
+}

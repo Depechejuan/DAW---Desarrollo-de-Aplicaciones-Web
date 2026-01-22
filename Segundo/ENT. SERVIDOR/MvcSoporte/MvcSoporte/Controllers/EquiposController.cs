@@ -1,15 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MvcSoporte.Data;
 using MvcSoporte.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace MvcSoporte.Controllers
 {
+    [Authorize(Roles = "Administrador")]
     public class EquiposController : Controller
     {
         private readonly MvcSoporteContexto _context;
@@ -29,19 +31,15 @@ namespace MvcSoporte.Controllers
         // GET: Equipos/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null)
-            {
+            if (id == null || _context.Equipos == null)
                 return NotFound();
-            }
 
             var equipo = await _context.Equipos.Include(e => e.Localizacion).Include(e => e.Avisos)
-                .ThenInclude(a => a.Empleado).Include(e => e.Avisos).ThenInclude(b => b.TipoAveria)
-                .FirstOrDefaultAsync(m => m.Id == id);
+            .ThenInclude(a => a.Empleado).Include(e => e.Avisos)
+            .ThenInclude(b => b.TipoAveria).FirstOrDefaultAsync(m => m.Id == id);
 
             if (equipo == null)
-            {
                 return NotFound();
-            }
 
             return View(equipo);
         }
