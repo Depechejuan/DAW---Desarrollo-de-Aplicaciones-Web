@@ -1,0 +1,39 @@
+/* ===============================
+ESTILOS GENERALES DEL SITIO
+- Variables
+- Reset / base
+- Layout
+================================= */
+/* Paleta y tipografía */
+:root {
+    --color-primario: #2563eb; /* blue-600 */
+    --color-secundario: #0f172a; /* slate-900 */
+    --color-texto: #1f2937; /* gray-800 */
+    --radio: 12px;
+    --sombra: 0 10px 25px rgba(0, 0, 0, 0.12);
+    --transicion: 180ms ease;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color: var(--color-texto);
+    background: #f8fafc;
+}
+
+/* Layout */
+.container {
+    width: min(1100px, 92vw);
+    margin: 0 auto;
+    padding: 24px 0;
+}

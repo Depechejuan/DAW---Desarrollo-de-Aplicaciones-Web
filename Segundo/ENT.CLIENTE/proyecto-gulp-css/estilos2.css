@@ -1,0 +1,46 @@
+/* ===============================
+COMPONENTES
+================================= */
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(15, 23, 42, 0.18);
+    background: white;
+    cursor: pointer;
+    transition: transform var(--transicion), box-shadow var(--transicion), background var(--transicion);
+}
+
+.button:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--sombra);
+}
+
+.button--primary {
+    background: var(--color-primario);
+    color: white;
+    border-color: transparent;
+}
+
+.card {
+    background: white;
+    border-radius: var(--radio);
+    padding: 18px;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.card__title {
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: var(--color-secundario);
+}
+
+.card__text {
+    margin: 0;
+    line-height: 1.6;
+}

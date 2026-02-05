@@ -1,0 +1,112 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *::after, *::before {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100dvh;
+}
+
+header {
+    height: 10dvh;
+    background-color: #006FF0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    text-align: center;
+}
+
+#icons {
+    border: 1px solid black;
+    grid-column: 1/2;
+}
+
+#icons > figure {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+#icons > figure > img,
+#search > figure > img {
+    border: 1px solid red;
+    width: 1dvw;
+    height: 1dvh;
+    margin-top: 20%;
+    margin-left: 10%;
+}
+#title {
+    color: white;
+    grid-column: 2/5;
+}
+#search {
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+nav {
+    background-color: bisque;
+    height: 5dvh;
+    width: 100dvw;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    margin: auto;
+}
+
+main {
+    height: 85dvh;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+.section-text {
+    display: grid;
+    width: 25dvw;
+    height: 42.50dvh;
+    margin: 0 15px;
+    grid-template-rows: repeat(10, 1fr);
+    h3 {
+        color: blue;
+        grid-row: 3/4;
+    }
+    h4 {
+        color: black;
+        grid-row: 4/5;
+    }
+    p {
+        color: black;
+        grid-row: 5/7;
+    }
+}
+.none {
+    grid-area: non;
+}
+
+.section-pics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.section-pics > article {
+    border: 1px solid red;
+    width: 25dvw;
+    height: 42.5dvh;
+}
+
+.section-pics > article > figure {
+    height:40dvh;
+    border: 1px solid rebeccapurple;
+    background-color:aquamarine;
+}
+
+.section-pics > article > p {
+    text-align: end;
+} 
